@@ -1,0 +1,49 @@
+.navUl {
+  display: none;
+}
+.navUlVisible {
+  display: flex;
+  flex-direction: column;
+  min-height: 100px;
+  justify-content: space-between;
+  list-style: none;
+  padding-left: 0;
+  padding-bottom: 10px;
+  margin: 5px 0 5px 20px;
+}
+.navLi {
+  margin-top: 20px;
+}
+.navLink {
+  text-decoration: none;
+  color: white;
+  font-size: 1.2em;
+}
+.navLink:hover,
+.navLink:active {
+  color: #ffd600;
+}
+@media (min-width: 600px) {
+  .navUl,
+  .navUlVisible {
+    display: flex;
+    flex-direction: row;
+    min-height: max-content;
+    list-style: none;
+    padding-left: 0;
+    padding-bottom: 2px;
+    margin: 0 30px 0 0;
+    width: max-content;
+  }
+  .navLi {
+    margin: 0 10px 0 10px;
+  }
+  .navLink {
+    border: 1px solid #ffd600;
+    display: block;
+    width: 100px;
+    text-align: center;
+    padding: 2px;
+    font-size: 1.3em;
+  }
+}
