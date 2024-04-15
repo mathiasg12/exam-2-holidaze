@@ -1,3 +1,4 @@
+@import '../../styles/customColors.css';
 .navUl {
   display: none;
 }
@@ -21,7 +22,7 @@
 }
 .navLink:hover,
 .navLink:active {
-  color: #ffd600;
+  color: var(--custom-yellow);
 }
 @media (min-width: 600px) {
   .navUl,
@@ -39,7 +40,8 @@
     margin: 0 10px 0 10px;
   }
   .navLink {
-    border: 1px solid #ffd600;
+    border: 1px solid;
+    border-color: var(--custom-yellow);
     display: block;
     width: 100px;
     text-align: center;

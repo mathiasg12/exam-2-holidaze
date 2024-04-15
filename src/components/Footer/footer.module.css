@@ -1,5 +1,6 @@
+@import '../../styles/customColors.css';
 footer {
-  background-color: #1c6582;
+  background-color: var(--custom-blue);
 }
 .footerElementsContainer {
   display: flex;

@@ -1,0 +1,35 @@
+@import '../../styles/customColors.css';
+.WelcomeMessageContainer {
+  margin: 150px auto;
+  background-color: var(--custom-blue);
+  color: white;
+  max-height: 300px;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.WelcomeMessageContainer h1,
+.WelcomeMessageContainer h2 {
+  width: fit-content;
+  text-align: center;
+  margin: 10px 0;
+}
+.buttonContainer {
+  height: 150px;
+  max-width: 250px;
+  text-align: center;
+}
+@media (min-width: 434px) {
+  .WelcomeMessageContainer {
+    border-radius: 10px;
+  }
+}
+@media (min-width: 600px) {
+  .WelcomeMessageContainer {
+    margin-top: 200px;
+    max-height: 220px;
+    width: 600px;
+  }
+}

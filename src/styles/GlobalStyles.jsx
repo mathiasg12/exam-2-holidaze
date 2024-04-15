@@ -6,6 +6,7 @@ body{
 main{
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
 }
 `;
 export default CustomGlobalStyles;

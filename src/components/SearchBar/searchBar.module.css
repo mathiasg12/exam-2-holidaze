@@ -1,0 +1,20 @@
+.searchBarContainer {
+  display: flex;
+  width: fit-content;
+}
+.searchBarContainer input {
+  width: 200px;
+  height: 31px;
+  border: 1px solid black;
+  border-right: 0;
+  border-radius: 10px 0 0 10px;
+}
+.magnifyingGlass {
+  background-color: white;
+  display: flex;
+  align-items: center;
+  width: 22px;
+  border: 1px solid black;
+  border-left: 0;
+  border-radius: 0 10px 10px 0;
+}

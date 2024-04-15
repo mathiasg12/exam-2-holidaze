@@ -1,0 +1,4 @@
+.searchBarAndFilterContainer {
+  display: flex;
+  flex-direction: column;
+}

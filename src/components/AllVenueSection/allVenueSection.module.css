@@ -1,0 +1,14 @@
+@import '../../styles/customColors.css';
+.allVenueSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 100px;
+}
+.allVenueSection h2 {
+  width: 100vw;
+  text-align: center;
+  background-color: var(--custom-blue);
+  color: white;
+  padding: 15px 0;
+}

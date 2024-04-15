@@ -1,5 +1,8 @@
+@import '../../styles/customColors.css';
 header {
-  background-color: #1c6582;
+  background-color: var(--custom-blue);
+  position: fixed;
+  width: 100vw;
 }
 .logoAndNavContainer {
   display: flex;

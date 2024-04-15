@@ -1,0 +1,8 @@
+.filterBtn {
+  height: 35px;
+  border: 1px solid black;
+  width: 114px;
+  background-color: white;
+  margin: 5px auto;
+  border-radius: 10px;
+}
