@@ -1,0 +1,39 @@
+@import '../../styles/customColors.css';
+.filterMenu {
+  min-width: 80vw;
+  background-color: var(--custom-blue);
+  color: white;
+  padding: 0 10px 0 10px;
+  border-radius: 10px;
+}
+.filterMenuClosed {
+  display: none;
+}
+.filterMenuContentContainer {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.closeMenu {
+  text-align: end;
+  font-size: 1.5em;
+  width: 100%;
+  cursor: pointer;
+}
+.filterMenu h3 {
+  text-align: center;
+}
+.filterMenu p {
+  margin: 1em auto 0.5em 4px;
+}
+.checkboxContainer {
+  margin: 5px auto;
+  display: flex;
+}
+.filterMenu input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+}
+.filterMenu input[type='checkbox']:checked {
+  accent-color: var(--custom-yellow);
+}

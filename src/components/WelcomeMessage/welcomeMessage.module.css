@@ -30,6 +30,7 @@
   .WelcomeMessageContainer {
     margin-top: 200px;
     max-height: 220px;
-    width: 600px;
+    min-width: 600px;
+    padding: 20px 0 20px 0;
   }
 }

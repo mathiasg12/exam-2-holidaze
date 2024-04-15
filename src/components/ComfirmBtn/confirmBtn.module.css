@@ -1,0 +1,10 @@
+@import '../../styles/customColors.css';
+.comfirmBtn {
+  background-color: var(--custom-yellow);
+  min-width: 130px;
+  min-height: 30px;
+  border: 1px solid black;
+  padding: 0;
+  margin: 10px auto;
+  border-radius: 10px;
+}
