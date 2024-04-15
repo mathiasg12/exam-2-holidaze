@@ -8,3 +8,8 @@
   margin: 10px auto;
   border-radius: 10px;
 }
+@media (min-width: 600px) {
+  .comfirmBtn {
+    display: none;
+  }
+}

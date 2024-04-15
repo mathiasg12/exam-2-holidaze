@@ -13,7 +13,11 @@ export function FilterMenu(props) {
           <label htmlFor="Guests" hidden>
             Guests
           </label>
-          <select id="amountOfGuests" name="Guests">
+          <select
+            id="amountOfGuests"
+            name="Guests"
+            className={styles.amountOfGuests}
+          >
             <option value="all">All</option>
             <option value=">5">Guests &gt; 5</option>
             <option value="5">Guests = 5</option>
