@@ -1,0 +1,14 @@
+@import '../../styles/customColors.css';
+.moreBtn {
+  background-color: var(--custom-yellow);
+  min-width: 130px;
+  min-height: 30px;
+  border: 1px solid black;
+  padding: 0;
+  margin: 30px auto 50px auto;
+  border-radius: 10px;
+}
+.moreBtnEndReached {
+  text-align: center;
+  margin: 30px auto;
+}

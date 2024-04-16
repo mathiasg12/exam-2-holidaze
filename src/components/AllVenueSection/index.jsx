@@ -1,4 +1,6 @@
 import { useFetchAllVenues } from '../../hooks/FetchAllVenues';
+import { filteredVenues } from '../../js/filterFunctionality';
+import { useFilterStore } from '../../states/filterState';
 import { SearchBarAndFilterSection } from '../SearchBarAndFilterSection';
 import { VenueCardsLandingPage } from '../venueCardsLandingPage';
 import styles from './allVenueSection.module.css';
@@ -6,8 +8,15 @@ export function AllVenueSection() {
   const { venues, error, loading } = useFetchAllVenues(
     'https://v2.api.noroff.dev/holidaze/venues'
   );
-  const loadedVenues = venues && venues.data ? venues.data : [];
-  console.log(loadedVenues);
+  const filterValues = useFilterStore((state) => state.metaArray);
+  const maxGuests = useFilterStore((state) => state.maxGuests);
+  console.log(maxGuests);
+  const loadedVenues = venues && venues ? venues : [];
+  const filteredLoadedVenues = filteredVenues(
+    loadedVenues,
+    filterValues,
+    maxGuests
+  );
   if (loading || !loadedVenues) {
     return (
       <section className={styles.allVenueSection}>
@@ -29,7 +38,7 @@ export function AllVenueSection() {
         ></SearchBarAndFilterSection>
         <VenueCardsLandingPage
           className={styles.venues}
-          arrayOfVenues={loadedVenues}
+          arrayOfVenues={filteredLoadedVenues}
         ></VenueCardsLandingPage>
       </section>
     );
