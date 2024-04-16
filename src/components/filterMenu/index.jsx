@@ -21,9 +21,9 @@ export function FilterMenu(props) {
       </div>
       <div className={styles.filterMenuContentContainer}>
         <h3>Filter</h3>
-        <div>
-          <label htmlFor="Guests" hidden>
-            Guests
+        <div className={styles.amountOfGuestsCon}>
+          <label htmlFor="Guests" className={styles.amountOfGuestsLabel}>
+            Max amount of guests
           </label>
           <select
             id="amountOfGuests"
@@ -32,12 +32,12 @@ export function FilterMenu(props) {
             onChange={optionChange}
           >
             <option value="all">All</option>
-            <option value="moreThan5">Guests &gt; 5</option>
-            <option value="five">Guests = 5</option>
-            <option value="four">Guests = 4</option>
-            <option value="three">Guests = 3</option>
-            <option value="two">Guests = 2</option>
-            <option value="one">Guests = 1</option>
+            <option value="moreThan5">More than 5 guests</option>
+            <option value="five">up to 5 guests</option>
+            <option value="four">up to 4 guests</option>
+            <option value="three">up to 3 guests</option>
+            <option value="two">up to 2 guests</option>
+            <option value="one">1 guest</option>
           </select>
         </div>
         <div>
