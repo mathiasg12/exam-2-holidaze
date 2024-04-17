@@ -38,6 +38,18 @@
     grid-row: 2;
   }
 }
+.availableVenues {
+  width: fit-content;
+  margin: 30px auto 10px auto;
+  font-size: 1.3em;
+}
+.resultsContainer button {
+  background-color: var(--custom-yellow);
+  height: 35px;
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 5px;
+}
 @media (min-width: 800px) {
   .allVenueSection {
     display: grid;

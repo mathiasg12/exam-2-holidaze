@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useFetchAllVenues } from '../../hooks/FetchAllVenues';
 import { filteredVenues } from '../../js/filterFunctionality';
 import { useFilterStore } from '../../states/filterState';
@@ -10,13 +11,27 @@ export function AllVenueSection() {
   );
   const filterValues = useFilterStore((state) => state.metaArray);
   const maxGuests = useFilterStore((state) => state.maxGuests);
-  console.log(maxGuests);
   const loadedVenues = venues && venues ? venues : [];
-  const filteredLoadedVenues = filteredVenues(
-    loadedVenues,
-    filterValues,
-    maxGuests
-  );
+  const [searched, setSearched] = useState(false);
+  const [searchedArray, setSearchedArray] = useState([]);
+  let filteredLoadedVenues = [];
+  if (searched) {
+    filteredLoadedVenues = filteredVenues(
+      searchedArray,
+      filterValues,
+      maxGuests
+    );
+  } else {
+    filteredLoadedVenues = filteredVenues(
+      loadedVenues,
+      filterValues,
+      maxGuests
+    );
+  }
+  function handleBackToAllVenuesBtnClick() {
+    setSearched(false);
+    document.getElementById('searchBar').value = '';
+  }
   if (loading || !loadedVenues) {
     return (
       <section className={styles.allVenueSection}>
@@ -35,11 +50,29 @@ export function AllVenueSection() {
         <h2>Venues</h2>
         <SearchBarAndFilterSection
           className={styles.searchAndFilter}
+          arrayToSearch={loadedVenues}
+          setSearched={setSearched}
+          searched={searched}
+          setSearchedArray={setSearchedArray}
         ></SearchBarAndFilterSection>
-        <VenueCardsLandingPage
-          className={styles.venues}
-          arrayOfVenues={filteredLoadedVenues}
-        ></VenueCardsLandingPage>
+        <div>
+          <div className={styles.availableVenues}>
+            {!searched ? (
+              <h3>{filteredLoadedVenues.length} Venues available</h3>
+            ) : (
+              <div className={styles.resultsContainer}>
+                <h3>{filteredLoadedVenues.length} Results for your search</h3>
+                <button onClick={handleBackToAllVenuesBtnClick}>
+                  Back to all venues
+                </button>
+              </div>
+            )}
+          </div>
+          <VenueCardsLandingPage
+            className={styles.venues}
+            arrayOfVenues={filteredLoadedVenues}
+          ></VenueCardsLandingPage>
+        </div>
       </section>
     );
   }

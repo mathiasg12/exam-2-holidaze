@@ -10,6 +10,15 @@ export function filterMetaValues(array, metaKeyArray) {
   });
   return filteredArray;
 }
+/**
+ * function that takes three parameters, array which is the array to filter, metaKeyArray which is the array with filter keys, and maxGuests which is a string,
+ * telling the function how many maxGuest the filtered objects should contain, the function uses the filterMetaValues function above which filter out the objects that
+ * dont match the meta keys, so an array first gets filtered by the function above then by max guests in this function, then returns a new array with all the filter criteria met
+ * @param {array} array
+ * @param {array} metaKeyArray
+ * @param {string} maxGuests
+ * @returns array
+ */
 export function filteredVenues(array, metaKeyArray, maxGuests) {
   if (maxGuests === 'all') {
     const filteredArrayWithMaxGuests = filterMetaValues(array, metaKeyArray);

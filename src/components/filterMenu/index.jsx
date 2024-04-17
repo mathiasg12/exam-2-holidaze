@@ -1,10 +1,23 @@
+import { useEffect } from 'react';
 import { useFilterStore } from '../../states/filterState';
 import { ComfirmBtn } from '../ComfirmBtn';
 import styles from './filterMenu.module.css';
+import { ResetFilters } from '../ResetFilters';
 export function FilterMenu(props) {
-  const { clicked, onClickFunction } = props;
+  const { clicked, onClickFunction, searched } = props;
   const filterSettings = useFilterStore((state) => state.filterSettings);
   const changeMaxGuests = useFilterStore((state) => state.changeMaxGuests);
+  const maxGuests = useFilterStore((state) => state.maxGuests);
+  console.log(searched);
+  const checkIfCheckboxIsChecked = useFilterStore(
+    (state) => state.checkMetaArray
+  );
+  useEffect(() => {
+    checkIfCheckboxIsChecked(useFilterStore.getState());
+  }, []);
+  if (searched) {
+    checkIfCheckboxIsChecked(useFilterStore.getState());
+  }
   function checkboxChange(inputClicked) {
     const checked = inputClicked.target.checked;
     const value = inputClicked.target.value;
@@ -30,6 +43,7 @@ export function FilterMenu(props) {
             name="Guests"
             className={styles.amountOfGuests}
             onChange={optionChange}
+            value={maxGuests}
           >
             <option value="all">All</option>
             <option value="moreThan5">More than 5 guests</option>
@@ -79,6 +93,7 @@ export function FilterMenu(props) {
             <label htmlFor="parking">Parking included</label>
           </div>
         </div>
+        <ResetFilters></ResetFilters>
         <ComfirmBtn onClickFunction={onClickFunction}></ComfirmBtn>
       </div>
     </div>

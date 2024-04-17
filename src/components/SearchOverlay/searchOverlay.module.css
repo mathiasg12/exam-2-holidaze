@@ -1,0 +1,61 @@
+.overlayContainer {
+  width: 227px;
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: white;
+  position: absolute;
+  z-index: 2;
+  border-radius: 0 0 10px 10px;
+}
+.overlayContainerHidden {
+  display: none;
+}
+.noResultsHidden {
+  display: none;
+}
+.imgCon img {
+  max-width: 50px;
+  max-height: 50px;
+  width: 228px;
+  height: 60px;
+}
+.overlayItems {
+  margin: 10px 2px;
+  color: black;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border-bottom: 2px solid black;
+}
+.overlayItems:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  border: 1px solid black;
+}
+.overlayItems h3 {
+  margin: 5px 10px;
+}
+.imageAndHeadingCon {
+  display: flex;
+}
+.pContainer p {
+  margin: 5px 5px;
+  width: fit-content;
+}
+.pContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+.noResults {
+  background-color: white;
+  padding: 5px;
+  width: 217px;
+  margin-top: 0;
+  border-radius: 0 0 10px 10px;
+}
+.noResults h3 {
+  margin: 5px 5px;
+}
