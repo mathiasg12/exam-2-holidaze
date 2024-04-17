@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'DroidSans';
+  src: url('/public/fonts/DroidSans.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Lato-regular';
+  src: url('/public/fonts/Lato-Regular.ttf') format('truetype');
+}

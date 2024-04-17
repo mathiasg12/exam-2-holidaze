@@ -35,14 +35,26 @@ export function SearchBar(props) {
     console.log(searchedArray);
     return (
       <div>
-        <div className={styles.searchBarContainerActive}>
+        <div
+          className={
+            searchClicked === true
+              ? styles.searchBarContainer
+              : styles.searchBarContainerActive
+          }
+        >
           <input
             placeholder="Search for a venue"
             onChange={handleSearchChange}
             onKeyDown={handleEnterKeyPress}
             id="searchBar"
           ></input>
-          <div className={styles.magnifyingGlassActive}>
+          <div
+            className={
+              searchClicked === true
+                ? styles.magnifyingGlass
+                : styles.magnifyingGlassActive
+            }
+          >
             <FontAwesomeIcon
               icon={faMagnifyingGlass}
               role="button"

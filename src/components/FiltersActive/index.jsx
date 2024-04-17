@@ -23,8 +23,13 @@ export function ActiveFilters() {
   return numberOfFilters > 0 ? (
     <div className={styles.activeFiltersContainer}>
       <p>Amount of Filters: {numberOfFilters}</p>
-      <p className={styles.resetFilters} role="button" onClick={handleBtnClick}>
-        Resest Filters
+      <p
+        className={styles.resetFilters}
+        role="button"
+        type="button"
+        onClick={handleBtnClick}
+      >
+        Reset Filters
       </p>
     </div>
   ) : (
