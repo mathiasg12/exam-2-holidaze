@@ -1,5 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import styles from './footer.module.css';
+/**
+ * component that creates the footer, the footer has contact information aswell as links to the landing page and profile
+ */
 export function Footer() {
   return (
     <footer>

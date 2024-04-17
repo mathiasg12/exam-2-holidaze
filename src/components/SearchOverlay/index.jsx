@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
 import styles from './searchOverlay.module.css';
+/**
+ * component that creates the look ahead search overlay, the component maps thrue the search array and displays it.
+ * @param {props} props
+ */
 export function SearchOverlay(props) {
   const { array, searchClicked } = props;
   if (array.length < 1) {

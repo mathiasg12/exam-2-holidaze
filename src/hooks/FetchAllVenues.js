@@ -1,6 +1,14 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { nonDuplicatedVenues } from '../js/removeDupllicatedArray';
+/**
+ * Hook that is used to fetch an array from the API, the function stores errors, content, and loading as states.
+ *  The function uses a while loop to go through all pages and collect all the data from the API. If the meta value of an object has isLastPage = true,
+ *  the loop will break. The loop has a cleanup function to prevent unwanted behavior, The loop starts if the URL changes.
+ *  The function also calls a function that filters through the new array and removes duplicates if there are any.
+ *  This function is placed inside a useEffect hook that re-triggers if the unfiltered array changes.
+ * @param {string} URL
+ */
 export function useFetchAllVenues(URL) {
   const [unFilteredvenues, setUnFilteredVenues] = useState([]);
   const [venues, setVenues] = useState([]);

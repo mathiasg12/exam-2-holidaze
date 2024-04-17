@@ -1,5 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import { Home } from '../../pages/Home';
+/**
+ * react Routes to the different paths
+ */
 export function PageRoutes() {
   return (
     <Routes>

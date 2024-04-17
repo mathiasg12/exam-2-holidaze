@@ -3,6 +3,10 @@ import { FilterBtn } from '../FilterBtn';
 import { SearchBar } from '../SearchBar';
 import { FilterMenu } from '../filterMenu';
 import styles from './searchAndFilter.module.css';
+/**
+ * component that creates the search and filter seaction, the component calls three other components, the searchbar, a filter button and the filter menu
+ * @param {props} props
+ */
 export function SearchBarAndFilterSection(props) {
   const { arrayToSearch, setSearched, setSearchedArray, searched } = props;
   const [clicked, setClicked] = useState(false);

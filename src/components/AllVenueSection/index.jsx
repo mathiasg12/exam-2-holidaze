@@ -5,6 +5,15 @@ import { useFilterStore } from '../../states/filterState';
 import { SearchBarAndFilterSection } from '../SearchBarAndFilterSection';
 import { VenueCardsLandingPage } from '../venueCardsLandingPage';
 import styles from './allVenueSection.module.css';
+import { ActiveFilters } from '../FiltersActive';
+/**
+Here's the corrected version:
+
+* The VenueSection component creates the venue section. It uses the useFetchAllVenues hook to fetch data from the API.
+  It then displays the content from the API in the venue section. If a user uses the search bar, a new array is made.
+  It then uses either the search array or the whole array to create a new array with the filter settings and then displays this array.
+  The component also handles error messages and displays loading if the loading state from the fetch hook is true.
+ */
 export function AllVenueSection() {
   const { venues, error, loading } = useFetchAllVenues(
     'https://v2.api.noroff.dev/holidaze/venues'
@@ -58,13 +67,19 @@ export function AllVenueSection() {
         <div>
           <div className={styles.availableVenues}>
             {!searched ? (
-              <h3>{filteredLoadedVenues.length} Venues available</h3>
+              <div>
+                <h3>{filteredLoadedVenues.length} Venues available</h3>
+                <ActiveFilters></ActiveFilters>
+              </div>
             ) : (
-              <div className={styles.resultsContainer}>
-                <h3>{filteredLoadedVenues.length} Results for your search</h3>
-                <button onClick={handleBackToAllVenuesBtnClick}>
-                  Back to all venues
-                </button>
+              <div>
+                <div className={styles.resultsContainer}>
+                  <h3>{filteredLoadedVenues.length} Results for your search</h3>
+                  <button onClick={handleBackToAllVenuesBtnClick}>
+                    Back to all venues
+                  </button>
+                </div>
+                <ActiveFilters></ActiveFilters>
               </div>
             )}
           </div>

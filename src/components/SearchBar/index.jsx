@@ -2,9 +2,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { searchfunctionality } from '../../js/searchFunctionality';
 import styles from './searchBar.module.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { SearchOverlay } from '../SearchOverlay';
 import { useFilterStore } from '../../states/filterState';
+/**
+ * component that creates the searchbar, uses states to store the search value, if the search button is clicked and gets the clearFilter state which clears all stored state values.
+ *  the component handles events like if the search symbol is clicked and if the search value changes.
+ * @param {props} props
+ */
 export function SearchBar(props) {
   const { arrayToSearch, setSearched, setSearchedArray } = props;
   const [searchValue, setSearchValue] = useState('');

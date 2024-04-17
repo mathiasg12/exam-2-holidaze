@@ -2,7 +2,14 @@ import { useEffect } from 'react';
 import { useFilterStore } from '../../states/filterState';
 import { ComfirmBtn } from '../ComfirmBtn';
 import styles from './filterMenu.module.css';
-import { ResetFilters } from '../ResetFilters';
+/**
+ * Here's the corrected version:
+
+* Component that creates the filter menu. The filter menu uses states from the filter cart to globally store filter settings.
+  The filter menu contains an exit button, calls the confirm button component, select input for the amount of guests,
+  and checkboxes for the different filter settings.*
+ * @param {props} props
+ */
 export function FilterMenu(props) {
   const { clicked, onClickFunction, searched } = props;
   const filterSettings = useFilterStore((state) => state.filterSettings);
@@ -93,7 +100,6 @@ export function FilterMenu(props) {
             <label htmlFor="parking">Parking included</label>
           </div>
         </div>
-        <ResetFilters></ResetFilters>
         <ComfirmBtn onClickFunction={onClickFunction}></ComfirmBtn>
       </div>
     </div>

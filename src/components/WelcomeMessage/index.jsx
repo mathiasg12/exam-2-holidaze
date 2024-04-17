@@ -1,5 +1,8 @@
 import { RentOutLink } from '../RentOutLink';
 import styles from './welcomeMessage.module.css';
+/**
+ * component that creates the welcoming message
+ */
 export function WelcomeMessage() {
   return (
     <div className={styles.welcomeSection}>

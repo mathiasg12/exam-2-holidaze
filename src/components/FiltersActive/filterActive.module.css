@@ -1,0 +1,22 @@
+@import '../../styles/customColors.css';
+.activeFiltersContainer p {
+  margin: 0;
+  text-align: center;
+}
+.resetFilters {
+  font-weight: bold;
+  text-decoration: underline;
+  padding-top: 5px;
+  cursor: pointer;
+}
+@media (min-width: 600px) {
+  .activeFiltersContainer {
+    display: flex;
+    width: 320px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .resetFilters {
+    padding-top: 0px;
+  }
+}
