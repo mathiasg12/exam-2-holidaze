@@ -3,8 +3,16 @@
 }
 @media (min-width: 600px) {
   .specificSection {
-    display: flex;
+    display: grid;
+    grid-template-columns: 300px 300px;
     align-items: start;
-    justify-content: center;
+    max-width: 650px;
+    margin: 200px auto;
+  }
+}
+@media (min-width: 850px) {
+  .specificSection {
+    grid-template-columns: 425px 425px;
+    max-width: 850px;
   }
 }

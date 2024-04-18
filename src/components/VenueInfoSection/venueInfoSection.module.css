@@ -19,8 +19,24 @@
   flex-direction: column;
   align-items: center;
 }
+.includesCon ul {
+  list-style: none;
+}
+.includesCon li {
+  padding: 5px;
+  background-color: white;
+  color: black;
+  margin: 5px auto;
+  text-align: center;
+  border-radius: 5px;
+  height: 25px;
+  font-weight: bold;
+}
 .descCon {
   border-bottom: 0;
+}
+.descCon p {
+  margin-left: 10px;
 }
 .venueInfoCon ul {
   padding: 10px;
@@ -58,7 +74,29 @@
 }
 @media (min-width: 600px) {
   .venueInfoCon {
+    margin-top: 0;
     width: 300px;
-    margin: 0 auto 0 25px;
+  }
+  .includesCon ul {
+    width: 300px;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  .includesCon li {
+    width: 70px;
+  }
+  .venueManager,
+  .locationAddress {
+    font-size: 1em;
+  }
+}
+@media (min-width: 850px) {
+  .venueInfoCon {
+    width: 400px;
+  }
+  .includesCon ul {
+    width: 400px;
   }
 }

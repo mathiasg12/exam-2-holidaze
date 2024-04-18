@@ -30,11 +30,15 @@ export function SpecificSection() {
     console.log(loadedVenue);
     return (
       <section className={styles.specificSection}>
-        <ImageCarousel imageArray={loadedVenue.media}></ImageCarousel>
+        <ImageCarousel
+          imageArray={loadedVenue.media}
+          className={styles.imageCar}
+        ></ImageCarousel>
         <VenueInfo
           venue={loadedVenue}
           owner={loadedVenueOwner}
           location={loadedLocation}
+          className={styles.venueInfo}
         ></VenueInfo>
       </section>
     );
