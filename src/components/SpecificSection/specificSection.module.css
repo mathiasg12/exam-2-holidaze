@@ -1,0 +1,10 @@
+.specificSection {
+  margin-top: 200px;
+}
+@media (min-width: 600px) {
+  .specificSection {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+  }
+}

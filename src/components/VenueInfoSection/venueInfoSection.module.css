@@ -1,0 +1,64 @@
+@import '../../styles/customColors.css';
+.venueInfoCon {
+  background-color: var(--custom-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  padding: 40px 0;
+  margin: 20px auto;
+}
+.includesCon,
+.descCon {
+  margin-top: 10px;
+  border: 1px solid white;
+  border-left: 0;
+  border-right: 0;
+  width: 99%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.descCon {
+  border-bottom: 0;
+}
+.venueInfoCon ul {
+  padding: 10px;
+}
+.venueInfoCon h1 {
+  margin-bottom: 0;
+}
+.venueInfoCon h3 {
+  margin-bottom: 0;
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+.loactionAndOwnerCon {
+  display: flex;
+  flex-direction: column;
+}
+.loactionAndOwnerCon p {
+  margin-top: 5px;
+}
+.venueManagerCon {
+  display: flex;
+  align-items: center;
+}
+.venueManager,
+.locationAddress {
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+.locationCon {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 600px) {
+  .venueInfoCon {
+    width: 300px;
+    margin: 0 auto 0 25px;
+  }
+}

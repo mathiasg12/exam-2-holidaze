@@ -6,6 +6,7 @@ import { SearchBarAndFilterSection } from '../SearchBarAndFilterSection';
 import { VenueCardsLandingPage } from '../venueCardsLandingPage';
 import styles from './allVenueSection.module.css';
 import { ActiveFilters } from '../FiltersActive';
+import { allVenuesURL } from '../../js/URL';
 /**
 Here's the corrected version:
 
@@ -15,9 +16,7 @@ Here's the corrected version:
   The component also handles error messages and displays loading if the loading state from the fetch hook is true.
  */
 export function AllVenueSection() {
-  const { venues, error, loading } = useFetchAllVenues(
-    'https://v2.api.noroff.dev/holidaze/venues'
-  );
+  const { venues, error, loading } = useFetchAllVenues(allVenuesURL, false);
   const filterValues = useFilterStore((state) => state.metaArray);
   const maxGuests = useFilterStore((state) => state.maxGuests);
   const loadedVenues = venues && venues ? venues : [];
