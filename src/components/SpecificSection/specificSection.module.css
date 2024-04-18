@@ -5,9 +5,13 @@
   .specificSection {
     display: grid;
     grid-template-columns: 300px 300px;
+    grid-template-rows: auto auto;
     align-items: start;
     max-width: 650px;
-    margin: 200px auto;
+    margin: 200px auto 0 auto;
+  }
+  .bookSection {
+    grid-column: 1/-1;
   }
 }
 @media (min-width: 850px) {

@@ -4,6 +4,7 @@ import { allVenuesURL } from '../../js/URL';
 import { ImageCarousel } from '../ImageCarousel';
 import styles from './specificSection.module.css';
 import { VenueInfo } from '../VenueInfoSection';
+import { BookSection } from '../BookSection';
 
 export function SpecificSection() {
   const { id } = useParams();
@@ -40,6 +41,10 @@ export function SpecificSection() {
           location={loadedLocation}
           className={styles.venueInfo}
         ></VenueInfo>
+        <BookSection
+          venue={loadedVenue}
+          className={styles.bookSection}
+        ></BookSection>
       </section>
     );
   }

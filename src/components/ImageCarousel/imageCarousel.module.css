@@ -1,6 +1,6 @@
 .image {
   width: 80vw;
-  height: 170px;
+  height: 300px;
   border-radius: 5px;
 }
 .allImageCon {
@@ -41,7 +41,7 @@
   margin: 0;
   font-weight: bold;
 }
-@media (min-width: 300px) {
+@media (min-width: 600px) {
   .image {
     width: 300px;
     height: 300px;

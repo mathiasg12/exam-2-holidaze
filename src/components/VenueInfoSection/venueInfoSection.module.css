@@ -4,9 +4,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 80vw;
   color: white;
-  padding: 40px 0;
+  padding: 50px 10px;
   margin: 20px auto;
+  border-radius: 5px;
 }
 .includesCon,
 .descCon {
@@ -42,7 +44,7 @@
   padding: 10px;
 }
 .venueInfoCon h1 {
-  margin-bottom: 0;
+  margin: 0;
 }
 .venueInfoCon h3 {
   margin-bottom: 0;
@@ -76,6 +78,7 @@
   .venueInfoCon {
     margin-top: 0;
     width: 300px;
+    padding: 50px 0px;
   }
   .includesCon ul {
     width: 300px;

@@ -1,0 +1,74 @@
+@import '../../styles/customColors.css';
+.bookSection {
+  color: white;
+  border-radius: 5px;
+  margin: 0 auto 150px auto;
+  background-color: var(--custom-blue);
+  width: 80vw;
+  padding: 50px 10px;
+  text-align: center;
+}
+.BookSectionInputAndLabel {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  text-align: start;
+  margin: 10px 0;
+}
+.BookSectionInputCon {
+  display: flex;
+  flex-direction: column;
+}
+.inputDate {
+  height: 30px;
+  width: 140px;
+  border: 1px solid black;
+  margin: 2px 10px 10px 0;
+}
+.guests {
+  width: 70px;
+  height: 20px;
+  border: 1px solid black;
+  margin-top: 2px;
+}
+.total p {
+  margin-bottom: 0;
+  font-size: 1.2em;
+}
+.bookButton {
+  background-color: var(--custom-yellow);
+  min-width: 130px;
+  min-height: 30px;
+  border: 1px solid black;
+  padding: 0;
+  margin: 30px auto 30px auto;
+  border-radius: 10px;
+}
+.bookButton:hover {
+  background-color: white;
+}
+.BookSectionAmountOfGuests {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+}
+.AllInputWrapper {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 0 auto;
+}
+@media (min-width: 600px) {
+  .bookSection {
+    width: 600px;
+    padding: 50px 0px;
+  }
+  .BookSectionInputCon {
+    flex-direction: row;
+  }
+}
+@media (min-width: 850px) {
+  .bookSection {
+    width: 840px;
+  }
+}
