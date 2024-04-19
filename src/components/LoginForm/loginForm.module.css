@@ -38,6 +38,9 @@
   min-height: 38px;
   margin: 20px auto;
 }
+.loginBtn:hover {
+  background-color: white;
+}
 .linkCon {
   display: flex;
   align-items: center;

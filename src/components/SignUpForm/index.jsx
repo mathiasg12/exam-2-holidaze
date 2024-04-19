@@ -1,6 +1,11 @@
 import { Link } from 'react-router-dom';
 import styles from './signUpForm.module.css';
 export function SignUpForm() {
+  // const { resp, loading } = useRegisterUser(registerURL, object);
+  // const loadedResp = resp ? resp : {};
+  // if (!loading) {
+  //   console.log(loadedResp);
+  // }
   return (
     <section className={styles.singUpSection}>
       <h1>Sign up</h1>

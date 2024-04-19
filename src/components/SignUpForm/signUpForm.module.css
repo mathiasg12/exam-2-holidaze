@@ -47,6 +47,9 @@
   min-height: 38px;
   margin: 20px auto;
 }
+.submitBtn:hover {
+  background-color: white;
+}
 .linkCon {
   display: flex;
   align-items: center;
