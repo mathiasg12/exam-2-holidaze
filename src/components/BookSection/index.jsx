@@ -3,27 +3,29 @@ import styles from './bookSection.module.css';
 export function BookSection(props) {
   const { venue } = props;
   const [guestValue, setGuestValue] = useState(1);
-  function handleChangeGuests(change) {
-    let changeValue = change.target.value;
+  const maxGuestFloat = parseFloat(venue.maxGuests);
+  function handleAddGuest() {
     document.getElementById(
-      'amountOfGuests'
-    ).innerText = `Amount of guests (max ${venue.maxGuests})`;
-    if (changeValue <= venue.maxGuests) {
-      setGuestValue(change.target.value);
+      'maxGuestsLabel'
+    ).innerText = `How many are staying? (min 1 and max ${venue.maxGuests})`;
+    if (guestValue + 1 > maxGuestFloat) {
+      setGuestValue(1);
+      document.getElementById(
+        'maxGuestsLabel'
+      ).innerText = `Max ${venue.maxGuests} guests`;
     } else {
-      if (parseFloat(changeValue) <= 0) {
-        document.getElementById(
-          'amountOfGuests'
-        ).innerText = `Please add atleast 1 guest`;
-        document.getElementById('guestInput').value = 1;
-        setGuestValue(1);
-      } else {
-        setGuestValue(1);
-        document.getElementById(
-          'amountOfGuests'
-        ).innerText = `Max ${venue.maxGuests} guests`;
-        document.getElementById('guestInput').value = 1;
-      }
+      setGuestValue(guestValue + 1);
+    }
+  }
+  function handleRemoveGuest() {
+    document.getElementById(
+      'maxGuestsLabel'
+    ).innerText = `How many are staying? (min 1 and max ${venue.maxGuests})`;
+    if (guestValue - 1 <= 0) {
+      document.getElementById('maxGuestsLabel').innerText = `Atleast 1 guest`;
+      setGuestValue(1);
+    } else {
+      setGuestValue(guestValue - 1);
     }
   }
   return (
@@ -40,18 +42,19 @@ export function BookSection(props) {
             <input name="to" type="date" className={styles.inputDate}></input>
           </div>
         </div>
-        <div className={styles.BookSectionAmountOfGuests}>
-          <label htmlFor="amountOfGuests" id="amountOfGuests">
-            Amount of guests (max {venue.maxGuests})
-          </label>
-          <input
-            name="amountOfGuests"
-            type="number"
-            className={styles.guests}
-            placeholder="1"
-            onChange={handleChangeGuests}
-            id="guestInput"
-          ></input>
+        <div className={styles.amountOfGuestsCon}>
+          <p id="maxGuestsLabel" className={styles.maxGuestsLabel}>
+            How many are staying? (min 1 and max {venue.maxGuests})
+          </p>
+          <div className={styles.BookSectionAmountOfGuests}>
+            <button className={styles.minusButton} onClick={handleRemoveGuest}>
+              -
+            </button>
+            <p>{guestValue}</p>
+            <button className={styles.plusButton} onClick={handleAddGuest}>
+              +
+            </button>
+          </div>
         </div>
       </div>
       <div className={styles.total}>

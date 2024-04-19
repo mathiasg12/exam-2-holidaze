@@ -25,12 +25,6 @@
   border: 1px solid black;
   margin: 2px 10px 10px 0;
 }
-.guests {
-  width: 70px;
-  height: 20px;
-  border: 1px solid black;
-  margin-top: 2px;
-}
 .total p {
   margin-bottom: 0;
   font-size: 1.2em;
@@ -49,8 +43,36 @@
 }
 .BookSectionAmountOfGuests {
   display: flex;
-  flex-direction: column;
-  width: fit-content;
+  justify-content: space-between;
+  max-width: 120px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  border-radius: 5px;
+  font-size: 1.2em;
+  border: 1px solid black;
+}
+.BookSectionAmountOfGuests p {
+  margin: 0 5px;
+  padding: 5px 0px;
+  height: 100%;
+}
+.plusButton,
+.minusButton {
+  margin: 0;
+  width: 30px;
+  border: 0;
+  border-radius: 5px 0 0 5px;
+}
+.plusButton {
+  border-radius: 0 5px 5px 0;
+}
+.maxGuestsLabel {
+  margin: 1em 0 5px 3px;
+  text-align: start;
+}
+.plusButton:hover,
+.minusButton:hover {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .AllInputWrapper {
   display: flex;
@@ -62,6 +84,9 @@
   .bookSection {
     width: 600px;
     padding: 50px 0px;
+  }
+  .amountOfGuestsCon {
+    width: 320px;
   }
   .BookSectionInputCon {
     flex-direction: row;
