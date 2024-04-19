@@ -22,7 +22,6 @@ export function VenueCardsLandingPage(props) {
   }, [arrayOfVenues]);
   function handleLoadBtn() {
     if (arrayOfVenues[endVenue]) {
-      console.log(pageNr);
       setPageNr((previousPageNr) => previousPageNr + 1);
     } else {
       setEndReached(true);
@@ -40,9 +39,9 @@ export function VenueCardsLandingPage(props) {
         <div className={styles.venueCardSection}>
           {currentPage.map((venueObject) => (
             <Link
-              to={`venueSpecific/${venueObject.id}`}
-              className={styles.venueCard}
               key={venueObject.id}
+              to={`specific/${venueObject.id}`}
+              className={styles.venueCard}
             >
               <div className={styles.imgCon}>
                 <img
