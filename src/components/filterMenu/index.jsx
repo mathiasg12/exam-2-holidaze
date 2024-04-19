@@ -15,7 +15,6 @@ export function FilterMenu(props) {
   const filterSettings = useFilterStore((state) => state.filterSettings);
   const changeMaxGuests = useFilterStore((state) => state.changeMaxGuests);
   const maxGuests = useFilterStore((state) => state.maxGuests);
-  console.log(searched);
   const checkIfCheckboxIsChecked = useFilterStore(
     (state) => state.checkMetaArray
   );

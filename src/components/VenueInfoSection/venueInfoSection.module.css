@@ -1,0 +1,105 @@
+@import '../../styles/customColors.css';
+.venueInfoCon {
+  background-color: var(--custom-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80vw;
+  color: white;
+  padding: 50px 10px;
+  margin: 20px auto;
+  border-radius: 5px;
+}
+.includesCon,
+.descCon {
+  margin-top: 10px;
+  border: 1px solid white;
+  border-left: 0;
+  border-right: 0;
+  width: 99%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.includesCon ul {
+  list-style: none;
+}
+.includesCon li {
+  padding: 5px;
+  background-color: white;
+  color: black;
+  margin: 5px auto;
+  text-align: center;
+  border-radius: 5px;
+  height: 25px;
+  font-weight: bold;
+}
+.descCon {
+  border-bottom: 0;
+}
+.descCon p {
+  margin-left: 10px;
+}
+.venueInfoCon ul {
+  padding: 10px;
+}
+.venueInfoCon h1 {
+  margin: 0;
+}
+.venueInfoCon h3 {
+  margin-bottom: 0;
+}
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+.loactionAndOwnerCon {
+  display: flex;
+  flex-direction: column;
+}
+.loactionAndOwnerCon p {
+  margin-top: 5px;
+}
+.venueManagerCon {
+  display: flex;
+  align-items: center;
+}
+.venueManager,
+.locationAddress {
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+.locationCon {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 600px) {
+  .venueInfoCon {
+    margin-top: 0;
+    width: 300px;
+    padding: 50px 0px;
+  }
+  .includesCon ul {
+    width: 300px;
+    justify-content: space-around;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  .includesCon li {
+    width: 70px;
+  }
+  .venueManager,
+  .locationAddress {
+    font-size: 1em;
+  }
+}
+@media (min-width: 850px) {
+  .venueInfoCon {
+    width: 400px;
+  }
+  .includesCon ul {
+    width: 400px;
+  }
+}
