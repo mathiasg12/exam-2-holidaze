@@ -1,3 +1,9 @@
+import { LoginForm } from '../../components/LoginForm';
+
 export function LoginPage() {
-  return <main>p</main>;
+  return (
+    <main>
+      <LoginForm></LoginForm>
+    </main>
+  );
 }
