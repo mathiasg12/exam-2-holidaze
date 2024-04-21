@@ -1,6 +1,10 @@
 import styles from './venueInfoSection.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faPerson } from '@fortawesome/free-solid-svg-icons';
+/**
+ * function that returns a component which containts the information section about the venue
+ * @param {props} props
+ */
 export function VenueInfo(props) {
   const { venue, owner, location } = props;
   const metaObject = venue.meta ? venue.meta : {};

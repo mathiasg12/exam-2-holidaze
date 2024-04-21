@@ -1,5 +1,8 @@
 import { Link } from 'react-router-dom';
 import styles from './signUpForm.module.css';
+/**
+ * component that creates the signup form and handles inputs from the user, if the submit button is pressed a new user is created
+ */
 export function SignUpForm() {
   // const { resp, loading } = useRegisterUser(registerURL, object);
   // const loadedResp = resp ? resp : {};

@@ -5,7 +5,9 @@ import { ImageCarousel } from '../ImageCarousel';
 import styles from './specificSection.module.css';
 import { VenueInfo } from '../VenueInfoSection';
 import { BookSection } from '../BookSection';
-
+/**
+ * the specific section component handles and displays errors,loading and the specific venue a user has clicked on, the component calls three other components
+ */
 export function SpecificSection() {
   const { id } = useParams();
   const { venues, error, loading } = useFetchAllVenues(
