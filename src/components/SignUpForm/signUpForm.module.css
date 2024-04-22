@@ -27,6 +27,7 @@
 .inputCon p {
   margin: 0 0 2px 0;
   color: var(--error-blueBg);
+  font-size: 0.9em;
 }
 .input {
   width: 100%;

@@ -1,17 +1,20 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './signUpForm.module.css';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { registerURL } from '../../js/URL';
-import { ValidationSchema } from '../../hooks/yupSchema';
+import { SignUpSchema } from '../../hooks/yupSchema';
 import { createSignUpObject } from '../../js/createSignUpObject';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { signUpFunction } from '../../js/signUpFunctionality';
 /**
- * component that creates the signup form and handles inputs from the user, if the submit button is pressed a new user is created
+ * component that creates the signup form and handles inputs from the user, if the submit button is pressed a new user is created and the user is logged in automatically, the component
+ * has a useffect that runs every time the loggedIn state changes, if loggedIn === true the page redirects to the profile page
  */
 export function SignUpForm() {
   const [errorActive, setErrorActive] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(
     'error please try again later'
   );
@@ -20,7 +23,7 @@ export function SignUpForm() {
     handleSubmit,
     formState: { errors },
     reset,
-  } = useForm({ resolver: yupResolver(ValidationSchema) });
+  } = useForm({ resolver: yupResolver(SignUpSchema) });
   const OnSubmit = async (data) => {
     const object = createSignUpObject(
       data.name,
@@ -34,9 +37,15 @@ export function SignUpForm() {
       object,
       setErrorActive,
       setErrorMessage,
+      setLoggedIn,
       reset
     );
   };
+  useEffect(() => {
+    if (loggedIn) {
+      navigate('/profile');
+    }
+  }, [loggedIn]);
   return (
     <section className={styles.singUpSection}>
       <h1>Sign up</h1>

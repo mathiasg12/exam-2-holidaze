@@ -1,12 +1,22 @@
+import { LoginURL } from './URL';
+import { loginFunctionality } from './loginfunctionality';
+
 /**
- * function that register a user to the API, takes five parameters, URL which is the URL to create the user and object, which is the object posted to the API, settErrorActive and setErrorMessage
- * is states that sets values depending on the respond from the api and reset which resets the form.
+ * function that register a user to the API, takes six parameters, URL which is the URL to create the user and object,
+ * which is the object posted to the API, settErrorActive,setLoggedIn and setErrorMessage
+ * is states that sets values depending on the respond from the api and reset which resets the form. the function also calls the login function if the api call was succesfull.
+ * @param {string} URL
+ * @param {object} object
+ * @param {state} setErrorActive
+ * @param {state} setErrorMessage
+ * @param {function} reset
  */
 export async function signUpFunction(
   URL,
   object,
   setErrorActive,
   setErrorMessage,
+  setLoggedIn,
   reset
 ) {
   try {
@@ -16,21 +26,26 @@ export async function signUpFunction(
       body: JSON.stringify(object),
     });
     const userJson = await registerUser.json();
-    console.log(userJson);
-    if (!userJson.data) {
+    if (!registerUser.ok) {
       setErrorActive(true);
       const error = userJson.errors[0].message;
-      console.log(error);
       setErrorMessage(error);
     } else {
       setErrorActive(false);
       console.log('nice', userJson.data);
-      alert('you successfully created a user');
       reset();
+      loginFunctionality(
+        object.email,
+        object.password,
+        LoginURL,
+        setErrorMessage,
+        setErrorActive,
+        setLoggedIn,
+        reset
+      );
     }
   } catch (error) {
-    console.error('Error registering user:', error);
     setErrorActive(true);
-    setErrorMessage('Error registering user');
+    setErrorMessage('Error with registration');
   }
 }
