@@ -1,8 +1,9 @@
 import styles from './venueInfoSection.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faPerson } from '@fortawesome/free-solid-svg-icons';
+import { ListItems } from '../ListItemsFromArray';
 /**
- * function that returns a component which containts the information section about the venue
+ * function that returns a component which containts the information section about the venue, the compoent
  * @param {props} props
  */
 export function VenueInfo(props) {
@@ -40,7 +41,7 @@ export function VenueInfo(props) {
         <h3>Includes</h3>
         <ul>
           {filterMetaArray.map((eachMeta) => (
-            <li>{eachMeta}</li>
+            <ListItems value={eachMeta} key={eachMeta}></ListItems>
           ))}
         </ul>
       </div>

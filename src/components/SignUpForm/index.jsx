@@ -7,6 +7,8 @@ import { SignUpSchema } from '../../hooks/yupSchema';
 import { createSignUpObject } from '../../js/createSignUpObject';
 import { useEffect, useState } from 'react';
 import { signUpFunction } from '../../js/signUpFunctionality';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 /**
  * component that creates the signup form and handles inputs from the user, if the submit button is pressed a new user is created and the user is logged in automatically, the component
  * has a useffect that runs every time the loggedIn state changes, if loggedIn === true the page redirects to the profile page
@@ -15,6 +17,8 @@ export function SignUpForm() {
   const [errorActive, setErrorActive] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const navigate = useNavigate();
+  const [repeatPasswordVisible, setRepeatPasswordVisible] = useState(false);
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const [errorMessage, setErrorMessage] = useState(
     'error please try again later'
   );
@@ -41,6 +45,12 @@ export function SignUpForm() {
       reset
     );
   };
+  function handleEyeClick() {
+    setPasswordVisible(!passwordVisible);
+  }
+  function handleEyeClickRepeatPassword() {
+    setRepeatPasswordVisible(!repeatPasswordVisible);
+  }
   useEffect(() => {
     if (loggedIn) {
       navigate('/profile');
@@ -95,23 +105,37 @@ export function SignUpForm() {
         <div className={styles.inputCon}>
           <label htmlFor="password">Password</label>
           <p>{errors.password?.message}</p>
-          <input
-            type="password"
-            name="password"
-            className={styles.input}
-            id="password"
-            {...register('password')}
-          ></input>
+          <div className={styles.eyeAndInputWrapper}>
+            <input
+              type={passwordVisible ? 'text' : 'password'}
+              name="password"
+              id="password"
+              className={styles.inputPassword}
+              {...register('password')}
+            ></input>
+            <FontAwesomeIcon
+              icon={passwordVisible ? faEye : faEyeSlash}
+              onClick={handleEyeClick}
+              className={styles.eye}
+            ></FontAwesomeIcon>
+          </div>
         </div>
         <div className={styles.inputCon}>
           <label htmlFor="rePassword">Repeat Password</label>
           <p>{errors.repeatPassword?.message}</p>
-          <input
-            type="password"
-            name="rePassword"
-            className={styles.input}
-            {...register('repeatPassword')}
-          ></input>
+          <div className={styles.eyeAndInputWrapper}>
+            <input
+              type={repeatPasswordVisible ? 'text' : 'password'}
+              name="rePassword"
+              className={styles.inputPassword}
+              {...register('repeatPassword')}
+            ></input>
+            <FontAwesomeIcon
+              icon={repeatPasswordVisible ? faEye : faEyeSlash}
+              onClick={handleEyeClickRepeatPassword}
+              className={styles.eye}
+            ></FontAwesomeIcon>
+          </div>
         </div>
         <fieldset>
           <legend>What kind of user are you registrering?</legend>

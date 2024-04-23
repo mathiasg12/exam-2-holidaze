@@ -19,11 +19,12 @@
   display: flex;
   flex-direction: column;
 }
-.inputDate {
-  height: 30px;
-  width: 140px;
-  border: 1px solid black;
-  margin: 2px 10px 10px 0;
+.BookSectionInputCon p {
+  margin: 10px auto 2px auto;
+}
+.arrow {
+  font-size: 1.5em;
+  display: none;
 }
 .total p {
   margin-bottom: 0;
@@ -44,12 +45,16 @@
 .BookSectionAmountOfGuests {
   display: flex;
   justify-content: space-between;
+  margin: 0 auto;
   max-width: 120px;
   background-color: rgba(255, 255, 255, 0.8);
   color: black;
   border-radius: 5px;
   font-size: 1.2em;
   border: 1px solid black;
+}
+.amountOfGuestsCon p {
+  text-align: center;
 }
 .BookSectionAmountOfGuests p {
   margin: 0 5px;
@@ -80,16 +85,29 @@
   width: fit-content;
   margin: 0 auto;
 }
+.calendarCon {
+  margin-top: 20px;
+}
 @media (min-width: 600px) {
+  .arrow {
+    display: block;
+  }
   .bookSection {
     width: 600px;
     padding: 50px 0px;
   }
   .amountOfGuestsCon {
     width: 320px;
+    margin: 10px auto;
   }
-  .BookSectionInputCon {
-    flex-direction: row;
+  .calendarCon {
+    margin-top: 0;
+  }
+  .calendars {
+    width: 400px;
+    justify-content: space-around;
+    display: flex;
+    align-items: end;
   }
 }
 @media (min-width: 850px) {
