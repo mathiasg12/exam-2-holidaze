@@ -34,7 +34,6 @@ export function SpecificSection() {
       </section>
     );
   } else {
-    console.log(loadedVenueBookigs);
     return (
       <section className={styles.specificSection}>
         <ImageCarousel
@@ -51,6 +50,7 @@ export function SpecificSection() {
           <BookSection
             venue={loadedVenue}
             className={styles.bookSection}
+            loadedBookings={loadedVenueBookigs}
           ></BookSection>
         ) : (
           <BookSectionNotLoggedIn></BookSectionNotLoggedIn>

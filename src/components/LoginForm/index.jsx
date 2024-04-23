@@ -7,6 +7,8 @@ import { loginFunctionality } from '../../js/loginfunctionality';
 import { LoginURL } from '../../js/URL';
 import { useEffect, useState } from 'react';
 import { useLoggedInStore } from '../../states/loggedInState';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 /**
  * component that creates the login form, the component validates and allows users to login when they press the login button if all validation passes, the component
  * has a useffect that runs every time the loggedIn state changes, if loggedIn === true the page redirects to the profile page
@@ -14,6 +16,7 @@ import { useLoggedInStore } from '../../states/loggedInState';
 export function LoginForm() {
   const [errorActive, setErrorActive] = useState(false);
   const loginTrue = useLoggedInStore((state) => state.login);
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const [errorMessage, setErrorMessage] = useState(
     'Sorry an error has occured please try again later'
   );
@@ -39,6 +42,9 @@ export function LoginForm() {
       reset
     );
   };
+  function handleEyeClick() {
+    setPasswordVisible(!passwordVisible);
+  }
   useEffect(() => {
     if (loggedIn) {
       navigate('/profile');
@@ -65,12 +71,23 @@ export function LoginForm() {
         <div className={styles.inputCon}>
           <label htmlFor="password">Password</label>
           <p>{errors.password?.message}</p>
-          <input
-            type="password"
-            name="password"
-            className={styles.input}
-            {...register('password')}
-          ></input>
+          <div className={styles.eyeAndInputWrapper}>
+            <input
+              type={passwordVisible ? 'text' : 'password'}
+              name="password"
+              id="password"
+              className={styles.inputPassword}
+              {...register('password')}
+            ></input>
+            <FontAwesomeIcon
+              id="eyeSymbolPassword"
+              icon={passwordVisible ? faEye : faEyeSlash}
+              className={styles.eye}
+              type="button"
+              role="button"
+              onClick={handleEyeClick}
+            ></FontAwesomeIcon>
+          </div>
         </div>
         <input type="submit" value="Login" className={styles.loginBtn}></input>
         <div className={styles.linkCon}>

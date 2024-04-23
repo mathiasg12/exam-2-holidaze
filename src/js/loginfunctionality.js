@@ -31,6 +31,7 @@ export async function loginFunctionality(
       setErrorActive(false);
       const response = await login.json();
       localStorage.setItem('token', response.data.accessToken);
+      localStorage.setItem('loggedIn', true);
       setLoggedIn(true);
       reset();
       fetchApiKey(ApiKeyURL);

@@ -1,12 +1,38 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './bookSection.module.css';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { allDaysBetween } from '../../js/daysInbetween';
 /**
  * component that creates the book section, this section allows users to add amount of guests, choose dates and book a venue
  * @param {props} props
  */
 export function BookSection(props) {
-  const { venue } = props;
+  const { venue, loadedBookings } = props;
   const [guestValue, setGuestValue] = useState(1);
+  const [checkIn, setCheckIn] = useState(null);
+  const [checkOut, setCheckOut] = useState(null);
+  const [earliestCheckoutDate, setEarliestCheckoutDate] = useState(new Date());
+  const [bookedDates, setBookedDates] = useState([]);
+  console.log(loadedBookings);
+  const exludedDatesArray = allDaysBetween(bookedDates);
+  console.log('ex', exludedDatesArray);
+  useEffect(() => {
+    const allBookedDates = loadedBookings.map((dates) => ({
+      startDate: new Date(dates.dateFrom),
+      endDate: new Date(dates.dateTo),
+    }));
+    setBookedDates(allBookedDates);
+  }, [loadedBookings]);
+  useEffect(() => {
+    if (checkIn) {
+      const nextDay = new Date(checkIn);
+      nextDay.setDate(nextDay.getDate() + 1);
+      setEarliestCheckoutDate(nextDay);
+    }
+  }, [checkIn]);
   const maxGuestFloat = parseFloat(venue.maxGuests);
   function handleAddGuest() {
     document.getElementById(
@@ -37,13 +63,34 @@ export function BookSection(props) {
       <h2>Look for available dates and book</h2>
       <div className={styles.AllInputWrapper}>
         <div className={styles.BookSectionInputCon}>
-          <div className={styles.BookSectionInputAndLabel}>
-            <label htmlFor="from">From</label>
-            <input name="from" type="date" className={styles.inputDate}></input>
-          </div>
-          <div className={styles.BookSectionInputAndLabel}>
-            <label htmlFor="to">To</label>
-            <input name="to" type="date" className={styles.inputDate}></input>
+          <p>Pick an available date (faded dates are unavailable)</p>
+          <div className={styles.calendars}>
+            <div className={styles.calendarCon}>
+              <p>Check-In</p>
+              <DatePicker
+                selected={checkIn}
+                onChange={(date) => setCheckIn(date)}
+                minDate={new Date()}
+                placeholderText="click to choose check-in"
+                excludeDates={exludedDatesArray}
+              ></DatePicker>
+            </div>
+            <FontAwesomeIcon
+              icon={faArrowRight}
+              className={styles.arrow}
+              role="button"
+              type="button"
+            />
+            <div className={styles.calendarCon}>
+              <p>Check-Out</p>
+              <DatePicker
+                selected={checkOut}
+                onChange={(date) => setCheckOut(date)}
+                minDate={earliestCheckoutDate}
+                placeholderText="click to choose check-out"
+                excludeDates={exludedDatesArray}
+              ></DatePicker>
+            </div>
           </div>
         </div>
         <div className={styles.amountOfGuestsCon}>
