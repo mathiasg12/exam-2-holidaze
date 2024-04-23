@@ -19,6 +19,7 @@ export function SpecificSection() {
   );
   const loadedVenue = venues ? venues : {};
   const loadedVenueOwner = venues.owner ? venues.owner : {};
+  const loadedVenueBookigs = venues.bookings ? venues.bookings : [];
   const loadedLocation = venues.location ? venues.location : {};
   if (loading || !loadedVenue) {
     return (
@@ -33,7 +34,7 @@ export function SpecificSection() {
       </section>
     );
   } else {
-    console.log(loadedVenue);
+    console.log(loadedVenueBookigs);
     return (
       <section className={styles.specificSection}>
         <ImageCarousel
