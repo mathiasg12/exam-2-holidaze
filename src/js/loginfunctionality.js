@@ -1,3 +1,6 @@
+import { ApiKeyURL } from './URL';
+import { fetchApiKey } from './fetchApiKey';
+
 /**
  * function that allow users to login and fetch the access token the function uses the email and password parameters to login and fetch the accessToken, the function then calls
  * the fetchApiKey function that fetches and stores the api key, the function then sets setLoggedIn to true which is used in the logginForm and SignupForm components to redirect the user
@@ -30,6 +33,7 @@ export async function loginFunctionality(
       localStorage.setItem('token', response.data.accessToken);
       setLoggedIn(true);
       reset();
+      fetchApiKey(ApiKeyURL);
     } else {
       setErrorActive(true);
       const error = await login.json();

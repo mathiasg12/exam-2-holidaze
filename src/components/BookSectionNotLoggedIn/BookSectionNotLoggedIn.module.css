@@ -1,0 +1,39 @@
+.notLoggedInContainer {
+  color: white;
+  border-radius: 5px;
+  margin: 0 auto 150px auto;
+  background-color: var(--custom-blue);
+  width: 80vw;
+  padding: 50px 10px;
+  text-align: center;
+}
+.notLoggedInContainer p {
+  max-width: 300px;
+  margin: 20px auto;
+}
+.loginBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--custom-yellow);
+  width: 128px;
+  height: 28px;
+  border: 1px solid black;
+  margin: 30px auto 30px auto;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.loginBtn:hover {
+  background-color: white;
+}
+@media (min-width: 600px) {
+  .notLoggedInContainer {
+    width: 600px;
+    padding: 50px 0px;
+  }
+}
+@media (min-width: 850px) {
+  .notLoggedInContainer {
+    width: 840px;
+  }
+}

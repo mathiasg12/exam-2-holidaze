@@ -6,12 +6,14 @@ import { LoginSchema } from '../../hooks/yupSchema';
 import { loginFunctionality } from '../../js/loginfunctionality';
 import { LoginURL } from '../../js/URL';
 import { useEffect, useState } from 'react';
+import { useLoggedInStore } from '../../states/loggedInState';
 /**
  * component that creates the login form, the component validates and allows users to login when they press the login button if all validation passes, the component
  * has a useffect that runs every time the loggedIn state changes, if loggedIn === true the page redirects to the profile page
  */
 export function LoginForm() {
   const [errorActive, setErrorActive] = useState(false);
+  const loginTrue = useLoggedInStore((state) => state.login);
   const [errorMessage, setErrorMessage] = useState(
     'Sorry an error has occured please try again later'
   );
@@ -40,6 +42,7 @@ export function LoginForm() {
   useEffect(() => {
     if (loggedIn) {
       navigate('/profile');
+      loginTrue();
     }
   }, [loggedIn]);
   return (
