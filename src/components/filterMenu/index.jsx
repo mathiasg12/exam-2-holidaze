@@ -3,8 +3,6 @@ import { useFilterStore } from '../../states/filterState';
 import { ComfirmBtn } from '../ComfirmBtn';
 import styles from './filterMenu.module.css';
 /**
- * Here's the corrected version:
-
 * Component that creates the filter menu. The filter menu uses states from the filter cart to globally store filter settings.
   The filter menu contains an exit button, calls the confirm button component, select input for the amount of guests,
   and checkboxes for the different filter settings.*

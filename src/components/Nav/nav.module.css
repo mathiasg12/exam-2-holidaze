@@ -15,12 +15,22 @@
 .navLi {
   margin-top: 20px;
 }
-.navLink {
+.displayNone {
+  display: none;
+}
+.navLink,
+.navButton {
   text-decoration: none;
   color: white;
   font-size: 1.2em;
 }
+.navButton {
+  margin: 0;
+  cursor: pointer;
+}
 .navLink:hover,
+.navButton:hover,
+.navButton:active,
 .navLink:active {
   color: var(--custom-yellow);
 }
@@ -39,13 +49,14 @@
   .navLi {
     margin: 0 10px 0 10px;
   }
-  .navLink {
+  .navLink,
+  .navButton {
     border: 1px solid;
     border-color: var(--custom-yellow);
     display: block;
     width: 100px;
     text-align: center;
     padding: 2px;
-    font-size: 1.3em;
+    font-size: 1.5em;
   }
 }

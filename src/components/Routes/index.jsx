@@ -2,6 +2,8 @@ import { Route, Routes } from 'react-router-dom';
 import { Home } from '../../pages/Home';
 import { Specific } from '../../pages/Specific';
 import { LoginPage } from '../../pages/Login';
+import { SignUpPage } from '../../pages/SignUp';
+import { Profile } from '../../pages/Profile';
 /**
  * react Routes to the different paths
  */
@@ -11,7 +13,8 @@ export function PageRoutes() {
       <Route path="/" element={<Home></Home>}></Route>
       <Route path="/specific/:id" element={<Specific></Specific>}></Route>
       <Route path="/login" element={<LoginPage></LoginPage>}></Route>
-      <Route path="/signUp"></Route>
+      <Route path="/signUp" element={<SignUpPage></SignUpPage>}></Route>
+      <Route path="/profile" element={<Profile></Profile>}></Route>
     </Routes>
   );
 }

@@ -1,9 +1,12 @@
 import { NavLink } from 'react-router-dom';
 import styles from './footer.module.css';
+import { useLoggedInStore } from '../../states/loggedInState';
 /**
  * component that creates the footer, the footer has contact information aswell as links to the landing page and profile
  */
 export function Footer() {
+  const isLoggedIn = useLoggedInStore((state) => state.loggedIn);
+  const logOut = useLoggedInStore((state) => state.logOut);
   return (
     <footer>
       <div className={styles.footerElementsContainer}>
@@ -15,7 +18,34 @@ export function Footer() {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/profile" className={styles.footerLink}>
+              <NavLink
+                to="/login"
+                className={isLoggedIn ? styles.displayNone : styles.footerLink}
+              >
+                Login
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/signup"
+                className={isLoggedIn ? styles.displayNone : styles.footerLink}
+              >
+                Sign Up
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/profile"
+                className={!isLoggedIn ? styles.displayNone : styles.footerLink}
+              >
+                Profile
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/profile"
+                className={!isLoggedIn ? styles.displayNone : styles.footerLink}
+              >
                 Rent out a venue
               </NavLink>
             </li>

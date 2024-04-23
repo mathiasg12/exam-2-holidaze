@@ -5,15 +5,21 @@ import { ImageCarousel } from '../ImageCarousel';
 import styles from './specificSection.module.css';
 import { VenueInfo } from '../VenueInfoSection';
 import { BookSection } from '../BookSection';
-
+import { useLoggedInStore } from '../../states/loggedInState';
+import { BookSectionNotLoggedIn } from '../BookSectionNotLoggedIn';
+/**
+ * the specific section component handles and displays errors,loading and the specific venue a user has clicked on, the component calls three other components
+ */
 export function SpecificSection() {
   const { id } = useParams();
+  const isloggedIn = useLoggedInStore((state) => state.loggedIn);
   const { venues, error, loading } = useFetchAllVenues(
     allVenuesURL + `/${id}`,
     true
   );
   const loadedVenue = venues ? venues : {};
   const loadedVenueOwner = venues.owner ? venues.owner : {};
+  const loadedVenueBookigs = venues.bookings ? venues.bookings : [];
   const loadedLocation = venues.location ? venues.location : {};
   if (loading || !loadedVenue) {
     return (
@@ -28,7 +34,7 @@ export function SpecificSection() {
       </section>
     );
   } else {
-    console.log(loadedVenue);
+    console.log(loadedVenueBookigs);
     return (
       <section className={styles.specificSection}>
         <ImageCarousel
@@ -41,10 +47,14 @@ export function SpecificSection() {
           location={loadedLocation}
           className={styles.venueInfo}
         ></VenueInfo>
-        <BookSection
-          venue={loadedVenue}
-          className={styles.bookSection}
-        ></BookSection>
+        {isloggedIn ? (
+          <BookSection
+            venue={loadedVenue}
+            className={styles.bookSection}
+          ></BookSection>
+        ) : (
+          <BookSectionNotLoggedIn></BookSectionNotLoggedIn>
+        )}
       </section>
     );
   }

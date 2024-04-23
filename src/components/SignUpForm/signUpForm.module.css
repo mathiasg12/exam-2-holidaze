@@ -1,0 +1,85 @@
+@import '../../styles/customColors.css';
+.singUpSection {
+  margin: 200px auto;
+  background-color: var(--custom-blue);
+  padding: 20px;
+  width: 80vw;
+  color: white;
+  border-radius: 5px;
+}
+.singUpSection form {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.singUpSection h1 {
+  text-align: center;
+}
+
+.inputCon {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  margin-bottom: 15px;
+  margin: 15px auto;
+}
+.inputCon p {
+  margin: 0 0 2px 0;
+  color: var(--error-blueBg);
+  font-size: 0.9em;
+}
+.input {
+  width: 100%;
+  height: 25px;
+}
+.singUpSection label {
+  margin-bottom: 5px;
+}
+.singUpSection fieldset {
+  text-align: center;
+  width: 220px;
+}
+.singUpSection fieldset label {
+  margin-top: 10px;
+}
+.submitBtn {
+  background-color: var(--custom-yellow);
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 180px;
+  min-height: 38px;
+  margin: 20px auto;
+}
+.errorWithForm {
+  width: fit-content;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+  color: rgb(197, 2, 2);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.errorWithFormNone {
+  display: none;
+}
+.submitBtn:hover {
+  background-color: white;
+}
+.linkCon {
+  display: flex;
+  align-items: center;
+}
+.linkCon a {
+  margin-left: 10px;
+  color: var(--custom-yellow);
+}
+@media (min-width: 600px) {
+  .singUpSection {
+    width: 600px;
+    padding: 40px 0px;
+  }
+  .singUpSection fieldset {
+    width: 300px;
+  }
+}

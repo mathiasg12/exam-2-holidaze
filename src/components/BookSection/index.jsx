@@ -1,5 +1,9 @@
 import { useState } from 'react';
 import styles from './bookSection.module.css';
+/**
+ * component that creates the book section, this section allows users to add amount of guests, choose dates and book a venue
+ * @param {props} props
+ */
 export function BookSection(props) {
   const { venue } = props;
   const [guestValue, setGuestValue] = useState(1);

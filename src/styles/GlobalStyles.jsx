@@ -7,6 +7,9 @@ p,label{
 h1,h2,h3,h4,h5,h6,a,button{
     font-family: Lato-regular;
 }
+h1{
+    font-size: 2.5em;
+}
 body{
     background-color: #ECECEC;
 }
