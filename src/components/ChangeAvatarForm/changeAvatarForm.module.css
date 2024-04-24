@@ -12,6 +12,9 @@
   border: 0;
   font-size: 1.2em;
 }
+.exitForm:hover {
+  background-color: var(--custom-yellow);
+}
 .inputWrapper {
   display: flex;
   flex-direction: column;
@@ -29,6 +32,9 @@
   padding: 0;
   border-radius: 5px;
   margin: 0 auto 20px auto;
+}
+.update:hover {
+  background-color: white;
 }
 .response {
   max-width: 200px;

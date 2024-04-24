@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 /**
- * yup schema for sign up form and login form
+ * yup schema for sign up form and login form and change avatar form
  */
 export const SignUpSchema = yup.object({
   name: yup.string().required('Name is required'),
