@@ -1,3 +1,12 @@
+/**
+ * function that returns a object, meant to be used in the signup function as body in the post request
+ * @param {string} name
+ * @param {string} email
+ * @param {string} password
+ * @param {string} image
+ * @param {string} userType
+ * @returns object
+ */
 export function createSignUpObject(name, email, password, image, userType) {
   if (userType === 'customer') {
     return {

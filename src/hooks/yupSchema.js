@@ -33,3 +33,10 @@ export const LoginSchema = yup.object({
     .required('Password is required')
     .min(8, 'Password must be minimum 8 characters long'),
 });
+export const ChangeAvatarSchema = yup.object({
+  url: yup
+    .string()
+    .required(
+      'please enter a valid URL or use the exit button to close the form'
+    ),
+});

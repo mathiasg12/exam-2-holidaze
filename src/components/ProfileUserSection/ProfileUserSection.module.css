@@ -1,0 +1,54 @@
+@import '../../styles/customColors.css';
+.userSection {
+  margin: 200px auto;
+  background-color: var(--custom-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0px;
+  width: 80vw;
+  color: white;
+  border-radius: 5px;
+}
+.userSection h2 {
+  margin: 15px 5px;
+}
+.userSection h1 {
+  margin: 10px auto;
+}
+.infoDiv {
+  display: flex;
+  align-items: start;
+}
+.boldP {
+  margin: 10px 5px;
+  font-weight: bold;
+}
+.regularP {
+  margin: 10px 5px;
+  display: flex;
+  align-items: end;
+  word-break: break-all;
+}
+.userWrapper {
+  max-width: 300px;
+}
+@media (min-width: 600px) {
+  .userSection {
+    width: 600px;
+  }
+  .userWrapper {
+    margin-top: 50px;
+  }
+  .imageAndInfoWrapper {
+    width: 600px;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+  }
+}
+@media (min-width: 800px) {
+  .userSection {
+    width: 800px;
+  }
+}

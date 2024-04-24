@@ -1,3 +1,9 @@
+import { ProfileUserSection } from '../../components/ProfileUserSection';
+
 export function Profile() {
-  return <main>hello</main>;
+  return (
+    <main>
+      <ProfileUserSection></ProfileUserSection>
+    </main>
+  );
 }

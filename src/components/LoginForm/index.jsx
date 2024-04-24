@@ -29,7 +29,6 @@ export function LoginForm() {
     formState: { errors },
   } = useForm({ resolver: yupResolver(LoginSchema) });
   const onSubmit = async (data) => {
-    console.log('data', data);
     const email = data.email;
     const password = data.password;
     await loginFunctionality(

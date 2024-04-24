@@ -26,26 +26,35 @@ export function useFetchAllVenues(URL, singleObjectBooleanValue) {
         if (isSingleObject === true) {
           let data = await fetch(URL + `?_bookings=true&&_owner=true`);
           let allVenues = await data.json();
-          setVenues(allVenues.data);
+          if (data.ok) {
+            setVenues(allVenues.data);
+          } else {
+            setError(true);
+          }
         } else {
           let page = 1;
           while (startedLoop) {
             let data = await fetch(URL + `?limit=10&&page=${page}`);
             let allVenues = await data.json();
-            setUnFilteredVenues((previousVenues) => [
-              ...previousVenues,
-              ...allVenues.data,
-            ]);
-            if (allVenues.meta.isLastPage === false) {
-              page++;
-            } else {
+            if (!data.ok) {
+              setError(true);
               break;
+            } else {
+              setUnFilteredVenues((previousVenues) => [
+                ...previousVenues,
+                ...allVenues.data,
+              ]);
+              if (allVenues.meta.isLastPage === false) {
+                page++;
+              } else {
+                break;
+              }
             }
           }
         }
       } catch (error) {
         console.log(error);
-        setError(error);
+        setError(true);
       } finally {
         setLoading(false);
       }

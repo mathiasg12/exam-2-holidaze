@@ -1,0 +1,56 @@
+@import '../../styles/customColors.css';
+.changeAvatarForm {
+  display: flex;
+  flex-direction: column;
+  border: 2px dotted black;
+}
+.exitForm {
+  width: 30px;
+  height: 30px;
+  margin: 0 0 10px auto;
+  background-color: rgb(255, 255, 255);
+  border: 0;
+  font-size: 1.2em;
+}
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  width: 200px;
+}
+.inputWrapper input {
+  height: 25px;
+}
+.update {
+  background-color: var(--custom-yellow);
+  min-width: 130px;
+  min-height: 30px;
+  border: 1px solid black;
+  padding: 0;
+  border-radius: 5px;
+  margin: 0 auto 20px auto;
+}
+.response {
+  max-width: 200px;
+  margin: 0 auto;
+}
+.responseHide {
+  display: none;
+}
+.hideForm {
+  display: none;
+}
+.errorMessage {
+  padding: 5px;
+  color: var(--error-blueBg);
+  margin: 0 auto;
+}
+.message {
+  padding: 5px;
+  margin: 0 auto;
+  color: var(--success-blueBg);
+}
+.errorP {
+  color: var(--error-blueBg);
+  margin: 5px 0;
+}
