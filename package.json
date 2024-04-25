@@ -1,6 +1,6 @@
 {
   "name": "exam-2-holidaze",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
