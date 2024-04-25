@@ -7,6 +7,7 @@
   width: 80vw;
   padding: 50px 10px;
   text-align: center;
+  position: relative;
 }
 .BookSectionInputAndLabel {
   display: flex;
@@ -56,6 +57,7 @@
 .amountOfGuestsCon p {
   text-align: center;
 }
+
 .BookSectionAmountOfGuests p {
   margin: 0 5px;
   padding: 5px 0px;
@@ -87,6 +89,24 @@
 }
 .calendarCon {
   margin-top: 20px;
+}
+.hideSuccessOverlay {
+  display: none;
+}
+.datePickerError {
+  border: solid 2px var(--error-blueBg);
+}
+.total {
+  margin-bottom: 0;
+}
+.errorCheckInAndOut {
+  color: var(--error-blueBg);
+}
+.errorMessage {
+  color: var(--error-blueBg);
+  margin: 0 40px;
+}
+.success {
 }
 @media (min-width: 600px) {
   .arrow {
