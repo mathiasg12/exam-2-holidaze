@@ -36,7 +36,6 @@ export async function updateProfile(
     if (putNewImage.ok) {
       updateImage();
       setError(false);
-      setResponseMessage('You successfully updated your avatar picture');
       reset();
     } else {
       setError(true);

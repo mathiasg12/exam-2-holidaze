@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useUpdateTriggerStore } from '../states/updateTriggerState';
 
-export function useFetchUserProfile(URL, changedProfileImage) {
+export function useFetchUserProfile(URL) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [profile, setProfile] = useState({});
@@ -21,7 +21,7 @@ export function useFetchUserProfile(URL, changedProfileImage) {
               'X-Noroff-API-Key': apiKey,
             },
           };
-          const data = await fetch(`${URL}${name}`, options);
+          const data = await fetch(`${URL}${name}?_bookings=true`, options);
           const dataJson = await data.json();
           if (data.ok) {
             setProfile(dataJson.data);
