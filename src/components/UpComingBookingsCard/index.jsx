@@ -29,7 +29,7 @@ export function UpComingBookingsCard(props) {
     const id = e.target.id;
     setDeleteOverlayKey(id);
   }
-  async function cancelReservation() {
+  async function onCancelReservationClick() {
     await deleteBooking(
       bookingsURL,
       deleteOverlayKey,
@@ -39,7 +39,7 @@ export function UpComingBookingsCard(props) {
       setMessageVisible
     );
   }
-  function goBack() {
+  function onGoBackBtnClick() {
     setDeleteOverlayKey('');
   }
   if (loadingDelete) {
@@ -89,11 +89,14 @@ export function UpComingBookingsCard(props) {
                       You are about to cancel your reservation. Are you sure?
                     </p>
                     <div>
-                      <button onClick={goBack} className={styles.goBackBtn}>
+                      <button
+                        onClick={onGoBackBtnClick}
+                        className={styles.goBackBtn}
+                      >
                         No, go back
                       </button>
                       <button
-                        onClick={cancelReservation}
+                        onClick={onCancelReservationClick}
                         className={styles.cancelSureBtn}
                       >
                         Yes, cancel my reservation
