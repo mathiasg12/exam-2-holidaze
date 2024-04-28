@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { updateProfile } from '../../js/updateProfile';
 import { profileURL } from '../../js/URL';
 import { useUpdateTriggerStore } from '../../states/updateTriggerState';
+import { LoadingSpinner } from '../LoadingSpinner';
 /**
  * component that returns the change avatar form, this component calls the updateProfile function which sends a put request  to the api
  * @param {props} props
@@ -75,6 +76,6 @@ export function ChangeAvatarForm(props) {
       </form>
     );
   } else {
-    return <p>Loading.....</p>;
+    return <LoadingSpinner></LoadingSpinner>;
   }
 }

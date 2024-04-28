@@ -1,6 +1,9 @@
 .specificSection {
   margin-top: 200px;
 }
+.specificSectionLoading {
+  margin: 200px auto;
+}
 @media (min-width: 600px) {
   .specificSection {
     display: grid;

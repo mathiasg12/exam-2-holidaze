@@ -4,8 +4,9 @@ import { allDaysBetween } from '../../js/daysInbetween';
 import { dateFormated } from '../../js/formatDates';
 import styles from './upComingBookigsCard.module.css';
 import { useUpdateTriggerStore } from '../../states/updateTriggerState';
-import { deleteBooking } from '../../js/deleteBooking';
 import { bookingsURL } from '../../js/URL';
+import { LoadingSpinner } from '../LoadingSpinner';
+import { deleteBooking } from '../../js/deleteBooking';
 /**
  * A component that generates individual cards displaying upcoming bookings.
  * Each card includes an image and information about the booking, along with a delete button,
@@ -19,26 +20,32 @@ export function UpComingBookingsCard(props) {
   const [loadingDelete, setLoadingDelete] = useState(false);
   const [messageVisible, setMessageVisible] = useState(false);
   const [message, setMessage] = useState('error error error error error error');
+  const [deleteOverlayKey, setDeleteOverlayKey] = useState('');
   const updateBookings = useUpdateTriggerStore((state) => state.newUpdate);
   function onExitButtonClick() {
     setMessageVisible(!messageVisible);
   }
-  async function onCancelClick(e) {
+  function onCancelClick(e) {
     const id = e.target.id;
+    setDeleteOverlayKey(id);
+  }
+  async function cancelReservation() {
     await deleteBooking(
       bookingsURL,
-      id,
+      deleteOverlayKey,
       updateBookings,
       setMessage,
       setLoadingDelete,
       setMessageVisible
     );
   }
-
+  function goBack() {
+    setDeleteOverlayKey('');
+  }
   if (loadingDelete) {
     return (
       <div className={styles.loading}>
-        <h2>Loading........</h2>
+        <LoadingSpinner></LoadingSpinner>
       </div>
     );
   } else {
@@ -71,6 +78,28 @@ export function UpComingBookingsCard(props) {
                   key={booking.id}
                   className={styles.upComingBookingsCardContentWrapper}
                 >
+                  <div
+                    className={
+                      deleteOverlayKey === booking.id
+                        ? styles.deleteOverlay
+                        : styles.deleteOverlayHide
+                    }
+                  >
+                    <p>
+                      You are about to cancel your reservation. Are you sure?
+                    </p>
+                    <div>
+                      <button onClick={goBack} className={styles.goBackBtn}>
+                        No, go back
+                      </button>
+                      <button
+                        onClick={cancelReservation}
+                        className={styles.cancelSureBtn}
+                      >
+                        Yes, cancel my reservation
+                      </button>
+                    </div>
+                  </div>
                   <div className={styles.imgCon}>
                     <img
                       src={booking.venue.media[0].url}

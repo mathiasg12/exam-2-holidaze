@@ -7,6 +7,7 @@ import { VenueInfo } from '../VenueInfoSection';
 import { BookSection } from '../BookSection';
 import { useLoggedInStore } from '../../states/loggedInState';
 import { BookSectionNotLoggedIn } from '../BookSectionNotLoggedIn';
+import { LoadingSpinner } from '../LoadingSpinner';
 /**
  * the specific section component handles and displays errors,loading and the specific venue a user has clicked on, the component calls three other components
  */
@@ -23,8 +24,8 @@ export function SpecificSection() {
   const loadedLocation = venues.location ? venues.location : {};
   if (loading || !loadedVenue) {
     return (
-      <section className={styles.specificSection}>
-        <div>Loading...</div>
+      <section className={styles.specificSectionLoading}>
+        <LoadingSpinner></LoadingSpinner>
       </section>
     );
   } else if (error) {

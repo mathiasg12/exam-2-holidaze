@@ -7,6 +7,7 @@ import styles from './allVenueSection.module.css';
 import { ActiveFilters } from '../FiltersActive';
 import { allVenuesURL } from '../../js/URL';
 import { VenueCardsLandingPage } from '../VenueCardsLandingPage';
+import { LoadingSpinner } from '../LoadingSpinner';
 /**
 Here's the corrected version:
 
@@ -43,7 +44,7 @@ export function AllVenueSection() {
   if (loading || !loadedVenues) {
     return (
       <section className={styles.allVenueSection}>
-        <div>Loading...</div>
+        <LoadingSpinner></LoadingSpinner>
       </section>
     );
   } else if (error) {
