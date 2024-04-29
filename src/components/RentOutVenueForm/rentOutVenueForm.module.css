@@ -35,14 +35,6 @@ form {
 .inputWrapper input {
   height: 27px;
 }
-.included {
-  margin: 0 auto;
-  width: 180px;
-}
-form input[type='checkbox'] {
-  width: 18px;
-  height: 18px;
-}
 .publishBtn {
   background-color: var(--custom-yellow);
   color: black;
@@ -51,9 +43,6 @@ form input[type='checkbox'] {
   width: 180px;
   min-height: 38px;
   margin: 20px auto;
-}
-form input[type='checkbox']:checked {
-  accent-color: var(--custom-yellow);
 }
 .imageLinkInfo {
   display: block;
