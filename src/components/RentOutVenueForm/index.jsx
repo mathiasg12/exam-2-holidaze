@@ -2,13 +2,40 @@ import { useForm } from 'react-hook-form';
 import styles from './rentOutVenueForm.module.css';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { RentOutVenueSchema } from '../../hooks/yupSchema';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createVenueObject } from '../../js/createVenueObject';
 export function RentOutVenueForm() {
   const [petsAllowed, setPetsAllowed] = useState(false);
   const [wifiIncluded, setWifiIncluded] = useState(false);
   const [parkingIncluded, setParkingIncluded] = useState(false);
   const [breakfastIncluded, setBreakfastIncuded] = useState(false);
+  const [imageArray, setImageArray] = useState([]);
+  const [imageError, setImageError] = useState('');
+  function addImage(event) {
+    event.preventDefault();
+    const imageLink = document.getElementById('image').value;
+    if (imageLink.length >= 5) {
+      setImageArray([...imageArray, { url: imageLink }]);
+    } else if (imageLink.length === 0) {
+      setImageError('You have not given a image link (optional)');
+    } else {
+      setImageError(
+        'Please add a valid image URL that is more than 5 characters (optional)'
+      );
+    }
+  }
+  function imageOnChange() {
+    setImageError('');
+  }
+  function removeImage(event) {
+    const idOfObjectToRemove = event.target.id;
+    const indexToRemove = imageArray.indexOf(idOfObjectToRemove);
+    imageArray.splice(indexToRemove, 1);
+    setImageArray([...imageArray]);
+  }
+  useEffect(() => {
+    console.log('imgA', imageArray);
+  }, [imageArray]);
   function handleChangedMetaValue(metaValue, setMetaValue) {
     setMetaValue(!metaValue);
   }
@@ -39,10 +66,33 @@ export function RentOutVenueForm() {
       <form onSubmit={handleSubmit(onSubmitClick)}>
         <h3>Rent out a Venue</h3>
         <div className={styles.inputWrapper}>
-          <label htmlFor="image">Image link</label>
+          <label htmlFor="image">Image link (optional)</label>
+          <p className={styles.errorMsg}>{imageError}</p>
           <div className={styles.addImageWrapper}>
-            <input type="text" name="image" id="image" />
-            <button>Add</button>
+            <input
+              type="text"
+              name="image"
+              id="image"
+              onChange={imageOnChange}
+            />
+            <button onClick={addImage}>Add</button>
+          </div>
+          <div>
+            <p>images added (click the link to remove)</p>
+            {imageArray.map((link, index) => {
+              return (
+                <p
+                  key={link.url + index}
+                  role="button"
+                  type="button"
+                  id={link.url + index}
+                  onClick={removeImage}
+                  className={styles.imageLink}
+                >
+                  {link.url}
+                </p>
+              );
+            })}
           </div>
         </div>
         <div className={styles.inputWrapper}>

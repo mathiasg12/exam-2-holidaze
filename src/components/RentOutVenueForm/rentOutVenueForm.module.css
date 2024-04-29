@@ -65,6 +65,14 @@ form input[type='checkbox']:checked {
   margin: 2px auto;
   color: var(--error-blueBg);
 }
+.imageLink {
+  word-wrap: break-word;
+  color: var(--success-blueBg);
+}
+.imageLink:hover {
+  cursor: pointer;
+  color: var(--error-blueBg);
+}
 @media (min-width: 600px) {
   form {
     max-width: 600px;
