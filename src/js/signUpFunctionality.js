@@ -33,7 +33,7 @@ export async function signUpFunction(
     } else {
       setErrorActive(false);
       reset();
-      loginFunctionality(
+      await loginFunctionality(
         object.email,
         object.password,
         LoginURL,

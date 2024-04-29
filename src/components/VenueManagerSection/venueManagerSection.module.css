@@ -1,0 +1,53 @@
+@import '../../styles/customColors.css';
+.buttonsContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--custom-blue);
+  margin: 50px auto;
+  padding: 20px 0;
+}
+.buttonWrapper {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+.managerMenuButton {
+  width: 180px;
+  height: 38px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px auto;
+  background-color: rgb(255, 255, 255);
+  font-size: 0.9em;
+}
+.displayDiv {
+  display: block;
+}
+.divHide {
+  display: none;
+}
+.managerMenuButtonActive {
+  width: 180px;
+  height: 38px;
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 10px auto;
+  font-size: 0.9em;
+  background-color: var(--custom-yellow);
+}
+.managerMenuButton:hover {
+  background-color: var(--custom-blue);
+  color: white;
+  border: 1px solid white;
+}
+@media (min-width: 600px) {
+  .buttonsContainer {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .buttonWrapper {
+    width: 600px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

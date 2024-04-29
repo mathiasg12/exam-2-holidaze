@@ -13,8 +13,8 @@ export function useFetchUserProfile(URL) {
     async function innerFunction() {
       if (apiKey && token && name) {
         try {
-          setError(false);
           setLoading(true);
+          setError(false);
           const options = {
             headers: {
               Authorization: `Bearer ${token}`,

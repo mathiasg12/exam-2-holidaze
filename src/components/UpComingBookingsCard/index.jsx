@@ -73,11 +73,8 @@ export function UpComingBookingsCard(props) {
               booking.venue.price
             );
             return (
-              <div className={styles.upComingBookingsCard}>
-                <div
-                  key={booking.id}
-                  className={styles.upComingBookingsCardContentWrapper}
-                >
+              <div className={styles.upComingBookingsCard} key={booking.id}>
+                <div className={styles.upComingBookingsCardContentWrapper}>
                   <div
                     className={
                       deleteOverlayKey === booking.id

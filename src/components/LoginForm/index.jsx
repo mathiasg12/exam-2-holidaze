@@ -49,7 +49,7 @@ export function LoginForm() {
       navigate('/profile');
       loginTrue();
     }
-  }, [loggedIn]);
+  }, [loggedIn, navigate, loginTrue]);
   return (
     <section className={styles.loginSection}>
       <h1>Login</h1>
