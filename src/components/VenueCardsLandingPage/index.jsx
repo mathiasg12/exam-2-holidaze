@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
  * component that displays the venue cards, the component also deals with pagination, and uses an useEffect to restet the page to 1 if the array changes
  * @param {array} props
  */
-export function VenueCardsLanding(props) {
+export function VenueCardsLandingPage(props) {
   const { arrayOfVenues } = props;
   const [pageNr, setPageNr] = useState(1);
   const [endReached, setEndReached] = useState(false);

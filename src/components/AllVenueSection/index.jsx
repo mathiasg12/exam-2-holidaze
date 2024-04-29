@@ -7,7 +7,7 @@ import styles from './allVenueSection.module.css';
 import { ActiveFilters } from '../FiltersActive';
 import { allVenuesURL } from '../../js/URL';
 import { LoadingSpinner } from '../LoadingSpinner';
-import { VenueCardsLanding } from '../VenueCardsLanding';
+import { VenueCardsLandingPage } from '../VenueCardsLandingPage';
 /**
 Here's the corrected version:
 
@@ -83,10 +83,10 @@ export function AllVenueSection() {
               </div>
             )}
           </div>
-          <VenueCardsLanding
+          <VenueCardsLandingPage
             className={styles.venues}
             arrayOfVenues={filteredLoadedVenues}
-          ></VenueCardsLanding>
+          ></VenueCardsLandingPage>
         </div>
       </section>
     );
