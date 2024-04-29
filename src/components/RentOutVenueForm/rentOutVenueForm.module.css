@@ -55,6 +55,12 @@ form input[type='checkbox'] {
 form input[type='checkbox']:checked {
   accent-color: var(--custom-yellow);
 }
+.imageLinkInfo {
+  display: block;
+}
+.imageLinkHide {
+  display: none;
+}
 .included div {
   margin: 5px auto 5px auto;
 }

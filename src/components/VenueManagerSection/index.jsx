@@ -51,7 +51,10 @@ export function VenueManagerSection() {
           activeMenuItem === 'rentOut' ? styles.displayDiv : styles.divHide
         }
       >
-        <RentOutVenueForm></RentOutVenueForm>
+        <RentOutVenueForm
+          activeMenuItem={activeMenuItem}
+          setActiveMenuItem={setActiveMenuItem}
+        ></RentOutVenueForm>
       </div>
     </section>
   );

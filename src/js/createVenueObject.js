@@ -20,13 +20,15 @@ export function createVenueObject(
   petsInc,
   wifiInc,
   parkingInc,
-  breakfastInc
+  breakfastInc,
+  mediaArray
 ) {
   return {
     name: inputName,
     description: inputDesc,
-    price: inputPrice,
-    maxGuests: inputGuests,
+    media: mediaArray,
+    price: Number(inputPrice),
+    maxGuests: Number(inputGuests),
     meta: {
       wifi: wifiInc,
       parking: parkingInc,

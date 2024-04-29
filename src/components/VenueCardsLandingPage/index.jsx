@@ -37,68 +37,77 @@ export function VenueCardsLandingPage(props) {
     return (
       <div className={styles.venueAndBtnCon}>
         <div className={styles.venueCardSection}>
-          {currentPage.map((venueObject) => (
-            <Link
-              key={venueObject.id}
-              to={`specific/${venueObject.id}`}
-              className={styles.venueCard}
-            >
-              <div className={styles.imgCon}>
-                <img
-                  src={venueObject.media[0].url}
-                  alt="venue"
-                  onError={(errorEvent) => {
-                    errorEvent.target.src = '../pictures/noImage.jpg';
-                  }}
-                />
-              </div>
-              <h3>{venueObject.name}</h3>
-              <div className={styles.included}>
-                {venueObject.meta.breakfast && (
-                  <p className={styles.breakfast}>Breakfast</p>
-                )}
-                {venueObject.meta.pets && <p className={styles.pets}>Pets</p>}
-                {venueObject.meta.parking && (
-                  <p className={styles.parking}>Parking</p>
-                )}
-                {venueObject.meta.wifi && <p className={styles.wifi}>Wifi</p>}
-              </div>
-              <div className={styles.loactionContainer}>
-                <p>
-                  {venueObject.location.address
-                    ? venueObject.location.address + ','
-                    : 'unknown,'}
-                </p>
-                <p>
-                  {venueObject.location.city
-                    ? venueObject.location.city
-                    : ' unknown'}
-                </p>
-              </div>
-              <div className={styles.starAndPersonContainer}>
-                <div className={styles.starCon}>
+          {currentPage.map((venueObject) => {
+            let image = '../pictures/noImage.jpg';
+            if (
+              venueObject.media !== undefined &&
+              venueObject.media.length >= 1
+            ) {
+              image = venueObject.media[0].url;
+            }
+            return (
+              <Link
+                key={venueObject.id}
+                to={`specific/${venueObject.id}`}
+                className={styles.venueCard}
+              >
+                <div className={styles.imgCon}>
+                  <img
+                    src={image}
+                    alt="venue"
+                    onError={(errorEvent) => {
+                      errorEvent.target.src = '../pictures/noImage.jpg';
+                    }}
+                  />
+                </div>
+                <h3>{venueObject.name}</h3>
+                <div className={styles.included}>
+                  {venueObject.meta.breakfast && (
+                    <p className={styles.breakfast}>Breakfast</p>
+                  )}
+                  {venueObject.meta.pets && <p className={styles.pets}>Pets</p>}
+                  {venueObject.meta.parking && (
+                    <p className={styles.parking}>Parking</p>
+                  )}
+                  {venueObject.meta.wifi && <p className={styles.wifi}>Wifi</p>}
+                </div>
+                <div className={styles.loactionContainer}>
                   <p>
-                    {venueObject.rating}/5
-                    <FontAwesomeIcon icon={faStar} className={styles.star} />
+                    {venueObject.location.address
+                      ? venueObject.location.address + ','
+                      : 'unknown,'}
+                  </p>
+                  <p>
+                    {venueObject.location.city
+                      ? venueObject.location.city
+                      : ' unknown'}
                   </p>
                 </div>
-                <div className={styles.personCon}>
-                  <p>
-                    {venueObject.maxGuests}
-                    <FontAwesomeIcon
-                      icon={faPerson}
-                      size="lg"
-                      className={styles.person}
-                    />
-                  </p>
+                <div className={styles.starAndPersonContainer}>
+                  <div className={styles.starCon}>
+                    <p>
+                      {venueObject.rating}/5
+                      <FontAwesomeIcon icon={faStar} className={styles.star} />
+                    </p>
+                  </div>
+                  <div className={styles.personCon}>
+                    <p>
+                      {venueObject.maxGuests}
+                      <FontAwesomeIcon
+                        icon={faPerson}
+                        size="lg"
+                        className={styles.person}
+                      />
+                    </p>
+                  </div>
                 </div>
-              </div>
-              <div className={styles.priceCon}>
-                <p className={styles.price}>{venueObject.price}$</p>
-                <p>per night</p>
-              </div>
-            </Link>
-          ))}
+                <div className={styles.priceCon}>
+                  <p className={styles.price}>{venueObject.price}$</p>
+                  <p>per night</p>
+                </div>
+              </Link>
+            );
+          })}
         </div>
         <MoreBtn onClick={handleLoadBtn} endReached={endReached}></MoreBtn>
       </div>
