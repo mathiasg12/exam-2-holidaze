@@ -8,7 +8,7 @@ import styles from './filterMenu.module.css';
   and checkboxes for the different filter settings.*
  * @param {props} props
  */
-export function FilterMenuLandingPage(props) {
+export function FilterMenu(props) {
   const { clicked, onClickFunction, searched } = props;
   const filterSettings = useFilterStore((state) => state.filterSettings);
   const changeMaxGuests = useFilterStore((state) => state.changeMaxGuests);
