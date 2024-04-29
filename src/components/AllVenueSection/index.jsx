@@ -6,8 +6,8 @@ import { SearchBarAndFilterSection } from '../SearchBarAndFilterSection';
 import styles from './allVenueSection.module.css';
 import { ActiveFilters } from '../FiltersActive';
 import { allVenuesURL } from '../../js/URL';
-import { VenueCardsLandingPage } from '../VenueCardsLandingPage';
 import { LoadingSpinner } from '../LoadingSpinner';
+import { VenueCardsLandingPage } from '../VenueCardsLandingPage';
 /**
 Here's the corrected version:
 
