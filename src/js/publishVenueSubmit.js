@@ -32,7 +32,8 @@ export async function onSubmitClick(
   error,
   loading,
   reset,
-  setImageArray
+  setImageArray,
+  mediaArray
 ) {
   const objectToApi = createVenueObject(
     data.name,
@@ -45,7 +46,8 @@ export async function onSubmitClick(
     petsAllowed,
     wifiIncluded,
     parkingIncluded,
-    breakfastIncluded
+    breakfastIncluded,
+    mediaArray
   );
   await postVenue(
     objectToApi,

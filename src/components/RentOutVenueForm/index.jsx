@@ -60,7 +60,8 @@ export function RentOutVenueForm(props) {
               error,
               loading,
               reset,
-              setImageArray
+              setImageArray,
+              imageArray
             );
           })}
         >

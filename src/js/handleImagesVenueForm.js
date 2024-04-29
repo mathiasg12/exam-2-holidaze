@@ -17,12 +17,15 @@ export function addImage(event, setImageArray, imageArray, setImageError) {
   const imageLink = document.getElementById('image').value;
   if (imageLink.length >= 5) {
     setImageArray([...imageArray, { url: imageLink }]);
+    document.getElementById('image').value = '';
   } else if (imageLink.length === 0) {
     setImageError('You have not given a image link (optional)');
+    document.getElementById('image').value = '';
   } else {
     setImageError(
       'Please add a valid image URL that is more than 5 characters (optional)'
     );
+    document.getElementById('image').value = '';
   }
 }
 /**

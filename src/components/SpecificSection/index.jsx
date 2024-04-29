@@ -22,6 +22,11 @@ export function SpecificSection() {
   const loadedVenueOwner = venues.owner ? venues.owner : {};
   const loadedVenueBookigs = venues.bookings ? venues.bookings : [];
   const loadedLocation = venues.location ? venues.location : {};
+  let imageMedia = [{ url: '../pictures/noImage.jpg' }];
+  if (Array.isArray(loadedVenue.media) && loadedVenue.media.length > 0) {
+    imageMedia = loadedVenue.media;
+  }
+  console.log(loadedVenue);
   if (loading || !loadedVenue) {
     return (
       <section className={styles.specificSectionLoading}>
@@ -38,7 +43,7 @@ export function SpecificSection() {
     return (
       <section className={styles.specificSection}>
         <ImageCarousel
-          imageArray={loadedVenue.media}
+          imageArray={imageMedia}
           className={styles.imageCar}
         ></ImageCarousel>
         <VenueInfo
