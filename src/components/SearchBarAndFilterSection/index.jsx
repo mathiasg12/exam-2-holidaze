@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FilterBtn } from '../FilterBtn';
 import { SearchBar } from '../SearchBar';
-import { FilterMenu } from '../filterMenu';
+import { FilterMenu } from '../FilterMenu';
 import styles from './searchAndFilter.module.css';
 /**
  * component that creates the search and filter seaction, the component calls three other components, the searchbar, a filter button and the filter menu

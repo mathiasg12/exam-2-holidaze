@@ -1,0 +1,7 @@
+@import '../../styles/customColors.css';
+.bookingsHeading {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--custom-blue);
+  color: white;
+}

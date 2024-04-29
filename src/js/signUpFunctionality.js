@@ -32,7 +32,6 @@ export async function signUpFunction(
       setErrorMessage(error);
     } else {
       setErrorActive(false);
-      console.log('nice', userJson.data);
       reset();
       loginFunctionality(
         object.email,

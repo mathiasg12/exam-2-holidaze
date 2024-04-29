@@ -1,0 +1,55 @@
+@import '../../styles/customColors.css';
+.successOverlay {
+  background-color: var(--success);
+  width: 80vw;
+  margin: 0 auto;
+  padding: 0 5px;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid white;
+  border-radius: 10px;
+}
+.successMessage {
+  margin: 0 40px;
+}
+.exitBtn {
+  width: fit-content;
+  font-size: 1.2em;
+  margin: 0 0 0 auto;
+  cursor: pointer;
+}
+.profileLink {
+  background-color: var(--custom-yellow);
+  color: black;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  max-width: 128px;
+  min-height: 28px;
+  line-height: 0;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+.closeBtn {
+  margin: 15px auto 30px auto;
+  font-size: 1.2em;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.closeBtn:hover,
+.exitBtn:hover {
+  color: var(--custom-yellow);
+}
+.profileLink:hover {
+  background-color: white;
+}
+@media (min-width: 600px) {
+  .successOverlay {
+    width: 500px;
+  }
+}

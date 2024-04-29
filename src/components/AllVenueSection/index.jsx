@@ -3,10 +3,11 @@ import { useFetchAllVenues } from '../../hooks/FetchAllVenues';
 import { filteredVenues } from '../../js/filterFunctionality';
 import { useFilterStore } from '../../states/filterState';
 import { SearchBarAndFilterSection } from '../SearchBarAndFilterSection';
-import { VenueCardsLandingPage } from '../venueCardsLandingPage';
 import styles from './allVenueSection.module.css';
 import { ActiveFilters } from '../FiltersActive';
 import { allVenuesURL } from '../../js/URL';
+import { VenueCardsLandingPage } from '../VenueCardsLandingPage';
+import { LoadingSpinner } from '../LoadingSpinner';
 /**
 Here's the corrected version:
 
@@ -43,7 +44,7 @@ export function AllVenueSection() {
   if (loading || !loadedVenues) {
     return (
       <section className={styles.allVenueSection}>
-        <div>Loading...</div>
+        <LoadingSpinner></LoadingSpinner>
       </section>
     );
   } else if (error) {
@@ -52,7 +53,7 @@ export function AllVenueSection() {
         <h2>Sorry an error has occured, please try again later</h2>
       </section>
     );
-  } else if (!loading) {
+  } else if (!loading && !error) {
     return (
       <section className={styles.allVenueSection}>
         <h2>Venues</h2>

@@ -1,6 +1,6 @@
 import * as yup from 'yup';
 /**
- * yup schema for sign up form and login form
+ * yup schema for sign up form and login form and change avatar form
  */
 export const SignUpSchema = yup.object({
   name: yup.string().required('Name is required'),
@@ -32,4 +32,11 @@ export const LoginSchema = yup.object({
     .string()
     .required('Password is required')
     .min(8, 'Password must be minimum 8 characters long'),
+});
+export const ChangeAvatarSchema = yup.object({
+  url: yup
+    .string()
+    .required(
+      'please enter a valid URL or use the exit button to close the form'
+    ),
 });

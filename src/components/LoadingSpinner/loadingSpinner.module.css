@@ -1,0 +1,38 @@
+@import '../../styles/customColors.css';
+.loadingSpinner {
+  width: 100px;
+  height: 100px;
+  font-size: 1.2em;
+  flex-direction: column;
+  display: flex;
+  border-radius: 100%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: var(--custom-blue);
+  margin: 50px auto;
+}
+.loadingSpinner::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  width: calc(100%);
+  height: calc(100%);
+  border-radius: 100%;
+  border: 5px solid var(--custom-blue);
+  border-top-color: var(--custom-yellow);
+  animation: spin 1.2s linear infinite;
+}
+.loadingSpinner p {
+  margin: 0 auto;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

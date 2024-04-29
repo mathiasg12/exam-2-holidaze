@@ -1,0 +1,185 @@
+@import '../../styles/customColors.css';
+.allBookingsCon {
+  margin: 10px auto 150px auto;
+}
+.totalBookings {
+  text-align: center;
+  font-size: 1.1em;
+}
+.upComingBookingsCardContentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  width: 80vw;
+  margin: 50px auto;
+  text-align: center;
+  position: relative;
+}
+.upComingBookingsCard h3 {
+  background-color: var(--custom-blue);
+  color: white;
+  padding: 5px;
+}
+.loading {
+  text-align: center;
+}
+.error {
+  border-radius: 10px;
+  margin: 0 auto;
+  width: fit-content;
+  background-color: var(--error);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+  padding: 5px;
+}
+.messageHide {
+  display: none;
+}
+.exitBtn {
+  display: flex;
+  justify-content: end;
+}
+.error p {
+  margin: 20px 20px 40px 20px;
+}
+.error button {
+  width: fit-content;
+  border-radius: 100%;
+  font-size: 1.2em;
+  border: 0;
+  background-color: white;
+}
+.imgCon img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px 10px 0 0;
+}
+.noBookings {
+  margin: 30px auto 100px auto;
+  text-align: center;
+}
+.imgCon {
+  width: 80vw;
+  height: 150px;
+  border-radius: 10px;
+}
+.checkInCheckOutWrapper {
+  display: flex;
+  justify-content: center;
+}
+.checkInCheckOut {
+  background-color: var(--custom-blue);
+  width: 95px;
+  border-radius: 10px;
+  color: white;
+  margin: 0 10px;
+}
+.deleteOverlay {
+  width: 80vw;
+  height: 500px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+}
+.deleteOverlay p {
+  margin: 50px 20px 30px 20px;
+}
+.deleteOverlay div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.deleteOverlay button {
+  margin: 10px auto;
+}
+.deleteOverlayHide {
+  display: none;
+}
+.goBackBtn {
+  background-color: var(--custom-yellow);
+  min-width: 130px;
+  min-height: 30px;
+  border: 1px solid black;
+  padding: 0;
+  margin: 30px auto 50px auto;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.goBackBtn:hover {
+  background-color: white;
+}
+.deleteBtn,
+.cancelSureBtn {
+  margin: 5px;
+  width: 180px;
+  border-radius: 5px;
+  height: 30px;
+  background-color: var(--error-blueBg);
+  border: 1px solid black;
+  font-weight: bold;
+}
+.deleteBtn:hover,
+.cancelSureBtn:hover {
+  background-color: rgb(143, 0, 0);
+  color: white;
+}
+.total {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+.btnCon {
+  width: 80vw;
+  display: flex;
+  justify-content: end;
+}
+@media (min-width: 600px) {
+  .deleteOverlay {
+    width: 600px;
+    height: 210px;
+  }
+  .upComingBookingsCardContentWrapper {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    height: 210px;
+    width: 600px;
+  }
+  .total {
+    margin: 16px 10px 0 auto;
+  }
+  .guestAndPriceWrapper {
+    margin: 0 auto;
+  }
+  .upComingBookingsCard h3 {
+    margin-top: 0;
+    border-radius: 0 10px 0 0;
+  }
+  .imgCon img {
+    width: 150px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+  }
+  .bookingInfoContainer {
+    display: flex;
+  }
+  .imgCon {
+    width: 150px;
+    height: 210px;
+  }
+  .btnCon {
+    width: 100%;
+  }
+  .deleteBtn {
+    margin: 20px 10px 10px 0;
+  }
+}
+@media (min-width: 700px) {
+  .upComingBookingsCardContentWrapper,
+  .deleteOverlay {
+    width: 700px;
+  }
+  .bookingInfoAndBtnWrapper {
+    width: 100%;
+  }
+}

@@ -32,6 +32,7 @@ export async function loginFunctionality(
       const response = await login.json();
       localStorage.setItem('token', response.data.accessToken);
       localStorage.setItem('loggedIn', true);
+      localStorage.setItem('name', response.data.name);
       setLoggedIn(true);
       reset();
       fetchApiKey(ApiKeyURL);
@@ -43,6 +44,6 @@ export async function loginFunctionality(
     }
   } catch (error) {
     setErrorActive(true);
-    setErrormessage(error);
+    setErrormessage('Error with Login');
   }
 }
