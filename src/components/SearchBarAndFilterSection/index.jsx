@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FilterBtn } from '../FilterBtn';
 import { SearchBar } from '../SearchBar';
-import { FilterMenu } from '../FilterMenu';
+import { FilterMenuLandingPage } from '../FilterMenuLandingPage';
 import styles from './searchAndFilter.module.css';
 /**
  * component that creates the search and filter seaction, the component calls three other components, the searchbar, a filter button and the filter menu
@@ -21,11 +21,11 @@ export function SearchBarAndFilterSection(props) {
         setSearchedArray={setSearchedArray}
       ></SearchBar>
       <FilterBtn onClickFunction={openOrCloseFilterMenu}></FilterBtn>
-      <FilterMenu
+      <FilterMenuLandingPage
         clicked={clicked}
         onClickFunction={openOrCloseFilterMenu}
         searched={searched}
-      ></FilterMenu>
+      ></FilterMenuLandingPage>
     </div>
   );
 }
