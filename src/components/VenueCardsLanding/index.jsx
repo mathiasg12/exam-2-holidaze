@@ -1,4 +1,4 @@
-import styles from './venueCardLandingPage.module.css';
+import styles from './venueCardLanding.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faPerson } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
  * component that displays the venue cards, the component also deals with pagination, and uses an useEffect to restet the page to 1 if the array changes
  * @param {array} props
  */
-export function VenueCardsLandingPage(props) {
+export function VenueCardsLanding(props) {
   const { arrayOfVenues } = props;
   const [pageNr, setPageNr] = useState(1);
   const [endReached, setEndReached] = useState(false);
