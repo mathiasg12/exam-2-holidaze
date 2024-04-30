@@ -6,7 +6,7 @@ import styles from './upComingBookigsCard.module.css';
 import { useUpdateTriggerStore } from '../../states/updateTriggerState';
 import { bookingsURL } from '../../js/URL';
 import { LoadingSpinner } from '../LoadingSpinner';
-import { deleteBooking } from '../../js/deleteBooking';
+import { deleteBookingAndVenues } from '../../js/deleteBookingAndVenues';
 /**
  * A component that generates individual cards displaying upcoming bookings.
  * Each card includes an image and information about the booking, along with a delete button,
@@ -30,7 +30,7 @@ export function UpComingBookingsCard(props) {
     setDeleteOverlayKey(id);
   }
   async function onCancelReservationClick() {
-    await deleteBooking(
+    await deleteBookingAndVenues(
       bookingsURL,
       deleteOverlayKey,
       updateBookings,

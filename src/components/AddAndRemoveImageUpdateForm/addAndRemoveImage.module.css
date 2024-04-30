@@ -1,0 +1,51 @@
+.imageLinkInfo {
+  display: block;
+}
+.imageLinkHide {
+  display: none;
+}
+.included div {
+  margin: 5px auto 5px auto;
+}
+.included h4 {
+  margin: 0;
+}
+.errorMsg {
+  margin: 2px auto;
+  color: var(--error-blueBg);
+}
+.imageLink {
+  word-wrap: break-word;
+  color: var(--success-blueBg);
+}
+.imageLink:hover {
+  cursor: pointer;
+  color: var(--error-blueBg);
+}
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 220px;
+  margin: 10px auto;
+}
+.inputWrapper textarea,
+.inputWrapper input {
+  width: 214px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.addImageWrapper {
+  display: flex;
+}
+.addImageWrapper input {
+  border-radius: 5px 0 0 5px;
+  border-right: 0;
+}
+.addImageWrapper button {
+  background-color: var(--custom-yellow);
+  border-radius: 0 5px 5px 0;
+  border: 1px solid black;
+}
+.inputWrapper input {
+  height: 27px;
+}

@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import styles from './venueManagerSection.module.css';
 import { RentOutVenueForm } from '../RentOutVenueForm';
+import { MyVenues } from '../MyVenues';
 export function VenueManagerSection() {
-  const [activeMenuItem, setActiveMenuItem] = useState('bookingsOnMyVenues');
+  const [activeMenuItem, setActiveMenuItem] = useState('myVenues');
   function handleClick(click) {
     const id = click.target.id;
     setActiveMenuItem(id);
@@ -55,6 +56,13 @@ export function VenueManagerSection() {
           activeMenuItem={activeMenuItem}
           setActiveMenuItem={setActiveMenuItem}
         ></RentOutVenueForm>
+      </div>
+      <div
+        className={
+          activeMenuItem === 'myVenues' ? styles.displayDiv : styles.divHide
+        }
+      >
+        <MyVenues activeMenuItem={activeMenuItem}></MyVenues>
       </div>
     </section>
   );

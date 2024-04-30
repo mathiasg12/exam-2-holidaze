@@ -12,6 +12,7 @@ import {
 } from '../../js/handleImagesVenueForm';
 import { onSubmitClick } from '../../js/publishVenueSubmit';
 import { PublishVenueFormCheckboxes } from '../PublishVenueFormCheckboxes';
+import { useUpdateTriggerStore } from '../../states/updateTriggerState';
 /**
  * function that returns the "rent out venue" form, the form uses yup form controll
  * @param {props} props
@@ -81,7 +82,13 @@ export function RentOutVenueForm(props) {
               />
               <button
                 onClick={(event) =>
-                  addImage(event, setImageArray, imageArray, setImageError)
+                  addImage(
+                    event,
+                    setImageArray,
+                    imageArray,
+                    setImageError,
+                    false
+                  )
                 }
               >
                 Add
@@ -103,7 +110,7 @@ export function RentOutVenueForm(props) {
                     key={link.url + index}
                     role="button"
                     type="button"
-                    id={link.url + index}
+                    id={index}
                     onClick={(event) => {
                       removeImage(event, imageArray, setImageArray);
                     }}

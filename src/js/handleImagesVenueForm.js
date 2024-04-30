@@ -12,9 +12,20 @@ export function imageOnChange(setImageError) {
  * @param {array} imageArray
  * @param {state} setImageError
  */
-export function addImage(event, setImageArray, imageArray, setImageError) {
+export function addImage(
+  event,
+  setImageArray,
+  imageArray,
+  setImageError,
+  isEditBoolean
+) {
   event.preventDefault();
-  const imageLink = document.getElementById('image').value;
+  let imageLink = '';
+  if (!isEditBoolean) {
+    imageLink = document.getElementById('image').value;
+  } else {
+    imageLink = document.getElementById('imageUpdateForm').value;
+  }
   if (imageLink.length >= 5) {
     setImageArray([...imageArray, { url: imageLink }]);
     document.getElementById('image').value = '';
@@ -35,8 +46,7 @@ export function addImage(event, setImageArray, imageArray, setImageError) {
  * @param {state} setImageArray
  */
 export function removeImage(event, imageArray, setImageArray) {
-  const idOfObjectToRemove = event.target.id;
-  const indexToRemove = imageArray.indexOf(idOfObjectToRemove);
+  const indexToRemove = event.target.id;
   imageArray.splice(indexToRemove, 1);
   setImageArray([...imageArray]);
 }

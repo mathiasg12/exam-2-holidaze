@@ -1,6 +1,6 @@
 import { allVenuesURL } from './URL';
 import { createVenueObject } from './createVenueObject';
-import { postVenue } from './postVenue';
+import { postOrUpdateVenue } from '../js/postOrUpdateVenue';
 /**
  * function that handles the submit click on the profile page when filling out the rent out a venue form, if a user clicks submit and the validation goes thrue the function will call,
  * the createVenueObject and use that object as a parameter for the postVenue function which posts the venue to the api,
@@ -49,17 +49,18 @@ export async function onSubmitClick(
     breakfastIncluded,
     mediaArray
   );
-  await postVenue(
+  await postOrUpdateVenue(
     objectToApi,
     allVenuesURL,
     setLoading,
     setError,
     setErrorMsg,
-    setSuccess
+    'post'
   );
 
   if (!error || !loading) {
     reset();
+    setSuccess(true);
     setImageArray([]);
   }
 }

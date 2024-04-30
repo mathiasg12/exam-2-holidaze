@@ -8,7 +8,6 @@ import { VenueManagerSection } from '../../components/VenueManagerSection';
 export function Profile() {
   const { loading, error, profile } = useFetchUserProfile(profileURL);
   const loadedProfile = profile ? profile : {};
-  console.log('p', loadedProfile);
   const [isVenueManager, setIsVenueManager] = useState(false);
   useEffect(() => {
     if (loadedProfile.venueManager === true) {

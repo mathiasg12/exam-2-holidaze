@@ -35,15 +35,15 @@ form {
 .inputWrapper input {
   height: 27px;
 }
-.publishBtn {
+.updateBtn {
   background-color: var(--custom-yellow);
   color: black;
   border: 1px solid black;
   border-radius: 5px;
   width: 180px;
   min-height: 38px;
+  margin: 20px auto 10px auto;
   font-weight: bold;
-  margin: 20px auto;
 }
 .imageLinkInfo {
   display: block;
@@ -68,6 +68,23 @@ form {
 .imageLink:hover {
   cursor: pointer;
   color: var(--error-blueBg);
+}
+.cancelBtn {
+  background-color: rgb(255, 255, 255);
+  margin: 10px auto;
+}
+.cancelBtn,
+.deleteBtn {
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 130px;
+  min-height: 28px;
+  font-weight: bold;
+}
+.deleteBtn {
+  background-color: var(--error-blueBg);
+  margin: 10px 0 0 auto;
 }
 @media (min-width: 600px) {
   form {
