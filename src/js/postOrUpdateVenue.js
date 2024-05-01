@@ -32,17 +32,20 @@ export async function postOrUpdateVenue(
       body: JSON.stringify(object),
     });
     const response = await postVenue.json();
+    console.log('resp', response);
     if (postVenue.ok) {
       console.log(response);
       setSuccess(true);
     } else {
       setError(true);
+      setSuccess(false);
       setErrorMsg(response.errors[0].message);
       console.log(response);
     }
   } catch (error) {
     setError(true);
     setErrorMsg('sorry something went wrong try again later');
+    setSuccess(false);
   } finally {
     setLoading(false);
   }

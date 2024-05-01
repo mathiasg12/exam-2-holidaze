@@ -29,8 +29,6 @@ export async function onSubmitClick(
   setError,
   setErrorMsg,
   setSuccess,
-  error,
-  loading,
   reset,
   setImageArray,
   mediaArray
@@ -58,10 +56,6 @@ export async function onSubmitClick(
     setSuccess,
     'post'
   );
-
-  if (!error || !loading) {
-    reset();
-    setSuccess(true);
-    setImageArray([]);
-  }
+  reset();
+  setImageArray([]);
 }

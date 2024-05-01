@@ -1,6 +1,6 @@
 @import '../../styles/customColors.css';
 .userSection {
-  margin: 200px auto;
+  margin: 200px auto 0 auto;
   background-color: var(--custom-blue);
   display: flex;
   flex-direction: column;
@@ -41,7 +41,7 @@
     margin-top: 50px;
   }
   .imageAndInfoWrapper {
-    width: 600px;
+    width: 580px;
     display: flex;
     align-items: start;
     justify-content: space-around;
@@ -49,6 +49,6 @@
 }
 @media (min-width: 800px) {
   .userSection {
-    width: 800px;
+    width: 650px;
   }
 }

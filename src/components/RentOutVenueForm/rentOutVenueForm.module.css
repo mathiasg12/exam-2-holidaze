@@ -57,9 +57,29 @@ form {
 .included h4 {
   margin: 0;
 }
-.errorMsg {
-  margin: 2px auto;
+.errorMsg,
+.errorMsgBottom {
+  margin: 2px 0;
   color: var(--error-blueBg);
+}
+.errorMsgBottom {
+  margin: 15px auto 0 auto;
+}
+.errorHide {
+  display: none;
+}
+.PrimaryErrorMsg {
+  width: fit-content;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: var(--error);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px dotted var(--error);
+}
+.rentOutHeading {
+  font-size: 1.5em;
 }
 .imageLink {
   word-wrap: break-word;

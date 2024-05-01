@@ -12,7 +12,6 @@ import {
 } from '../../js/handleImagesVenueForm';
 import { onSubmitClick } from '../../js/publishVenueSubmit';
 import { PublishVenueFormCheckboxes } from '../PublishVenueFormCheckboxes';
-import { useUpdateTriggerStore } from '../../states/updateTriggerState';
 /**
  * function that returns the "rent out venue" form, the form uses yup form controll
  * @param {props} props
@@ -29,11 +28,7 @@ export function RentOutVenueForm(props) {
   const [success, setSuccess] = useState(false);
   const [imageArray, setImageArray] = useState([]);
   const [imageError, setImageError] = useState('');
-  useEffect(() => {
-    if (activeMenuItem !== 'rentOut') {
-      setSuccess(false);
-    }
-  }, [activeMenuItem]);
+
   function handleChangedMetaValue(metaValue, setMetaValue) {
     setMetaValue(!metaValue);
   }
@@ -43,6 +38,14 @@ export function RentOutVenueForm(props) {
     reset,
     formState: { errors },
   } = useForm({ resolver: yupResolver(RentOutVenueSchema) });
+  useEffect(() => {
+    if (activeMenuItem !== 'rentOut') {
+      setSuccess(false);
+      setImageArray([]);
+      reset();
+      setError(false);
+    }
+  }, [activeMenuItem]);
   if (!loading && !success) {
     return (
       <div>
@@ -58,16 +61,16 @@ export function RentOutVenueForm(props) {
               setError,
               setErrorMsg,
               setSuccess,
-              error,
-              loading,
               reset,
               setImageArray,
               imageArray
             );
           })}
         >
-          <h3>Rent out a Venue</h3>
-          <h4 className={styles.errorMsg}>{errorMsg}</h4>
+          <h3 className={styles.rentOutHeading}>Rent out a Venue</h3>
+          <h4 className={error ? styles.PrimaryErrorMsg : styles.errorHide}>
+            {errorMsg}
+          </h4>
           <div className={styles.inputWrapper}>
             <label htmlFor="image">Image link (optional)</label>
             <p className={styles.errorMsg}>{imageError}</p>
@@ -194,6 +197,9 @@ export function RentOutVenueForm(props) {
             setWifiIncluded={setWifiIncluded}
             handleChangedMetaValue={handleChangedMetaValue}
           ></PublishVenueFormCheckboxes>
+          <h4 className={error ? styles.errorMsgBottom : styles.errorHide}>
+            {errorMsg}
+          </h4>
           <div>
             <input
               type="submit"

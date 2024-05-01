@@ -1,20 +1,27 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './venueManagerSection.module.css';
 import { RentOutVenueForm } from '../RentOutVenueForm';
 import { MyVenues } from '../MyVenues';
 import { BookingsOnMyVenues } from '../BookingsOnMyVenues';
 import { useFetchMyvenues } from '../../hooks/FetchMyVenues';
 import { profileURL } from '../../js/URL';
+import { useUpdateTriggerStore } from '../../states/updateTriggerState';
 /**
  * component that creates the venue manager section, this component includes a menu where the manager can choose between three different admin sections.
  */
 export function VenueManagerSection() {
   const [activeMenuItem, setActiveMenuItem] = useState('myVenues');
   const { error, loading, venues } = useFetchMyvenues(profileURL);
+  const update = useUpdateTriggerStore((state) => state.newUpdate);
   function handleClick(click) {
     const id = click.target.id;
     setActiveMenuItem(id);
   }
+  useEffect(() => {
+    if (activeMenuItem === 'myVenues') {
+      update();
+    }
+  }, [activeMenuItem]);
   return (
     <section>
       <div className={styles.buttonsContainer}>

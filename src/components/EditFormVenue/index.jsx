@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { PublishVenueFormCheckboxes } from '../PublishVenueFormCheckboxes';
 import styles from './editForm.module.css';
 import { useForm } from 'react-hook-form';
@@ -23,6 +23,7 @@ export function EditFormVenue(props) {
     setSuccess,
     setDeleteThisVenue,
     id,
+    success,
   } = props;
   const loadedLocation = venueToEdit.location ? venueToEdit.location : {};
   const loadedMeta = venueToEdit.meta ? venueToEdit.meta : {};
@@ -52,7 +53,6 @@ export function EditFormVenue(props) {
   function handleChangedMetaValue(metaValue, setMetaValue) {
     setMetaValue(!metaValue);
   }
-  const update = useUpdateTriggerStore((state) => state.newUpdate);
   const {
     register,
     handleSubmit,
@@ -65,6 +65,12 @@ export function EditFormVenue(props) {
     setNewImageArray([]);
     setEdit(false);
   }
+  useEffect(() => {
+    if (success) {
+      setNewImageArray([]);
+      setEdit(false);
+    }
+  }, [success]);
   return (
     <form
       onSubmit={handleSubmit((data) => {
@@ -74,22 +80,17 @@ export function EditFormVenue(props) {
           wifiIncluded,
           parkingIncluded,
           breakfastIncluded,
-          reset,
-          setNewImageArray,
           newImageArray,
           setErrorMsg,
           setLoading,
           setError,
           setSuccess,
-          id,
-          error,
-          setEdit,
-          update
+          id
         );
       })}
     >
       <h3>Update your Venue: {venueToEdit.name}</h3>
-      <h4 className={styles.errorMsg}>{errorMsg}</h4>
+      <h4 className={error ? styles.errorMsg : styles.errorHide}>{errorMsg}</h4>
       <div className={styles.inputWrapper}>
         <label htmlFor="name">Name</label>
         <p className={styles.errorMsg}>{errors.name?.message}</p>

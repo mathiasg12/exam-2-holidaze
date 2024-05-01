@@ -62,6 +62,10 @@ export function UpComingBookingsCard(props) {
             Total bookings: {loadedBookingsArray.length}
           </p>
           {loadedBookingsArray.map((booking) => {
+            let image = '../pictures/noImage.jpg';
+            if (booking.media !== undefined && booking.media.length >= 1) {
+              image = booking.media[0].url;
+            }
             const dateInbetween = allDaysBetween([
               {
                 startDate: new Date(booking.dateFrom),
@@ -102,7 +106,7 @@ export function UpComingBookingsCard(props) {
                   </div>
                   <div className={styles.imgCon}>
                     <img
-                      src={booking.venue.media[0].url}
+                      src={image}
                       alt="venue"
                       onError={(errorEvent) => {
                         errorEvent.target.src = '../pictures/noImage.jpg';

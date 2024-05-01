@@ -7,17 +7,12 @@ export async function onUpdateClick(
   wifiIncluded,
   parkingIncluded,
   breakfastIncluded,
-  reset,
-  setImageArray,
   mediaArray,
   setErrorMsg,
   setLoading,
   setError,
   setSuccess,
-  id,
-  error,
-  setEdit,
-  update
+  id
 ) {
   const objectToApi = createVenueObject(
     data.name,
@@ -43,10 +38,4 @@ export async function onUpdateClick(
     setSuccess,
     'put'
   );
-  if (!error) {
-    setImageArray([]);
-    reset();
-    setEdit(false);
-    update();
-  }
 }

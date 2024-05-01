@@ -16,7 +16,9 @@ export function BookingsOnMyVenues(props) {
     if (loadedVenue.length < 1) {
       return (
         <div>
-          <h3>There is currently no bookings on youre venues</h3>
+          <h3 className={styles.noBookings}>
+            There are currently no bookings on your venues yet
+          </h3>
         </div>
       );
     } else {
@@ -38,7 +40,7 @@ export function BookingsOnMyVenues(props) {
                     className={styles.bookingsOnVenueContainer}
                   >
                     <div className={styles.headingEachCard}>
-                      <p>Bookings on youre venue:</p>
+                      <p>Bookings on your venue:</p>
                       <p className={styles.venueName}>{venue.name}</p>
                     </div>
                     {venue.bookings.map((booking) => (
@@ -46,8 +48,7 @@ export function BookingsOnMyVenues(props) {
                         <div>
                           <h4>Dates</h4>
                           <p>
-                            Date from:{' '}
-                            {dateFormated(new Date(booking.dateFrom))}
+                            Date from:{dateFormated(new Date(booking.dateFrom))}
                           </p>
                           <p>
                             Date to: {dateFormated(new Date(booking.dateTo))}
@@ -67,7 +68,11 @@ export function BookingsOnMyVenues(props) {
           </div>
         );
       } else {
-        return <h3>There is currently no bookings on youre venues</h3>;
+        return (
+          <h3 className={styles.noBookingsHeading}>
+            There is currently no bookings on youre venues
+          </h3>
+        );
       }
     }
   }
