@@ -2,8 +2,15 @@ import { useState } from 'react';
 import styles from './venueManagerSection.module.css';
 import { RentOutVenueForm } from '../RentOutVenueForm';
 import { MyVenues } from '../MyVenues';
+import { BookingsOnMyVenues } from '../BookingsOnMyVenues';
+import { useFetchMyvenues } from '../../hooks/FetchMyVenues';
+import { profileURL } from '../../js/URL';
+/**
+ * component that creates the venue manager section, this component includes a menu where the manager can choose between three different admin sections.
+ */
 export function VenueManagerSection() {
   const [activeMenuItem, setActiveMenuItem] = useState('myVenues');
+  const { error, loading, venues } = useFetchMyvenues(profileURL);
   function handleClick(click) {
     const id = click.target.id;
     setActiveMenuItem(id);
@@ -62,7 +69,25 @@ export function VenueManagerSection() {
           activeMenuItem === 'myVenues' ? styles.displayDiv : styles.divHide
         }
       >
-        <MyVenues activeMenuItem={activeMenuItem}></MyVenues>
+        <MyVenues
+          activeMenuItem={activeMenuItem}
+          error={error}
+          loading={loading}
+          venues={venues}
+        ></MyVenues>
+      </div>
+      <div
+        className={
+          activeMenuItem === 'bookingsOnMyVenues'
+            ? styles.displayDiv
+            : styles.divHide
+        }
+      >
+        <BookingsOnMyVenues
+          error={error}
+          loading={loading}
+          venues={venues}
+        ></BookingsOnMyVenues>
       </div>
     </section>
   );

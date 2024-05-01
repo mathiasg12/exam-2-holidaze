@@ -22,7 +22,7 @@ export function useFetchMyvenues(URL) {
         };
         setError(false);
         setLoading(true);
-        let data = await fetch(`${URL}${name}/venues`, options);
+        let data = await fetch(`${URL}${name}/venues?_bookings=true`, options);
         let myVenues = await data.json();
         if (data.ok) {
           setUnFilteredVenues(myVenues.data);

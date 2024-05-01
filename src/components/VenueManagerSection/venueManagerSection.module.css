@@ -11,13 +11,15 @@
   display: flex;
   flex-direction: column;
 }
-.managerMenuButton {
+.managerMenuButton,
+.managerMenuButtonActive {
   width: 180px;
   height: 38px;
   border: 1px solid black;
   border-radius: 5px;
   margin: 10px auto;
   background-color: rgb(255, 255, 255);
+  font-weight: bold;
   font-size: 0.9em;
 }
 .displayDiv {
@@ -27,12 +29,6 @@
   display: none;
 }
 .managerMenuButtonActive {
-  width: 180px;
-  height: 38px;
-  border: 1px solid black;
-  border-radius: 5px;
-  margin: 10px auto;
-  font-size: 0.9em;
   background-color: var(--custom-yellow);
 }
 .managerMenuButton:hover {

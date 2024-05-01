@@ -55,6 +55,7 @@ export async function onSubmitClick(
     setLoading,
     setError,
     setErrorMsg,
+    setSuccess,
     'post'
   );
 

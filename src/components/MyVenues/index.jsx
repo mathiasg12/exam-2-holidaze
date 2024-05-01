@@ -1,21 +1,20 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useFetchMyvenues } from '../../hooks/FetchMyVenues';
-import { profileURL } from '../../js/URL';
 import { LoadingSpinner } from '../LoadingSpinner';
 import styles from './myVenues.module.css';
 import { faPerson } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import { EditVenue } from '../EdtiVenue';
+import { ErrorMessageNotSpecific } from '../ErrorMessageNotSpecific';
 /**
  * the MyVenues component displays a users active venues, the component handles erors, loading and the venue cards that are displayed to the user
  * @param {props} props
  */
 export function MyVenues(props) {
-  const { activeMenuItem } = props;
-  const { error, loading, venues } = useFetchMyvenues(profileURL);
+  const { activeMenuItem, error, loading, venues } = props;
   const [edit, setEdit] = useState(false);
   const [indexOfEditVenue, setIndexOfEditVenue] = useState(0);
   const loadedVenues = venues ? venues : [];
+  console.log(loadedVenues);
   function handleEditBtnClick(e) {
     const id = e.target.id;
     setIndexOfEditVenue(loadedVenues.findIndex((venue) => venue.id === id));
@@ -29,7 +28,7 @@ export function MyVenues(props) {
   if (loading) {
     return <LoadingSpinner></LoadingSpinner>;
   } else if (error) {
-    return <div>Something went wrong try again later</div>;
+    return <ErrorMessageNotSpecific></ErrorMessageNotSpecific>;
   } else {
     if (edit) {
       return (
