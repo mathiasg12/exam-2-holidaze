@@ -6,6 +6,8 @@ import { useEffect, useState } from 'react';
 import { EditVenue } from '../EdtiVenue';
 import { ErrorMessageNotSpecific } from '../ErrorMessageNotSpecific';
 import { useUpdateTriggerStore } from '../../states/updateTriggerState';
+import { Link } from 'react-router-dom';
+import { capText } from '../../js/capText';
 /**
  * the MyVenues component displays a users active venues, the component handles erors, loading and the venue cards that are displayed to the user
  * @param {props} props
@@ -76,7 +78,7 @@ export function MyVenues(props) {
                         }}
                       />
                     </div>
-                    <h3>{venue.name}</h3>
+                    <h3>{capText(venue.name, 30)}</h3>
                     <div className={styles.included}>
                       {venue.meta.breakfast && (
                         <p className={styles.breakfast}>Breakfast</p>
@@ -98,7 +100,7 @@ export function MyVenues(props) {
                       </p>
                     </div>
                     <div className={styles.descWrapper}>
-                      {venue.description}
+                      {capText(venue.description, 30)}
                     </div>
                     <div className={styles.starAndPersonContainer}>
                       <div className={styles.personCon}>
@@ -116,6 +118,12 @@ export function MyVenues(props) {
                       <p>{venue.price}$</p>
                       <p>per night</p>
                     </div>
+                    <Link
+                      className={styles.linkToVenue}
+                      to={`/specific/${venue.id}`}
+                    >
+                      see venue
+                    </Link>
                     <div className={styles.buttonCon}>
                       <button
                         className={styles.editBtn}

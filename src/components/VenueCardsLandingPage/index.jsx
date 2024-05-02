@@ -4,6 +4,7 @@ import { faStar, faPerson } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { MoreBtn } from '../MoreBtn';
 import { useEffect, useState } from 'react';
+import { capText } from '../../js/capText';
 /**
  * component that displays the venue cards, the component also deals with pagination, and uses an useEffect to restet the page to 1 if the array changes
  * @param {array} props
@@ -60,7 +61,7 @@ export function VenueCardsLandingPage(props) {
                     }}
                   />
                 </div>
-                <h3>{venueObject.name}</h3>
+                <h3>{capText(venueObject.name, 30)}</h3>
                 <div className={styles.included}>
                   {venueObject.meta.breakfast && (
                     <p className={styles.breakfast}>Breakfast</p>

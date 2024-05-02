@@ -44,7 +44,10 @@
   padding: 10px;
 }
 .venueInfoCon h1 {
-  margin: 0;
+  margin: 5px;
+  text-align: center;
+  word-wrap: break-word;
+  max-width: 100%;
 }
 .venueInfoCon h3 {
   margin-bottom: 0;

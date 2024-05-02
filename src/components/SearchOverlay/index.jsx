@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './searchOverlay.module.css';
+import { capText } from '../../js/capText';
 /**
  * component that creates the look ahead search overlay, the component maps thrue the search array and displays it.
  * @param {props} props
@@ -47,7 +48,7 @@ export function SearchOverlay(props) {
                     }}
                   />
                 </div>
-                <h3>{venueObject.name}</h3>
+                <h3>{capText(venueObject.name, 30)}</h3>
               </div>
               <div className={styles.pContainer}>
                 <p>

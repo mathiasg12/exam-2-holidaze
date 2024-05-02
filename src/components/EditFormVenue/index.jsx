@@ -7,6 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { AddAndRemoveImage } from '../AddAndRemoveImageUpdateForm';
 import { onUpdateClick } from '../../js/updateVenueSubmitClick';
 import { useUpdateTriggerStore } from '../../states/updateTriggerState';
+import { capText } from '../../js/capText';
 /**
  * function that returns the component for the edit form, the edit form allow users to update their venues or delete them
  * @param {props} props
@@ -89,7 +90,9 @@ export function EditFormVenue(props) {
         );
       })}
     >
-      <h3>Update your Venue: {venueToEdit.name}</h3>
+      <h3 className={styles.headingH3}>
+        Update your Venue: {capText(venueToEdit.name, 30)}
+      </h3>
       <h4 className={error ? styles.errorMsg : styles.errorHide}>{errorMsg}</h4>
       <div className={styles.inputWrapper}>
         <label htmlFor="name">Name</label>

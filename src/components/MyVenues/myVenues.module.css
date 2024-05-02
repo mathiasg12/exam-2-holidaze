@@ -57,7 +57,7 @@
   box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
 }
 .venueCard h3 {
-  margin: 10px auto;
+  margin: 10px auto 5px auto;
 }
 .included {
   display: flex;
@@ -86,13 +86,28 @@
   display: flex;
   justify-content: space-around;
 }
+.linkToVenue {
+  color: var(--custom-blue);
+  font-size: 1.1em;
+  text-align: center;
+  margin: 5px auto;
+  text-decoration: none;
+  background-color: rgba(172, 172, 172, 0.3);
+  padding: 5px 5px 10px 5px;
+  border-radius: 5px;
+}
 .editBtn {
+  cursor: pointer;
   background-color: var(--custom-yellow);
   min-width: 130px;
   min-height: 30px;
   border: 1px solid black;
   padding: 0;
   border-radius: 5px;
+  margin-top: 5px;
+}
+.editBtn:hover {
+  background-color: white;
 }
 .deleteBtn {
   background-color: var(--error-blueBg);

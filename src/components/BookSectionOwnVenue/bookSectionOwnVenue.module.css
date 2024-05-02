@@ -1,0 +1,35 @@
+.ownVenueCon {
+  color: white;
+  border-radius: 5px;
+  margin: 0 auto 150px auto;
+  background-color: var(--custom-blue);
+  width: 80vw;
+  padding: 50px 10px;
+  text-align: center;
+}
+.venueLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--custom-yellow);
+  width: 128px;
+  height: 28px;
+  border: 1px solid black;
+  margin: 30px auto 30px auto;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.venueLink:hover {
+  background-color: white;
+}
+@media (min-width: 600px) {
+  .ownVenueCon {
+    width: 600px;
+    padding: 50px 0px;
+  }
+}
+@media (min-width: 850px) {
+  .ownVenueCon {
+    width: 840px;
+  }
+}

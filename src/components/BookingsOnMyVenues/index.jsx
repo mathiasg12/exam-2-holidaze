@@ -3,6 +3,7 @@ import styles from './bookingsOnMyVenues.module.css';
 import { ErrorMessageNotSpecific } from '../ErrorMessageNotSpecific';
 import { LoadingSpinner } from '../LoadingSpinner';
 import { dateFormated } from '../../js/formatDates';
+import { capText } from '../../js/capText';
 export function BookingsOnMyVenues(props) {
   const { error, loading, venues } = props;
   const loadedVenue = venues ? venues : {};
@@ -41,7 +42,9 @@ export function BookingsOnMyVenues(props) {
                   >
                     <div className={styles.headingEachCard}>
                       <p>Bookings on your venue:</p>
-                      <p className={styles.venueName}>{venue.name}</p>
+                      <p className={styles.venueName}>
+                        {capText(venue.name, 30)}
+                      </p>
                     </div>
                     {venue.bookings.map((booking) => (
                       <div className={styles.bookingCard} key={booking.id}>

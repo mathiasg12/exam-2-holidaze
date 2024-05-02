@@ -61,6 +61,9 @@ form {
   margin: 2px auto;
   color: var(--error-blueBg);
 }
+.headingH3 {
+  text-align: center;
+}
 .imageLink {
   word-wrap: break-word;
   color: var(--success-blueBg);

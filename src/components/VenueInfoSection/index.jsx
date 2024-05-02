@@ -2,6 +2,7 @@ import styles from './venueInfoSection.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faPerson } from '@fortawesome/free-solid-svg-icons';
 import { ListItems } from '../ListItemsFromArray';
+import { capText } from '../../js/capText';
 /**
  * function that returns a component which containts the information section about the venue, the compoent
  * @param {props} props
@@ -15,7 +16,7 @@ export function VenueInfo(props) {
     .map(([key]) => key);
   return (
     <div className={styles.venueInfoCon}>
-      <h1>{venue.name}</h1>
+      <h1>{capText(venue.name, 30)}</h1>
       <div>
         <p>
           {venue.rating}/5

@@ -7,6 +7,7 @@ import { useUpdateTriggerStore } from '../../states/updateTriggerState';
 import { bookingsURL } from '../../js/URL';
 import { LoadingSpinner } from '../LoadingSpinner';
 import { deleteBookingAndVenues } from '../../js/deleteBookingAndVenues';
+import { capText } from '../../js/capText';
 /**
  * A component that generates individual cards displaying upcoming bookings.
  * Each card includes an image and information about the booking, along with a delete button,
@@ -114,7 +115,9 @@ export function UpComingBookingsCard(props) {
                     />
                   </div>
                   <div className={styles.bookingInfoAndBtnWrapper}>
-                    <h3>Your reservation at: {booking.venue.name}</h3>
+                    <h3>
+                      Your reservation at: {capText(booking.venue.name, 30)}
+                    </h3>
 
                     <div className={styles.bookingInfoContainer}>
                       <div className={styles.checkInCheckOutWrapper}>
