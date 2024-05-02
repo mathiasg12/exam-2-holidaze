@@ -4,8 +4,9 @@ import styles from './rentOutLink.module.css';
  * component that creates a link to the profile page
  */
 export function RentOutLink() {
+  const name = localStorage.getItem('name');
   return (
-    <Link to="/profile" className={styles.rentOutLink}>
+    <Link to={name ? '/profile' : '/login'} className={styles.rentOutLink}>
       Rent out a venue
     </Link>
   );

@@ -7,21 +7,6 @@
   padding: 50px 10px;
   text-align: center;
 }
-.venueLink {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--custom-yellow);
-  width: 128px;
-  height: 28px;
-  border: 1px solid black;
-  margin: 30px auto 30px auto;
-  border-radius: 10px;
-  text-decoration: none;
-}
-.venueLink:hover {
-  background-color: white;
-}
 @media (min-width: 600px) {
   .ownVenueCon {
     width: 600px;

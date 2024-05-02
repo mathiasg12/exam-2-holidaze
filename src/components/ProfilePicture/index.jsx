@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ChangeAvatarForm } from '../ChangeAvatarForm';
+import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 import styles from './ProfilePicture.module.css';
 /**
  * component that creates the jsx for the avatar picture and change avatar picture button, uses the changeAvatarForm component
@@ -25,7 +26,7 @@ export function ProfilePicture(props) {
         ></img>
       </div>
       <button
-        className={styles.changeProfilePictureBtn}
+        className={`${commonStyles.smallButtonYellow} ${commonStyles.smallMarginBottom} `}
         onClick={handleChangeAvatarClick}
       >
         Change avatar

@@ -35,16 +35,6 @@ form {
 .inputWrapper input {
   height: 27px;
 }
-.publishBtn {
-  background-color: var(--custom-yellow);
-  color: black;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 180px;
-  min-height: 38px;
-  font-weight: bold;
-  margin: 20px auto;
-}
 .imageLinkInfo {
   display: block;
 }

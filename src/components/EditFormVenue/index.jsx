@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { PublishVenueFormCheckboxes } from '../PublishVenueFormCheckboxes';
 import styles from './editForm.module.css';
+import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 import { useForm } from 'react-hook-form';
 import { RentOutVenueSchema } from '../../hooks/yupSchema';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -208,13 +209,20 @@ export function EditFormVenue(props) {
         handleChangedMetaValue={handleChangedMetaValue}
       ></PublishVenueFormCheckboxes>
       <div>
-        <input type="submit" value="Update" className={styles.updateBtn} />
+        <input
+          type="submit"
+          value="Update"
+          className={`${commonStyles.bigButtonYellow} ${commonStyles.smallMarginBottom}`}
+        />
       </div>
-      <button onClick={handleCancelClick} className={styles.cancelBtn}>
+      <button
+        onClick={handleCancelClick}
+        className={`${commonStyles.smallButtonYellow} ${commonStyles.smallMarginBottom} ${commonStyles.noMarginTop} ${commonStyles.buttonWhite}`}
+      >
         Cancel
       </button>
       <button
-        className={styles.deleteBtn}
+        className={`${commonStyles.dangerButton} ${styles.deleteBtn}`}
         onClick={() => {
           setDeleteThisVenue(true);
         }}

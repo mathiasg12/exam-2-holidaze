@@ -32,7 +32,9 @@
 }
 .myVenueHeading {
   text-align: center;
-  font-size: 1.5em;
+  padding: 10px;
+  background-color: var(--custom-blue);
+  color: white;
 }
 .MyVenuesContainer {
   display: flex;
@@ -90,24 +92,11 @@
   color: var(--custom-blue);
   font-size: 1.1em;
   text-align: center;
-  margin: 5px auto;
+  margin: 5px auto 10px auto;
   text-decoration: none;
   background-color: rgba(172, 172, 172, 0.3);
   padding: 5px 5px 10px 5px;
   border-radius: 5px;
-}
-.editBtn {
-  cursor: pointer;
-  background-color: var(--custom-yellow);
-  min-width: 130px;
-  min-height: 30px;
-  border: 1px solid black;
-  padding: 0;
-  border-radius: 5px;
-  margin-top: 5px;
-}
-.editBtn:hover {
-  background-color: white;
 }
 .deleteBtn {
   background-color: var(--error-blueBg);

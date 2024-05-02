@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import styles from './rentOutVenueForm.module.css';
+import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { RentOutVenueSchema } from '../../hooks/yupSchema';
 import { useEffect, useState } from 'react';
@@ -204,7 +205,7 @@ export function RentOutVenueForm(props) {
             <input
               type="submit"
               value="Publish"
-              className={styles.publishBtn}
+              className={commonStyles.bigButtonYellow}
             />
           </div>
         </form>

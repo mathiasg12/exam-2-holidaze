@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './loginForm.module.css';
+import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { LoginSchema } from '../../hooks/yupSchema';
@@ -88,7 +89,11 @@ export function LoginForm() {
             ></FontAwesomeIcon>
           </div>
         </div>
-        <input type="submit" value="Login" className={styles.loginBtn}></input>
+        <input
+          type="submit"
+          value="Login"
+          className={commonStyles.bigButtonYellow}
+        ></input>
         <div className={styles.linkCon}>
           <p>Don't have an account?</p>
           <Link to="/signUp">Click here</Link>

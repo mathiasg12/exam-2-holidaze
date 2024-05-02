@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './bookSectionOwnVenue.module.css';
+import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 /**
  * Component that renders a div containing a heading, paragraph, and a link element.
  * It tells users that they cant book their own venue. The link redirects them to the landing page.
@@ -15,7 +16,7 @@ export function BookSectionOwnVenue() {
         to make reservations, feel free to explore other listings. Happy
         booking!
       </p>
-      <Link to={'/'} className={styles.venueLink}>
+      <Link to={'/'} className={commonStyles.smallButtonLinkYellow}>
         Venues
       </Link>
     </div>

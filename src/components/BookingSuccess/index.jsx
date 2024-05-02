@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './bookingSuccess.module.css';
+import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 /**
  * component that returns the success message overlay, this overlay includes a thank you message, close overlay buttons, and a link to the profile page
  * @param {props} props
@@ -26,7 +27,10 @@ export function BookingSuccess(props) {
         can always view your upcoming bookings on your profile page.
       </p>
       <p></p>
-      <Link to="/profile" className={styles.profileLink}>
+      <Link
+        to="/profile"
+        className={`${commonStyles.smallButtonLinkYellow} ${commonStyles.smallMarginBottom}`}
+      >
         Profile
       </Link>
       <p

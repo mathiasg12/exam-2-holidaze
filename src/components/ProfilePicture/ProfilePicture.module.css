@@ -11,15 +11,3 @@
   height: 200px;
   margin: 20px auto 0 auto;
 }
-.changeProfilePictureBtn {
-  background-color: var(--custom-yellow);
-  min-width: 130px;
-  min-height: 30px;
-  border: 1px solid black;
-  padding: 0;
-  border-radius: 5px;
-  margin: 10px auto 20px auto;
-}
-.changeProfilePictureBtn:hover {
-  background-color: white;
-}

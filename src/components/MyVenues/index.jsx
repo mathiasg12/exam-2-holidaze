@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { LoadingSpinner } from '../LoadingSpinner';
 import styles from './myVenues.module.css';
+import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 import { faPerson } from '@fortawesome/free-solid-svg-icons';
 import { useEffect, useState } from 'react';
 import { EditVenue } from '../EdtiVenue';
@@ -60,7 +61,7 @@ export function MyVenues(props) {
       } else {
         return (
           <div>
-            <h3 className={styles.myVenueHeading}>My venues</h3>
+            <h2 className={styles.myVenueHeading}>My venues</h2>
             <div className={styles.MyVenuesContainer}>
               {loadedVenues.map((venue) => {
                 let image = '../pictures/noImage.jpg';
@@ -126,7 +127,7 @@ export function MyVenues(props) {
                     </Link>
                     <div className={styles.buttonCon}>
                       <button
-                        className={styles.editBtn}
+                        className={`${commonStyles.smallButtonYellow} ${commonStyles.noMarginTop} ${commonStyles.smallMarginBottom}`}
                         id={venue.id}
                         onClick={handleEditBtnClick}
                       >

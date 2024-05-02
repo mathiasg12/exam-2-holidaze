@@ -12,6 +12,7 @@ import { bookVenue } from '../../js/bookVenueFunctionality';
 import { bookingsURL } from '../../js/URL';
 import { BookingSuccess } from '../BookingSuccess';
 import { LoadingSpinner } from '../LoadingSpinner';
+import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 /**
  * component that creates the book section, this section allows users to add amount of guests, choose dates and book a venue
  * @param {props} props
@@ -207,7 +208,7 @@ export function BookSection(props) {
           </h3>
         </div>
         <button
-          className={styles.bookButton}
+          className={commonStyles.smallButtonYellow}
           onClick={handleBookVenue}
           disabled={success}
         >

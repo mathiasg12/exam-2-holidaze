@@ -27,7 +27,7 @@ export function BookingsOnMyVenues(props) {
         return (
           <div>
             <div className={styles.headingSection}>
-              <h3>Bookings on my venues</h3>
+              <h2>Bookings on my venues</h2>
               <p>
                 Is a venue missing from this list? That means there are
                 currently no bookings for that venue

@@ -96,33 +96,11 @@
 .deleteOverlayHide {
   display: none;
 }
-.goBackBtn {
-  background-color: var(--custom-yellow);
-  min-width: 130px;
-  min-height: 30px;
-  border: 1px solid black;
-  padding: 0;
-  margin: 30px auto 50px auto;
-  border-radius: 5px;
-  font-weight: bold;
-}
-.goBackBtn:hover {
-  background-color: white;
-}
 .deleteBtn,
 .cancelSureBtn {
   margin: 5px;
   width: 180px;
-  border-radius: 5px;
   height: 30px;
-  background-color: var(--error-blueBg);
-  border: 1px solid black;
-  font-weight: bold;
-}
-.deleteBtn:hover,
-.cancelSureBtn:hover {
-  background-color: rgb(143, 0, 0);
-  color: white;
 }
 .total {
   font-size: 1.1em;

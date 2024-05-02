@@ -31,18 +31,6 @@
   margin-bottom: 0;
   font-size: 1.2em;
 }
-.bookButton {
-  background-color: var(--custom-yellow);
-  min-width: 130px;
-  min-height: 30px;
-  border: 1px solid black;
-  padding: 0;
-  margin: 30px auto 30px auto;
-  border-radius: 10px;
-}
-.bookButton:hover {
-  background-color: white;
-}
 .BookSectionAmountOfGuests {
   display: flex;
   justify-content: space-between;

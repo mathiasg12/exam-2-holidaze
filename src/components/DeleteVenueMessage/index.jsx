@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 import { allVenuesURL } from '../../js/URL';
 import { useUpdateTriggerStore } from '../../states/updateTriggerState';
 import styles from './deleteThisVenueMessage.module.css';
@@ -42,14 +43,17 @@ export function DeleteVenueMessage(props) {
         </p>
         <div className={styles.btnContainer}>
           <button
-            className={styles.cancelBtn}
+            className={`${commonStyles.buttonWhite} ${styles.cancelBtn}`}
             onClick={() => {
               setDeleteThisVenue(false);
             }}
           >
             No, go back{' '}
           </button>
-          <button className={styles.deleteBtn} onClick={onDeleteVenueClick}>
+          <button
+            className={`${commonStyles.dangerButton} ${styles.deleteBtn}`}
+            onClick={onDeleteVenueClick}
+          >
             Yes, Delete this venue
           </button>
         </div>

@@ -1,0 +1,61 @@
+@import '../customColors.css';
+.smallButtonYellow {
+  background-color: var(--custom-yellow);
+  min-width: 130px;
+  min-height: 30px;
+  border: 1px solid black;
+  padding: 0;
+  margin: 30px auto 50px auto;
+  border-radius: 5px;
+}
+.smallButtonYellow:hover,
+.smallButtonLinkYellow:hover,
+.bigButtonYellow:hover {
+  background-color: white;
+}
+.smallButtonLinkYellow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--custom-yellow);
+  width: 128px;
+  height: 28px;
+  border: 1px solid black;
+  margin: 30px auto 30px auto;
+  border-radius: 10px;
+  text-decoration: none;
+}
+.bigButtonYellow {
+  background-color: var(--custom-yellow);
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 180px;
+  min-height: 38px;
+  margin: 20px auto;
+}
+.dangerButton {
+  background-color: var(--error-blueBg);
+  font-weight: bold;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.dangerButton:hover {
+  background-color: var(--error);
+  color: white;
+}
+.buttonWhite {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.buttonWhite:hover {
+  background-color: rgb(214, 214, 214);
+}
+.smallMarginBottom {
+  margin-bottom: 10px;
+}
+.noMarginTop {
+  margin-top: 0;
+}

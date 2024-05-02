@@ -1,5 +1,6 @@
 import { ChangeAvatarSchema } from '../../hooks/yupSchema';
 import styles from './changeAvatarForm.module.css';
+import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { useEffect, useState } from 'react';
@@ -72,7 +73,11 @@ export function ChangeAvatarForm(props) {
           <p className={styles.errorP}>{errors.url?.message}</p>
           <input type="text" name="url" {...register('url')} />
         </div>
-        <input type="submit" className={styles.update} value="Update"></input>
+        <input
+          type="submit"
+          className={`${commonStyles.smallButtonYellow} ${commonStyles.smallMarginBottom} ${commonStyles.noMarginTop} `}
+          value="Update"
+        ></input>
       </form>
     );
   } else {

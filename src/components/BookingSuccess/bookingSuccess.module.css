@@ -21,22 +21,11 @@
   margin: 0 0 0 auto;
   cursor: pointer;
 }
-.profileLink {
-  background-color: var(--custom-yellow);
-  color: black;
-  text-decoration: none;
-  border: 1px solid black;
-  border-radius: 5px;
-  display: flex;
-  max-width: 128px;
-  min-height: 28px;
-  line-height: 0;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
+.linkBtn {
+  margin-bottom: 0;
 }
 .closeBtn {
-  margin: 15px auto 30px auto;
+  margin: 0 auto 30px auto;
   font-size: 1.2em;
   text-decoration: underline;
   cursor: pointer;
@@ -44,9 +33,6 @@
 .closeBtn:hover,
 .exitBtn:hover {
   color: var(--custom-yellow);
-}
-.profileLink:hover {
-  background-color: white;
 }
 @media (min-width: 600px) {
   .successOverlay {

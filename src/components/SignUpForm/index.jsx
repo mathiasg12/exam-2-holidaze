@@ -1,5 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom';
 import styles from './signUpForm.module.css';
+import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { registerURL } from '../../js/URL';
@@ -162,7 +163,11 @@ export function SignUpForm() {
             />
           </div>
         </fieldset>
-        <input type="submit" value="Sign up" className={styles.submitBtn} />
+        <input
+          type="submit"
+          value="Sign up"
+          className={commonStyles.bigButtonYellow}
+        />
         <div className={styles.linkCon}>
           <p>Already a user?</p>
           <Link to="/login">Click here</Link>

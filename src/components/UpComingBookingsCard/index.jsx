@@ -3,6 +3,7 @@ import { calculateVenuePrice } from '../../js/calculateVenuePrice';
 import { allDaysBetween } from '../../js/daysInbetween';
 import { dateFormated } from '../../js/formatDates';
 import styles from './upComingBookigsCard.module.css';
+import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 import { useUpdateTriggerStore } from '../../states/updateTriggerState';
 import { bookingsURL } from '../../js/URL';
 import { LoadingSpinner } from '../LoadingSpinner';
@@ -93,13 +94,13 @@ export function UpComingBookingsCard(props) {
                     <div>
                       <button
                         onClick={onGoBackBtnClick}
-                        className={styles.goBackBtn}
+                        className={commonStyles.smallButtonYellow}
                       >
                         No, go back
                       </button>
                       <button
                         onClick={onCancelReservationClick}
-                        className={styles.cancelSureBtn}
+                        className={`${commonStyles.dangerButton} ${styles.deleteBtn}`}
                       >
                         Yes, cancel my reservation
                       </button>
@@ -139,7 +140,7 @@ export function UpComingBookingsCard(props) {
                     <div className={styles.btnCon}>
                       <button
                         id={booking.id}
-                        className={styles.deleteBtn}
+                        className={`${commonStyles.dangerButton} ${styles.deleteBtn}`}
                         onClick={onCancelClick}
                       >
                         Cancel Reservation
