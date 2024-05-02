@@ -6,10 +6,12 @@ import { BookingsOnMyVenues } from '../BookingsOnMyVenues';
 import { useFetchMyvenues } from '../../hooks/FetchMyVenues';
 import { profileURL } from '../../js/URL';
 import { useUpdateTriggerStore } from '../../states/updateTriggerState';
+import { UpComingBookingsSection } from '../UpComingBookingsSection';
 /**
  * component that creates the venue manager section, this component includes a menu where the manager can choose between three different admin sections.
  */
-export function VenueManagerSection() {
+export function VenueManagerSection(props) {
+  const { profile } = props;
   const [activeMenuItem, setActiveMenuItem] = useState('myVenues');
   const { error, loading, venues } = useFetchMyvenues(profileURL);
   const update = useUpdateTriggerStore((state) => state.newUpdate);
@@ -59,6 +61,17 @@ export function VenueManagerSection() {
           >
             Rent out a venue
           </button>
+          <button
+            onClick={handleClick}
+            className={
+              activeMenuItem === 'myBookings'
+                ? styles.managerMenuButtonActive
+                : styles.managerMenuButton
+            }
+            id="myBookings"
+          >
+            My bookings
+          </button>
         </div>
       </div>
       <div
@@ -95,6 +108,15 @@ export function VenueManagerSection() {
           loading={loading}
           venues={venues}
         ></BookingsOnMyVenues>
+      </div>
+      <div>
+        <div
+          className={
+            activeMenuItem === 'myBookings' ? styles.displayDiv : styles.divHide
+          }
+        >
+          <UpComingBookingsSection profile={profile}></UpComingBookingsSection>
+        </div>
       </div>
     </section>
   );

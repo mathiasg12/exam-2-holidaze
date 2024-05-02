@@ -42,8 +42,13 @@
     justify-content: center;
   }
   .buttonWrapper {
-    width: 600px;
+    width: 100vw;
     flex-direction: row;
     justify-content: space-between;
+  }
+}
+@media (min-width: 850px) {
+  .buttonWrapper {
+    width: 800px;
   }
 }

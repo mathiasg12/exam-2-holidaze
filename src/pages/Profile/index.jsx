@@ -36,7 +36,7 @@ export function Profile() {
         {!isVenueManager ? (
           <UpComingBookingsSection profile={profile}></UpComingBookingsSection>
         ) : (
-          <VenueManagerSection></VenueManagerSection>
+          <VenueManagerSection profile={profile}></VenueManagerSection>
         )}
       </main>
     );
