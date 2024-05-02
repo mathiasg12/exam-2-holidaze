@@ -31,7 +31,7 @@ export function createSignUpObject(name, email, password, image, userType) {
             ? image
             : 'https://unsplash.com/photos/blue-and-white-lego-blocks-pi9W2dWDdak',
       },
-      ' venueManager': true,
+      venueManager: true,
     };
   }
 }

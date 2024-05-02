@@ -1,0 +1,32 @@
+.publishVenueSuccessContainer {
+  background-color: var(--custom-blue);
+  max-width: 80vw;
+  padding: 20px;
+  margin: 0 auto 100px auto;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  border: 5px solid var(--success-blueBg);
+}
+.BtnWrapper {
+  display: flex;
+  flex-direction: column;
+}
+.BtnWrapper button {
+  background-color: var(--custom-yellow);
+  min-width: 180px;
+  min-height: 30px;
+  border: 1px solid black;
+  font-weight: bold;
+  padding: 0;
+  margin: 5px auto;
+  border-radius: 5px;
+}
+.BtnWrapper button:hover {
+  background-color: white;
+}
+@media (min-width: 600px) {
+  .publishVenueSuccessContainer {
+    max-width: 600px;
+  }
+}

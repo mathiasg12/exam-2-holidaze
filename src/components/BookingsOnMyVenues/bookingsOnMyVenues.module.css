@@ -1,0 +1,78 @@
+@import '../../styles/customColors.css';
+.bookingsOnVenueContainer {
+  max-width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  margin: 50px auto;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding-bottom: 50px;
+}
+.bookingsOnVenueContainer h4 {
+  margin: 5px auto;
+}
+.bookingsOnVenueContainer p {
+  margin: 5px auto;
+}
+.headingSection {
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto;
+}
+.headingSection h3 {
+  font-size: 1.5em;
+}
+.headingEachCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto;
+  line-height: 0;
+  font-size: 1.2em;
+  flex-wrap: wrap;
+}
+.venueName {
+  font-weight: bold;
+}
+.headingEachCard p {
+  margin: 15px 5px;
+  font-size: 1.2em;
+}
+.bookingCard {
+  display: flex;
+  background-color: var(--custom-blue);
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  min-width: 70vw;
+  margin: 20px auto;
+  word-wrap: break-word;
+}
+.customerDiv {
+  margin: 0 0 0 20px;
+}
+.noBookings,
+.noBookingsHeading {
+  text-align: center;
+  margin-bottom: 50px;
+}
+@media (max-width: 400px) {
+  .bookingCard {
+    flex-direction: column;
+  }
+  .customerDiv {
+    margin: 0;
+  }
+}
+@media (min-width: 800px) {
+  .bookingCard {
+    min-width: 500px;
+  }
+}
+@media (min-width: 1100px) {
+  .bookingsOnVenueContainer {
+    max-width: 900px;
+  }
+}

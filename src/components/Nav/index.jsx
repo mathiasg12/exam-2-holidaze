@@ -1,14 +1,20 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import styles from './nav.module.css';
 import { useLoggedInStore } from '../../states/loggedInState';
+import { useEffect } from 'react';
 /**
  * the navigation component, includes links, takes a prop called clicked which is true or false depending if the user has clicked the hamburger icon.
  * @param {prop} props
  */
 export function Nav(props) {
   const { clicked } = props;
-  const isLoggedIn = useLoggedInStore((state) => state.loggedIn);
   const logOut = useLoggedInStore((state) => state.logOut);
+  const navigate = useNavigate();
+  let isLoggedIn = useLoggedInStore((state) => state.loggedIn);
+  function onLogoutClick() {
+    logOut();
+    navigate('/');
+  }
   return (
     <nav className={styles.nav} id="Nav">
       <ul className={clicked ? styles.navUlVisible : styles.navUl}>
@@ -34,7 +40,7 @@ export function Nav(props) {
         </li>
         <li className={!isLoggedIn ? styles.displayNone : styles.navLi}>
           <p
-            onClick={logOut}
+            onClick={onLogoutClick}
             type="button"
             role="button"
             className={styles.navButton}

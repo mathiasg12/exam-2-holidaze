@@ -28,14 +28,14 @@ export async function loginFunctionality(
       body: JSON.stringify({ email: userEmail, password: userPassword }),
     });
     if (login.ok) {
-      setErrorActive(false);
+      await setErrorActive(false);
       const response = await login.json();
       localStorage.setItem('token', response.data.accessToken);
       localStorage.setItem('loggedIn', true);
       localStorage.setItem('name', response.data.name);
-      setLoggedIn(true);
-      reset();
-      fetchApiKey(ApiKeyURL);
+      await reset();
+      await fetchApiKey(ApiKeyURL);
+      await setLoggedIn(true);
     } else {
       setErrorActive(true);
       const error = await login.json();

@@ -1,0 +1,96 @@
+form {
+  background-color: var(--custom-blue);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80vw;
+  border-radius: 5px;
+  margin: 0 auto 50px auto;
+}
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 220px;
+  margin: 10px auto;
+}
+.inputWrapper textarea,
+.inputWrapper input {
+  width: 214px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.addImageWrapper {
+  display: flex;
+}
+.addImageWrapper input {
+  border-radius: 5px 0 0 5px;
+  border-right: 0;
+}
+.addImageWrapper button {
+  background-color: var(--custom-yellow);
+  border-radius: 0 5px 5px 0;
+  border: 1px solid black;
+}
+.inputWrapper input {
+  height: 27px;
+}
+.updateBtn {
+  background-color: var(--custom-yellow);
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 180px;
+  min-height: 38px;
+  margin: 20px auto 10px auto;
+  font-weight: bold;
+}
+.imageLinkInfo {
+  display: block;
+}
+.imageLinkHide {
+  display: none;
+}
+.included div {
+  margin: 5px auto 5px auto;
+}
+.included h4 {
+  margin: 0;
+}
+.errorMsg {
+  margin: 2px auto;
+  color: var(--error-blueBg);
+}
+.headingH3 {
+  text-align: center;
+}
+.imageLink {
+  word-wrap: break-word;
+  color: var(--success-blueBg);
+}
+.imageLink:hover {
+  cursor: pointer;
+  color: var(--error-blueBg);
+}
+.cancelBtn {
+  background-color: rgb(255, 255, 255);
+  margin: 10px auto;
+}
+.cancelBtn,
+.deleteBtn {
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 130px;
+  min-height: 28px;
+  font-weight: bold;
+}
+.deleteBtn {
+  background-color: var(--error-blueBg);
+  margin: 10px 0 0 auto;
+}
+@media (min-width: 600px) {
+  form {
+    max-width: 600px;
+  }
+}

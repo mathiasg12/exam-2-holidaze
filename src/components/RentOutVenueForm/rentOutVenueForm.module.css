@@ -1,0 +1,96 @@
+form {
+  background-color: var(--custom-blue);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 80vw;
+  border-radius: 5px;
+  margin: 0 auto 50px auto;
+}
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 220px;
+  margin: 10px auto;
+}
+.inputWrapper textarea,
+.inputWrapper input {
+  width: 214px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.addImageWrapper {
+  display: flex;
+}
+.addImageWrapper input {
+  border-radius: 5px 0 0 5px;
+  border-right: 0;
+}
+.addImageWrapper button {
+  background-color: var(--custom-yellow);
+  border-radius: 0 5px 5px 0;
+  border: 1px solid black;
+}
+.inputWrapper input {
+  height: 27px;
+}
+.publishBtn {
+  background-color: var(--custom-yellow);
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 180px;
+  min-height: 38px;
+  font-weight: bold;
+  margin: 20px auto;
+}
+.imageLinkInfo {
+  display: block;
+}
+.imageLinkHide {
+  display: none;
+}
+.included div {
+  margin: 5px auto 5px auto;
+}
+.included h4 {
+  margin: 0;
+}
+.errorMsg,
+.errorMsgBottom {
+  margin: 2px 0;
+  color: var(--error-blueBg);
+}
+.errorMsgBottom {
+  margin: 15px auto 0 auto;
+}
+.errorHide {
+  display: none;
+}
+.PrimaryErrorMsg {
+  width: fit-content;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: var(--error);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px dotted var(--error);
+}
+.rentOutHeading {
+  font-size: 1.5em;
+}
+.imageLink {
+  word-wrap: break-word;
+  color: var(--success-blueBg);
+}
+.imageLink:hover {
+  cursor: pointer;
+  color: var(--error-blueBg);
+}
+@media (min-width: 600px) {
+  form {
+    max-width: 600px;
+  }
+}

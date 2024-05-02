@@ -8,6 +8,7 @@ import { BookSection } from '../BookSection';
 import { useLoggedInStore } from '../../states/loggedInState';
 import { BookSectionNotLoggedIn } from '../BookSectionNotLoggedIn';
 import { LoadingSpinner } from '../LoadingSpinner';
+import { BookSectionOwnVenue } from '../BookSectionOwnVenue';
 /**
  * the specific section component handles and displays errors,loading and the specific venue a user has clicked on, the component calls three other components
  */
@@ -22,6 +23,12 @@ export function SpecificSection() {
   const loadedVenueOwner = venues.owner ? venues.owner : {};
   const loadedVenueBookigs = venues.bookings ? venues.bookings : [];
   const loadedLocation = venues.location ? venues.location : {};
+  const userName = localStorage.getItem('name');
+  let imageMedia = [{ url: '../pictures/noImage.jpg' }];
+  if (Array.isArray(loadedVenue.media) && loadedVenue.media.length > 0) {
+    imageMedia = loadedVenue.media;
+  }
+  console.log(loadedVenue);
   if (loading || !loadedVenue) {
     return (
       <section className={styles.specificSectionLoading}>
@@ -38,7 +45,7 @@ export function SpecificSection() {
     return (
       <section className={styles.specificSection}>
         <ImageCarousel
-          imageArray={loadedVenue.media}
+          imageArray={imageMedia}
           className={styles.imageCar}
         ></ImageCarousel>
         <VenueInfo
@@ -48,11 +55,15 @@ export function SpecificSection() {
           className={styles.venueInfo}
         ></VenueInfo>
         {isloggedIn ? (
-          <BookSection
-            venue={loadedVenue}
-            className={styles.bookSection}
-            loadedBookings={loadedVenueBookigs}
-          ></BookSection>
+          userName !== loadedVenueOwner.name ? (
+            <BookSection
+              venue={loadedVenue}
+              className={styles.bookSection}
+              loadedBookings={loadedVenueBookigs}
+            ></BookSection>
+          ) : (
+            <BookSectionOwnVenue></BookSectionOwnVenue>
+          )
         ) : (
           <BookSectionNotLoggedIn></BookSectionNotLoggedIn>
         )}

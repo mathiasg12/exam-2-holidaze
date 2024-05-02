@@ -6,7 +6,8 @@ import styles from './upComingBookigsCard.module.css';
 import { useUpdateTriggerStore } from '../../states/updateTriggerState';
 import { bookingsURL } from '../../js/URL';
 import { LoadingSpinner } from '../LoadingSpinner';
-import { deleteBooking } from '../../js/deleteBooking';
+import { deleteBookingAndVenues } from '../../js/deleteBookingAndVenues';
+import { capText } from '../../js/capText';
 /**
  * A component that generates individual cards displaying upcoming bookings.
  * Each card includes an image and information about the booking, along with a delete button,
@@ -30,7 +31,7 @@ export function UpComingBookingsCard(props) {
     setDeleteOverlayKey(id);
   }
   async function onCancelReservationClick() {
-    await deleteBooking(
+    await deleteBookingAndVenues(
       bookingsURL,
       deleteOverlayKey,
       updateBookings,
@@ -62,6 +63,10 @@ export function UpComingBookingsCard(props) {
             Total bookings: {loadedBookingsArray.length}
           </p>
           {loadedBookingsArray.map((booking) => {
+            let image = '../pictures/noImage.jpg';
+            if (booking.media !== undefined && booking.media.length >= 1) {
+              image = booking.media[0].url;
+            }
             const dateInbetween = allDaysBetween([
               {
                 startDate: new Date(booking.dateFrom),
@@ -73,11 +78,8 @@ export function UpComingBookingsCard(props) {
               booking.venue.price
             );
             return (
-              <div className={styles.upComingBookingsCard}>
-                <div
-                  key={booking.id}
-                  className={styles.upComingBookingsCardContentWrapper}
-                >
+              <div className={styles.upComingBookingsCard} key={booking.id}>
+                <div className={styles.upComingBookingsCardContentWrapper}>
                   <div
                     className={
                       deleteOverlayKey === booking.id
@@ -105,7 +107,7 @@ export function UpComingBookingsCard(props) {
                   </div>
                   <div className={styles.imgCon}>
                     <img
-                      src={booking.venue.media[0].url}
+                      src={image}
                       alt="venue"
                       onError={(errorEvent) => {
                         errorEvent.target.src = '../pictures/noImage.jpg';
@@ -113,7 +115,9 @@ export function UpComingBookingsCard(props) {
                     />
                   </div>
                   <div className={styles.bookingInfoAndBtnWrapper}>
-                    <h3>Your reservation at: {booking.venue.name}</h3>
+                    <h3>
+                      Your reservation at: {capText(booking.venue.name, 30)}
+                    </h3>
 
                     <div className={styles.bookingInfoContainer}>
                       <div className={styles.checkInCheckOutWrapper}>

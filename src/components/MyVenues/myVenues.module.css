@@ -1,0 +1,130 @@
+.breakfast {
+  background-color: #8610e0;
+  color: white;
+}
+.pets {
+  background-color: #1021e0;
+  color: white;
+}
+.parking {
+  background-color: #7a5000;
+  color: white;
+}
+.wifi {
+  background-color: #394759;
+  color: white;
+}
+.person {
+  margin-left: 2px;
+}
+.imgCon {
+  max-width: 260px;
+  height: 200px;
+}
+.imgCon img {
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 100%;
+}
+.noVenues {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.myVenueHeading {
+  text-align: center;
+  font-size: 1.5em;
+}
+.MyVenuesContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 50px;
+}
+.venueCard {
+  margin: 30px 30px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  width: 260px;
+  min-height: 450px;
+  border-radius: 10px;
+  text-align: center;
+  background-color: white;
+  color: black;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+}
+.venueCard h3 {
+  margin: 10px auto 5px auto;
+}
+.included {
+  display: flex;
+  font-size: 0.8em;
+  margin: 0 auto;
+  max-width: 100%;
+  justify-content: space-around;
+}
+.venueCard p {
+  margin: 5px;
+}
+.included p {
+  border-radius: 5px;
+  width: 56px;
+  padding: 2px 1px;
+  margin: 5px 5px 10px 5px;
+}
+.loactionContainer,
+.priceContainer {
+  display: flex;
+  margin: 0 auto;
+  width: fit-content;
+}
+.buttonCon {
+  margin: auto 5px 5px auto;
+  display: flex;
+  justify-content: space-around;
+}
+.linkToVenue {
+  color: var(--custom-blue);
+  font-size: 1.1em;
+  text-align: center;
+  margin: 5px auto;
+  text-decoration: none;
+  background-color: rgba(172, 172, 172, 0.3);
+  padding: 5px 5px 10px 5px;
+  border-radius: 5px;
+}
+.editBtn {
+  cursor: pointer;
+  background-color: var(--custom-yellow);
+  min-width: 130px;
+  min-height: 30px;
+  border: 1px solid black;
+  padding: 0;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+.editBtn:hover {
+  background-color: white;
+}
+.deleteBtn {
+  background-color: var(--error-blueBg);
+  min-width: 100px;
+  min-height: 30px;
+  border: 1px solid black;
+  padding: 0;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+@media (min-width: 800px) {
+  .MyVenuesContainer {
+    width: 800px;
+  }
+}
+@media (min-width: 1000px) {
+  .MyVenuesContainer {
+    width: 1000px;
+  }
+}

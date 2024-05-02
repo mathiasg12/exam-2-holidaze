@@ -1,0 +1,53 @@
+.deleteMessageContainer {
+  background-color: var(--custom-blue);
+  color: white;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 50px auto 100px auto;
+  text-align: center;
+  max-width: 400px;
+}
+.cancelBtn {
+  background-color: rgb(255, 255, 255);
+  margin: 10px auto 5px auto;
+}
+.cancelBtn,
+.deleteBtn {
+  color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 180px;
+  min-height: 38px;
+  font-weight: bold;
+}
+.deleteBtn {
+  background-color: var(--error-blueBg);
+  margin: 10px auto 5px auto;
+}
+.btnContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.messageVisible {
+  border-radius: 10px;
+  margin: 0 auto;
+  width: fit-content;
+  background-color: var(--error);
+  color: rgb(255, 255, 255);
+  border: 1px solid rgb(255, 255, 255);
+  padding: 5px;
+}
+.messageHide {
+  display: none;
+}
+@media (min-width: 600px) {
+  .deleteMessageContainer {
+    max-width: 600px;
+  }
+  .btnContainer {
+    flex-direction: row;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
