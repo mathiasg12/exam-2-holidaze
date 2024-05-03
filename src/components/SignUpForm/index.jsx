@@ -66,7 +66,7 @@ export function SignUpForm() {
       <p
         id="errorWithform"
         className={
-          !errorActive ? styles.errorWithFormNone : styles.errorWithForm
+          !errorActive ? styles.errorWithFormNone : commonStyles.errorMsg
         }
       >
         {errorMessage}
@@ -74,7 +74,9 @@ export function SignUpForm() {
       <form onSubmit={handleSubmit(OnSubmit)}>
         <div className={styles.inputCon}>
           <label htmlFor="email">Email</label>
-          <p>{errors.email?.message}</p>
+          <p className={commonStyles.errorValidation}>
+            {errors.email?.message}
+          </p>
           <input
             type="text"
             name="email"
@@ -85,7 +87,7 @@ export function SignUpForm() {
         </div>
         <div className={styles.inputCon}>
           <label htmlFor="name">Name</label>
-          <p>{errors.name?.message}</p>
+          <p className={commonStyles.errorValidation}>{errors.name?.message}</p>
           <input
             type="text"
             name="name"
@@ -108,7 +110,9 @@ export function SignUpForm() {
         </div>
         <div className={styles.inputCon}>
           <label htmlFor="password">Password</label>
-          <p>{errors.password?.message}</p>
+          <p className={commonStyles.errorValidation}>
+            {errors.password?.message}
+          </p>
           <div className={styles.eyeAndInputWrapper}>
             <input
               type={passwordVisible ? 'text' : 'password'}
@@ -126,7 +130,9 @@ export function SignUpForm() {
         </div>
         <div className={styles.inputCon}>
           <label htmlFor="rePassword">Repeat Password</label>
-          <p>{errors.repeatPassword?.message}</p>
+          <p className={commonStyles.errorValidation}>
+            {errors.repeatPassword?.message}
+          </p>
           <div className={styles.eyeAndInputWrapper}>
             <input
               type={repeatPasswordVisible ? 'text' : 'password'}

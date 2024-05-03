@@ -9,6 +9,7 @@ import { useLoggedInStore } from '../../states/loggedInState';
 import { BookSectionNotLoggedIn } from '../BookSectionNotLoggedIn';
 import { LoadingSpinner } from '../LoadingSpinner';
 import { BookSectionOwnVenue } from '../BookSectionOwnVenue';
+import { ErrorMessageNotSpecific } from '../ErrorMessageNotSpecific';
 /**
  * the specific section component handles and displays errors,loading and the specific venue a user has clicked on, the component calls three other components
  */
@@ -38,7 +39,7 @@ export function SpecificSection() {
   } else if (error) {
     return (
       <section className={styles.specificSection}>
-        <h2>Sorry an error has occured, please try again later</h2>
+        <ErrorMessageNotSpecific></ErrorMessageNotSpecific>
       </section>
     );
   } else {

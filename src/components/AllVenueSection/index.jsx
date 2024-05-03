@@ -8,6 +8,7 @@ import { ActiveFilters } from '../FiltersActive';
 import { allVenuesURL } from '../../js/URL';
 import { LoadingSpinner } from '../LoadingSpinner';
 import { VenueCardsLandingPage } from '../VenueCardsLandingPage';
+import { ErrorMessageNotSpecific } from '../ErrorMessageNotSpecific';
 /**
 Here's the corrected version:
 
@@ -48,11 +49,7 @@ export function AllVenueSection() {
       </section>
     );
   } else if (error) {
-    return (
-      <section className={styles.allVenueSection}>
-        <h2>Sorry an error has occured, please try again later</h2>
-      </section>
-    );
+    return <ErrorMessageNotSpecific></ErrorMessageNotSpecific>;
   } else if (!loading && !error) {
     return (
       <section className={styles.allVenueSection}>

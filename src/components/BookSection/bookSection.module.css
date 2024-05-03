@@ -90,12 +90,6 @@
 .errorCheckInAndOut {
   color: var(--error-blueBg);
 }
-.errorMessage {
-  color: var(--error-blueBg);
-  margin: 0 40px;
-}
-.success {
-}
 @media (min-width: 600px) {
   .arrow {
     display: block;

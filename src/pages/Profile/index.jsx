@@ -21,20 +21,15 @@ export function Profile() {
         <h2>Loading...</h2>
       </main>
     );
-  } else if (error) {
-    return (
-      <main>
-        <div>
-          <h2>Sorry An error has occured, please try again later</h2>
-        </div>
-      </main>
-    );
-  } else if (!error && !loading && loadedProfile) {
+  } else if (!loading && loadedProfile) {
     return (
       <main>
         <ProfileUserSection profile={profile}></ProfileUserSection>
         {!isVenueManager ? (
-          <UpComingBookingsSection profile={profile}></UpComingBookingsSection>
+          <UpComingBookingsSection
+            profile={profile}
+            error={error}
+          ></UpComingBookingsSection>
         ) : (
           <VenueManagerSection profile={profile}></VenueManagerSection>
         )}

@@ -54,13 +54,17 @@ export function LoginForm() {
   return (
     <section className={styles.loginSection}>
       <h1>Login</h1>
-      <p className={errorActive ? styles.errorActive : styles.errorActiveNone}>
+      <p
+        className={errorActive ? commonStyles.errorMsg : styles.errorActiveNone}
+      >
         {errorMessage}
       </p>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className={styles.inputCon}>
           <label htmlFor="email">Email</label>
-          <p>{errors.email?.message}</p>
+          <p className={commonStyles.errorValidation}>
+            {errors.email?.message}
+          </p>
           <input
             type="text"
             name="email"
@@ -70,7 +74,9 @@ export function LoginForm() {
         </div>
         <div className={styles.inputCon}>
           <label htmlFor="password">Password</label>
-          <p>{errors.password?.message}</p>
+          <p className={commonStyles.errorValidation}>
+            {errors.password?.message}
+          </p>
           <div className={styles.eyeAndInputWrapper}>
             <input
               type={passwordVisible ? 'text' : 'password'}

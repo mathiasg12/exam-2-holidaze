@@ -69,12 +69,12 @@ export function RentOutVenueForm(props) {
           })}
         >
           <h3 className={styles.rentOutHeading}>Rent out a Venue</h3>
-          <h4 className={error ? styles.PrimaryErrorMsg : styles.errorHide}>
+          <h4 className={error ? commonStyles.errorMsg : styles.errorHide}>
             {errorMsg}
           </h4>
           <div className={styles.inputWrapper}>
             <label htmlFor="image">Image link (optional)</label>
-            <p className={styles.errorMsg}>{imageError}</p>
+            <p className={commonStyles.errorValidation}>{imageError}</p>
             <div className={styles.addImageWrapper}>
               <input
                 type="text"
@@ -128,12 +128,16 @@ export function RentOutVenueForm(props) {
           </div>
           <div className={styles.inputWrapper}>
             <label htmlFor="name">Name</label>
-            <p className={styles.errorMsg}>{errors.name?.message}</p>
+            <p className={commonStyles.errorValidation}>
+              {errors.name?.message}
+            </p>
             <input type="text" name="name" id="name" {...register('name')} />
           </div>
           <div className={styles.inputWrapper}>
             <label htmlFor="desc">Description</label>
-            <p className={styles.errorMsg}>{errors.description?.message}</p>
+            <p className={commonStyles.errorValidation}>
+              {errors.description?.message}
+            </p>
             <textarea
               name="desc"
               id="desc"
@@ -144,7 +148,9 @@ export function RentOutVenueForm(props) {
           </div>
           <div className={styles.inputWrapper}>
             <label htmlFor="price">Price per night in $</label>
-            <p className={styles.errorMsg}>{errors.price?.message}</p>
+            <p className={commonStyles.errorValidation}>
+              {errors.price?.message}
+            </p>
             <input
               type="number"
               name="price"
@@ -154,7 +160,9 @@ export function RentOutVenueForm(props) {
           </div>
           <div className={styles.inputWrapper}>
             <label htmlFor="address">adress</label>
-            <p className={styles.errorMsg}>{errors.address?.message}</p>
+            <p className={commonStyles.errorValidation}>
+              {errors.address?.message}
+            </p>
             <input
               type="text"
               name="adress"
@@ -164,12 +172,16 @@ export function RentOutVenueForm(props) {
           </div>
           <div className={styles.inputWrapper}>
             <label htmlFor="city">City</label>
-            <p className={styles.errorMsg}>{errors.city?.message}</p>
+            <p className={commonStyles.errorValidation}>
+              {errors.city?.message}
+            </p>
             <input type="text" name="city" id="city" {...register('city')} />
           </div>
           <div className={styles.inputWrapper}>
             <label htmlFor="country">Country</label>
-            <p className={styles.errorMsg}>{errors.country?.message}</p>
+            <p className={commonStyles.errorValidation}>
+              {errors.country?.message}
+            </p>
             <input
               type="text"
               name="country"
@@ -179,7 +191,9 @@ export function RentOutVenueForm(props) {
           </div>
           <div className={styles.inputWrapper}>
             <label htmlFor="maxGuestsAllowed">Max Guests</label>
-            <p className={styles.errorMsg}>{errors.maxGuests?.message}</p>
+            <p className={commonStyles.errorValidation}>
+              {errors.maxGuests?.message}
+            </p>
             <input
               type="number"
               name="maxGuestsAllowed"
@@ -198,9 +212,15 @@ export function RentOutVenueForm(props) {
             setWifiIncluded={setWifiIncluded}
             handleChangedMetaValue={handleChangedMetaValue}
           ></PublishVenueFormCheckboxes>
-          <h4 className={error ? styles.errorMsgBottom : styles.errorHide}>
-            {errorMsg}
-          </h4>
+          <div className={styles.errorCon}>
+            <p
+              className={
+                error ? commonStyles.errorValidation : styles.errorHide
+              }
+            >
+              {errorMsg}
+            </p>
+          </div>
           <div>
             <input
               type="submit"

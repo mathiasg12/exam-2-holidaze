@@ -1,7 +1,7 @@
-import styles from './errorMessageNotSpecific.module.css';
+import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 export function ErrorMessageNotSpecific() {
   return (
-    <div className={styles.errorMsg}>
+    <div className={commonStyles.errorMsg}>
       <h3>Sorry something went wrong, please try again later</h3>
     </div>
   );

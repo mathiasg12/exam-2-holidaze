@@ -35,6 +35,9 @@ form {
 .inputWrapper input {
   height: 27px;
 }
+.errorCon {
+  margin-top: 15px;
+}
 .imageLinkInfo {
   display: block;
 }
@@ -46,10 +49,6 @@ form {
 }
 .included h4 {
   margin: 0;
-}
-.errorMsg {
-  margin: 2px auto;
-  color: var(--error-blueBg);
 }
 .headingH3 {
   text-align: center;

@@ -7,7 +7,6 @@ import { RentOutVenueSchema } from '../../hooks/yupSchema';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { AddAndRemoveImage } from '../AddAndRemoveImageUpdateForm';
 import { onUpdateClick } from '../../js/updateVenueSubmitClick';
-import { useUpdateTriggerStore } from '../../states/updateTriggerState';
 import { capText } from '../../js/capText';
 /**
  * function that returns the component for the edit form, the edit form allow users to update their venues or delete them
@@ -94,10 +93,12 @@ export function EditFormVenue(props) {
       <h3 className={styles.headingH3}>
         Update your Venue: {capText(venueToEdit.name, 30)}
       </h3>
-      <h4 className={error ? styles.errorMsg : styles.errorHide}>{errorMsg}</h4>
+      <h4 className={error ? commonStyles.errorMsg : styles.errorHide}>
+        {errorMsg}
+      </h4>
       <div className={styles.inputWrapper}>
         <label htmlFor="name">Name</label>
-        <p className={styles.errorMsg}>{errors.name?.message}</p>
+        <p className={commonStyles.errorValidation}>{errors.name?.message}</p>
         <input
           type="text"
           name="name"
@@ -115,7 +116,9 @@ export function EditFormVenue(props) {
       ></AddAndRemoveImage>
       <div className={styles.inputWrapper}>
         <label htmlFor="desc">Description</label>
-        <p className={styles.errorMsg}>{errors.description?.message}</p>
+        <p className={commonStyles.errorValidation}>
+          {errors.description?.message}
+        </p>
         <textarea
           name="desc"
           id="desc"
@@ -130,7 +133,7 @@ export function EditFormVenue(props) {
       </div>
       <div className={styles.inputWrapper}>
         <label htmlFor="price">Price per night in $</label>
-        <p className={styles.errorMsg}>{errors.price?.message}</p>
+        <p className={commonStyles.errorValidation}>{errors.price?.message}</p>
         <input
           defaultValue={priceOfVenue}
           type="number"
@@ -143,7 +146,9 @@ export function EditFormVenue(props) {
       </div>
       <div className={styles.inputWrapper}>
         <label htmlFor="address">adress</label>
-        <p className={styles.errorMsg}>{errors.address?.message}</p>
+        <p className={commonStyles.errorValidation}>
+          {errors.address?.message}
+        </p>
         <input
           defaultValue={addressOfVenue}
           type="text"
@@ -157,7 +162,7 @@ export function EditFormVenue(props) {
       </div>
       <div className={styles.inputWrapper}>
         <label htmlFor="city">City</label>
-        <p className={styles.errorMsg}>{errors.city?.message}</p>
+        <p className={commonStyles.errorValidation}>{errors.city?.message}</p>
         <input
           defaultValue={cityOfVenue}
           type="text"
@@ -171,7 +176,9 @@ export function EditFormVenue(props) {
       </div>
       <div className={styles.inputWrapper}>
         <label htmlFor="country">Country</label>
-        <p className={styles.errorMsg}>{errors.country?.message}</p>
+        <p className={commonStyles.errorValidation}>
+          {errors.country?.message}
+        </p>
         <input
           defaultValue={countryOfVenue}
           type="text"
@@ -185,7 +192,9 @@ export function EditFormVenue(props) {
       </div>
       <div className={styles.inputWrapper}>
         <label htmlFor="maxGuestsAllowed">Max Guests</label>
-        <p className={styles.errorMsg}>{errors.maxGuests?.message}</p>
+        <p className={commonStyles.errorValidation}>
+          {errors.maxGuests?.message}
+        </p>
         <input
           defaultValue={maxGuestsOfVenue}
           type="number"
@@ -208,6 +217,11 @@ export function EditFormVenue(props) {
         setWifiIncluded={setWifiIncluded}
         handleChangedMetaValue={handleChangedMetaValue}
       ></PublishVenueFormCheckboxes>
+      <div className={styles.errorCon}>
+        <p className={error ? commonStyles.errorValidation : styles.errorHide}>
+          {errorMsg}
+        </p>
+      </div>
       <div>
         <input
           type="submit"

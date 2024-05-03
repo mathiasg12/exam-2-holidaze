@@ -54,7 +54,11 @@ export function UpComingBookingsCard(props) {
     if (loadedBookingsArray.length >= 1) {
       return (
         <div className={styles.allBookingsCon}>
-          <div className={messageVisible ? styles.error : styles.messageHide}>
+          <div
+            className={
+              messageVisible ? commonStyles.errorMsg : styles.messageHide
+            }
+          >
             <div className={styles.exitBtn}>
               <button onClick={onExitButtonClick}>X</button>
             </div>

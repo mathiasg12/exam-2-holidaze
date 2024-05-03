@@ -34,17 +34,3 @@
 .hideForm {
   display: none;
 }
-.errorMessage {
-  padding: 5px;
-  color: var(--error-blueBg);
-  margin: 0 auto;
-}
-.message {
-  padding: 5px;
-  margin: 0 auto;
-  color: var(--success-blueBg);
-}
-.errorP {
-  color: var(--error-blueBg);
-  margin: 5px 0;
-}

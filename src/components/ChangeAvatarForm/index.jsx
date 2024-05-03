@@ -3,7 +3,7 @@ import styles from './changeAvatarForm.module.css';
 import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { updateProfile } from '../../js/updateProfile';
 import { profileURL } from '../../js/URL';
 import { useUpdateTriggerStore } from '../../states/updateTriggerState';
@@ -64,13 +64,13 @@ export function ChangeAvatarForm(props) {
             closeResponseMessage ? styles.responseHide : styles.response
           }
         >
-          <p className={error ? styles.errorMessage : styles.message}>
+          <p className={error ? commonStyles.errorMsg : styles.message}>
             {responseMessage}
           </p>
         </div>
         <div className={styles.inputWrapper}>
           <label htmlFor="url">Add a valid URL</label>
-          <p className={styles.errorP}>{errors.url?.message}</p>
+          <p className={commonStyles.errorValidation}>{errors.url?.message}</p>
           <input type="text" name="url" {...register('url')} />
         </div>
         <input

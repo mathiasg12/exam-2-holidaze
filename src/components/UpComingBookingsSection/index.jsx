@@ -1,3 +1,4 @@
+import { ErrorMessageNotSpecific } from '../ErrorMessageNotSpecific';
 import { UpComingBookingsCard } from '../UpComingBookingsCard';
 import styles from './UpComingBookingsSection.module.css';
 /**
@@ -5,13 +6,16 @@ import styles from './UpComingBookingsSection.module.css';
  * @param {props} props
  */
 export function UpComingBookingsSection(props) {
-  const { profile } = props;
+  const { profile, error } = props;
   const loadedProfile = profile ? profile : {};
-
-  return (
-    <section>
-      <h2 className={styles.bookingsHeading}>My Bookings</h2>
-      <UpComingBookingsCard profile={loadedProfile}></UpComingBookingsCard>
-    </section>
-  );
+  if (error) {
+    return <ErrorMessageNotSpecific></ErrorMessageNotSpecific>;
+  } else {
+    return (
+      <section>
+        <h2 className={styles.bookingsHeading}>My Bookings</h2>
+        <UpComingBookingsCard profile={loadedProfile}></UpComingBookingsCard>
+      </section>
+    );
+  }
 }

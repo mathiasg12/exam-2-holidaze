@@ -25,11 +25,7 @@
   margin-bottom: 15px;
   margin: 15px auto;
 }
-.inputCon p {
-  margin: 0 0 2px 0;
-  color: var(--error-blueBg);
-  font-size: 0.9em;
-}
+
 .input {
   width: 100%;
   height: 33px;
@@ -64,15 +60,6 @@
 }
 .singUpSection fieldset label {
   margin-top: 10px;
-}
-.errorWithForm {
-  width: fit-content;
-  margin: 0 auto;
-  padding: 10px;
-  border-radius: 5px;
-  color: var(--error);
-  background-color: rgba(255, 255, 255, 0.4);
-  border: 2px dotted var(--error);
 }
 .errorWithFormNone {
   display: none;

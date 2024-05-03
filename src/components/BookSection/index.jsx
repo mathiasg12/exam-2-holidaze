@@ -100,7 +100,7 @@ export function BookSection(props) {
     return (
       <div className={styles.bookSection}>
         <h2>Look for available dates and book</h2>
-        <h3 className={!error ? styles.message : styles.errorMessage}>
+        <h3 className={!error ? styles.message : commonStyles.errorMsg}>
           {message}
         </h3>
         <div

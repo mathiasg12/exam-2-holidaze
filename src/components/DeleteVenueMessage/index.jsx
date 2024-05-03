@@ -32,7 +32,7 @@ export function DeleteVenueMessage(props) {
         <h3> You are about to delete this venue</h3>
         <h4
           className={
-            messageVisible ? styles.messageVisible : styles.messageHide
+            messageVisible ? commonStyles.errorMsg : styles.messageHide
           }
         >
           {message}

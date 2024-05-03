@@ -115,7 +115,10 @@ export function VenueManagerSection(props) {
             activeMenuItem === 'myBookings' ? styles.displayDiv : styles.divHide
           }
         >
-          <UpComingBookingsSection profile={profile}></UpComingBookingsSection>
+          <UpComingBookingsSection
+            profile={profile}
+            error={error}
+          ></UpComingBookingsSection>
         </div>
       </div>
     </section>
