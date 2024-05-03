@@ -18,5 +18,8 @@ main{
     display: flex;
     flex-direction: column;
 }
+a{
+    color:black;
+}
 `;
 export default CustomGlobalStyles;

@@ -19,10 +19,14 @@ export function handleRemoveGuest(guestValue, setGuestValue, venue, label) {
 }
 export function handleAddGuest(guestValue, setGuestValue, venue, label) {
   const maxGuestFloat = parseFloat(venue.maxGuests);
-  label.innerText = `How many are staying? (min 1 and max ${venue.maxGuests})`;
+  if (label && label.innerText !== null) {
+    label.innerText = `How many are staying? (min 1 and max ${venue.maxGuests})`;
+  }
   if (guestValue + 1 > maxGuestFloat) {
     setGuestValue(maxGuestFloat);
-    label.innerText = `Max ${venue.maxGuests} guests`;
+    if (label && label.innerText !== null) {
+      label.innerText = `Max ${venue.maxGuests} guests`;
+    }
   } else {
     setGuestValue(guestValue + 1);
   }

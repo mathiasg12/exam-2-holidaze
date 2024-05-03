@@ -50,6 +50,7 @@ export function BookSection(props) {
   }, [checkIn]);
   function removeErrorMessage() {
     setMessage('');
+    setError(false);
   }
   useEffect(() => {
     if (checkIn && checkOut !== null) {

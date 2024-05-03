@@ -27,6 +27,7 @@ export function UpComingBookingsCard(props) {
   function onExitButtonClick() {
     setMessageVisible(!messageVisible);
   }
+  console.log(loadedBookingsArray);
   function onCancelClick(e) {
     const id = e.target.id;
     setDeleteOverlayKey(id);
@@ -69,8 +70,11 @@ export function UpComingBookingsCard(props) {
           </p>
           {loadedBookingsArray.map((booking) => {
             let image = '../pictures/noImage.jpg';
-            if (booking.media !== undefined && booking.media.length >= 1) {
-              image = booking.media[0].url;
+            if (
+              booking.venue.media !== undefined &&
+              booking.venue.media.length >= 1
+            ) {
+              image = booking.venue.media[0].url;
             }
             const dateInbetween = allDaysBetween([
               {
