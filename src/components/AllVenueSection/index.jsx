@@ -40,7 +40,6 @@ export function AllVenueSection() {
   }
   function handleBackToAllVenuesBtnClick() {
     setSearched(false);
-    document.getElementById('searchBar').value = '';
   }
   if (loading || !loadedVenues) {
     return (

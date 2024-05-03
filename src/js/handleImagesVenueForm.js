@@ -17,26 +17,22 @@ export function addImage(
   setImageArray,
   imageArray,
   setImageError,
-  isEditBoolean
+  imageInputValue,
+  setImageInputValue
 ) {
   event.preventDefault();
-  let imageLink = '';
-  if (!isEditBoolean) {
-    imageLink = document.getElementById('image').value;
-  } else {
-    imageLink = document.getElementById('imageUpdateForm').value;
-  }
-  if (imageLink.length >= 5) {
-    setImageArray([...imageArray, { url: imageLink }]);
-    document.getElementById('image').value = '';
-  } else if (imageLink.length === 0) {
+  if (imageInputValue.length >= 5) {
+    setImageArray([...imageArray, { url: imageInputValue }]);
+    setImageInputValue('');
+    console.log(imageArray);
+  } else if (imageInputValue.length === 0) {
     setImageError('You have not given a image link (optional)');
-    document.getElementById('image').value = '';
+    setImageInputValue('');
   } else {
     setImageError(
       'Please add a valid image URL that is more than 5 characters (optional)'
     );
-    document.getElementById('image').value = '';
+    setImageInputValue('');
   }
 }
 /**
@@ -49,4 +45,5 @@ export function removeImage(event, imageArray, setImageArray) {
   const indexToRemove = event.target.id;
   imageArray.splice(indexToRemove, 1);
   setImageArray([...imageArray]);
+  console.log(imageArray);
 }

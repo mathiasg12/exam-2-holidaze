@@ -6,7 +6,12 @@ import {
 } from '../../js/handleImagesVenueForm';
 import styles from './addAndRemoveImage.module.css';
 export function AddAndRemoveImage(props) {
-  const { newImageArray, setNewImageArray } = props;
+  const {
+    newImageArray,
+    setNewImageArray,
+    imageInputValue,
+    setImageInputValue,
+  } = props;
   const [imageError, setImageError] = useState('');
   useEffect(() => {
     console.log(newImageArray);
@@ -20,8 +25,10 @@ export function AddAndRemoveImage(props) {
           type="text"
           name="image"
           id="imageUpdateForm"
-          onKeyDown={() => {
+          value={imageInputValue}
+          onChange={(e) => {
             imageOnChange(setImageError);
+            setImageInputValue(e.target.value);
           }}
         />
         <button
@@ -31,7 +38,8 @@ export function AddAndRemoveImage(props) {
               setNewImageArray,
               newImageArray,
               setImageError,
-              true
+              imageInputValue,
+              setImageInputValue
             )
           }
         >

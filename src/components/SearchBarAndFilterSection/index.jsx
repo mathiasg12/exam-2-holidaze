@@ -19,6 +19,7 @@ export function SearchBarAndFilterSection(props) {
         arrayToSearch={arrayToSearch}
         setSearched={setSearched}
         setSearchedArray={setSearchedArray}
+        searched={searched}
       ></SearchBar>
       <FilterBtn onClickFunction={openOrCloseFilterMenu}></FilterBtn>
       <FilterMenu

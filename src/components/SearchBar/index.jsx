@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 import { searchfunctionality } from '../../js/searchFunctionality';
 import styles from './searchBar.module.css';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { SearchOverlay } from '../SearchOverlay';
 import { useFilterStore } from '../../states/filterState';
 /**
@@ -11,14 +11,15 @@ import { useFilterStore } from '../../states/filterState';
  * @param {props} props
  */
 export function SearchBar(props) {
-  const { arrayToSearch, setSearched, setSearchedArray } = props;
+  const { arrayToSearch, setSearched, setSearchedArray, searched } = props;
   const [searchValue, setSearchValue] = useState('');
   const [searchClicked, setSearchClicked] = useState(false);
   const clearFilters = useFilterStore((state) => state.clearFilter);
-  function handleSearchChange(change) {
-    setSearchValue(change.target.value.toLowerCase().trim());
-    setSearchClicked(false);
-  }
+  useEffect(() => {
+    if (searched === false) {
+      setSearchValue('');
+    }
+  }, [searched]);
   if (searchValue.length > 0) {
     const searchedArray = searchfunctionality(arrayToSearch, searchValue);
     function handleSearchClicked() {
@@ -44,7 +45,11 @@ export function SearchBar(props) {
         >
           <input
             placeholder="Search for a venue"
-            onChange={handleSearchChange}
+            value={searchValue}
+            onChange={(e) => {
+              setSearchValue(e.target.value.toLowerCase().trim());
+              setSearchClicked(false);
+            }}
             onKeyDown={handleEnterKeyPress}
             id="searchBar"
           ></input>
@@ -75,7 +80,11 @@ export function SearchBar(props) {
         <div className={styles.searchBarContainer}>
           <input
             placeholder="Search for a venue"
-            onChange={handleSearchChange}
+            value={searchValue}
+            onChange={(e) => {
+              setSearchValue(e.target.value.toLowerCase().trim());
+              setSearchClicked(false);
+            }}
             id="searchBar"
           ></input>
           <div className={styles.magnifyingGlass}>

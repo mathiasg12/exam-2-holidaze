@@ -29,6 +29,7 @@ export function RentOutVenueForm(props) {
   const [success, setSuccess] = useState(false);
   const [imageArray, setImageArray] = useState([]);
   const [imageError, setImageError] = useState('');
+  const [imageInputValue, setImageInputValue] = useState('');
 
   function handleChangedMetaValue(metaValue, setMetaValue) {
     setMetaValue(!metaValue);
@@ -80,8 +81,10 @@ export function RentOutVenueForm(props) {
                 type="text"
                 name="image"
                 id="image"
-                onChange={() => {
+                value={imageInputValue}
+                onChange={(e) => {
                   imageOnChange(setImageError);
+                  setImageInputValue(e.target.value);
                 }}
               />
               <button
@@ -91,7 +94,8 @@ export function RentOutVenueForm(props) {
                     setImageArray,
                     imageArray,
                     setImageError,
-                    false
+                    imageInputValue,
+                    setImageInputValue
                   )
                 }
               >

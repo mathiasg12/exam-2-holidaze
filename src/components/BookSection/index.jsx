@@ -30,9 +30,11 @@ export function BookSection(props) {
   const [message, setMessage] = useState('');
   const [checkInError, setCheckInError] = useState(false);
   const [checkOutError, setCheckOutError] = useState(false);
-  console.log(loadedBookings);
+  const [total, setTotal] = useState('Total:');
+  const [maxGuestLabelContent, setMaxGuestsLabelContent] = useState(
+    ` How many are staying? (min 1 and max ${venue.maxGuests})`
+  );
   const exludedDatesArray = allDaysBetween(bookedDates);
-  const guestLabel = document.getElementById('maxGuestsLabel');
   const checkInOrOutErrorMsg = 'Please select a valid date';
   useEffect(() => {
     const allBookedDates = loadedBookings.map((dates) => ({
@@ -58,9 +60,9 @@ export function BookSection(props) {
         { startDate: checkIn, endDate: checkOut },
       ]);
       const total = calculateVenuePrice(stayPeriode, venue.price);
-      document.getElementById('total').innerText = `Total: ${total}$`;
+      setTotal(`Total: ${total}$`);
     } else {
-      document.getElementById('total').innerText = `Total:`;
+      setTotal('Total:');
     }
   }, [checkIn, checkOut]);
   async function handleBookVenue() {
@@ -174,9 +176,7 @@ export function BookSection(props) {
             </div>
           </div>
           <div className={styles.amountOfGuestsCon}>
-            <p id="maxGuestsLabel" className={styles.maxGuestsLabel}>
-              How many are staying? (min 1 and max {venue.maxGuests})
-            </p>
+            <p className={styles.maxGuestsLabel}>{maxGuestLabelContent}</p>
             <div className={styles.BookSectionAmountOfGuests}>
               <button
                 className={styles.minusButton}
@@ -185,7 +185,7 @@ export function BookSection(props) {
                     guestValue,
                     setGuestValue,
                     venue,
-                    guestLabel
+                    setMaxGuestsLabelContent
                   )
                 }
               >
@@ -195,7 +195,12 @@ export function BookSection(props) {
               <button
                 className={styles.plusButton}
                 onClick={() =>
-                  handleAddGuest(guestValue, setGuestValue, venue, guestLabel)
+                  handleAddGuest(
+                    guestValue,
+                    setGuestValue,
+                    venue,
+                    setMaxGuestsLabelContent
+                  )
                 }
               >
                 +
@@ -205,7 +210,7 @@ export function BookSection(props) {
         </div>
         <div className={styles.total}>
           <h3 id="total" className={styles.total}>
-            Total:{' '}
+            {total}
           </h3>
         </div>
         <button

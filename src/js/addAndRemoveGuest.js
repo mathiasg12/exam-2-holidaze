@@ -6,27 +6,40 @@
  * @param {state} guestValue
  * @param {state} setGuestValue
  * @param {state} venue
- * @param {const} label
+ * @param {state}  setMaxGuestsLabelContent
  */
-export function handleRemoveGuest(guestValue, setGuestValue, venue, label) {
-  label.innerText = `How many are staying? (min 1 and max ${venue.maxGuests})`;
+export function handleRemoveGuest(
+  guestValue,
+  setGuestValue,
+  venue,
+  setMaxGuestsLabelContent
+) {
+  setMaxGuestsLabelContent(
+    `How many are staying? (min 1 and max ${venue.maxGuests})`
+  );
   if (guestValue - 1 <= 0) {
-    label.innerText = `Atleast 1 guest`;
+    setMaxGuestsLabelContent(`Atleast 1 guest`);
     setGuestValue(1);
   } else {
     setGuestValue(guestValue - 1);
   }
 }
-export function handleAddGuest(guestValue, setGuestValue, venue, label) {
+export function handleAddGuest(
+  guestValue,
+  setGuestValue,
+  venue,
+  setMaxGuestsLabelContent
+) {
   const maxGuestFloat = parseFloat(venue.maxGuests);
-  if (label && label.innerText !== null) {
-    label.innerText = `How many are staying? (min 1 and max ${venue.maxGuests})`;
-  }
+
+  setMaxGuestsLabelContent(
+    `How many are staying? (min 1 and max ${venue.maxGuests})`
+  );
+
   if (guestValue + 1 > maxGuestFloat) {
     setGuestValue(maxGuestFloat);
-    if (label && label.innerText !== null) {
-      label.innerText = `Max ${venue.maxGuests} guests`;
-    }
+
+    setMaxGuestsLabelContent(`Max ${venue.maxGuests} guests`);
   } else {
     setGuestValue(guestValue + 1);
   }

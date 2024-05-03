@@ -32,6 +32,7 @@ export function EditFormVenue(props) {
   const [petsAllowed, setPetsAllowed] = useState(loadedMeta.pets || false);
   const [wifiIncluded, setWifiIncluded] = useState(loadedMeta.wifi || false);
   const [newImageArray, setNewImageArray] = useState(loadedMedia || []);
+  const [imageInputValue, setImageInputValue] = useState('');
   const [parkingIncluded, setParkingIncluded] = useState(
     loadedMeta.parking || false
   );
@@ -113,6 +114,8 @@ export function EditFormVenue(props) {
       <AddAndRemoveImage
         newImageArray={newImageArray}
         setNewImageArray={setNewImageArray}
+        imageInputValue={imageInputValue}
+        setImageInputValue={setImageInputValue}
       ></AddAndRemoveImage>
       <div className={styles.inputWrapper}>
         <label htmlFor="desc">Description</label>
