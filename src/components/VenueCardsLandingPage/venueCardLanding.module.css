@@ -18,8 +18,7 @@
   background-color: rgba(255, 255, 255, 0.2);
 }
 .venueCard h3 {
-  font-size: 1.4em;
-  margin: 10px auto 0 auto;
+  margin: 10px auto 5px auto;
 }
 .loactionContainer {
   display: flex;

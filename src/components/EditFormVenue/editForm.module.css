@@ -1,4 +1,4 @@
-form {
+.editForm {
   background-color: var(--custom-blue);
   color: white;
   display: flex;
@@ -7,6 +7,7 @@ form {
   max-width: 80vw;
   border-radius: 5px;
   margin: 0 auto 50px auto;
+  border: 2px solid var(--custom-yellow);
 }
 .inputWrapper {
   display: flex;
@@ -67,7 +68,7 @@ form {
   height: 28px;
 }
 @media (min-width: 600px) {
-  form {
+  .editForm {
     max-width: 600px;
   }
 }

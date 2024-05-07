@@ -29,6 +29,7 @@
   background-color: var(--custom-yellow);
   color: black;
   border: 1px solid black;
+  font-weight: bold;
   border-radius: 5px;
   width: 180px;
   min-height: 38px;

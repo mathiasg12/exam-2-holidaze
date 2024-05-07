@@ -52,6 +52,7 @@ export function RentOutVenueForm(props) {
     return (
       <div>
         <form
+          className={styles.rentOutVenueForm}
           onSubmit={handleSubmit((data) => {
             onSubmitClick(
               data,

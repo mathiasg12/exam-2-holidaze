@@ -10,6 +10,9 @@ h1,h2,h3,h4,h5,h6,a,button{
 h1{
     font-size: 2.5em;
 }
+h3{
+    font-size:1.25em;
+}
 body{
     background-color: #ECECEC;
 }

@@ -41,14 +41,6 @@ export function Footer() {
                 Profile
               </NavLink>
             </li>
-            <li>
-              <NavLink
-                to="/profile"
-                className={!isLoggedIn ? styles.displayNone : styles.footerLink}
-              >
-                Rent out a venue
-              </NavLink>
-            </li>
           </ul>
         </div>
         <div className={styles.footerSection}>

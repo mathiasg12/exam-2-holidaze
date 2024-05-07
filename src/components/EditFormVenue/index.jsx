@@ -75,6 +75,7 @@ export function EditFormVenue(props) {
   }, [success]);
   return (
     <form
+      className={styles.editForm}
       onSubmit={handleSubmit((data) => {
         onUpdateClick(
           data,
