@@ -83,6 +83,7 @@ export function RentOutVenueForm(props) {
                 name="image"
                 id="image"
                 value={imageInputValue}
+                className={commonStyles.input}
                 onChange={(e) => {
                   imageOnChange(setImageError);
                   setImageInputValue(e.target.value);
@@ -136,7 +137,17 @@ export function RentOutVenueForm(props) {
             <p className={commonStyles.errorValidation}>
               {errors.name?.message}
             </p>
-            <input type="text" name="name" id="name" {...register('name')} />
+            <input
+              type="text"
+              name="name"
+              id="name"
+              {...register('name')}
+              className={
+                !errors.name
+                  ? commonStyles.input
+                  : `${commonStyles.errorInput} ${commonStyles.input}`
+              }
+            />
           </div>
           <div className={styles.inputWrapper}>
             <label htmlFor="desc">Description</label>
@@ -149,6 +160,11 @@ export function RentOutVenueForm(props) {
               cols="20"
               rows="10"
               {...register('description')}
+              className={
+                !errors.description
+                  ? styles.inputDesc
+                  : `${styles.errorInputDesc} ${styles.inputDesc}`
+              }
             ></textarea>
           </div>
           <div className={styles.inputWrapper}>
@@ -161,10 +177,15 @@ export function RentOutVenueForm(props) {
               name="price"
               id="price"
               {...register('price')}
+              className={
+                !errors.price
+                  ? commonStyles.input
+                  : `${commonStyles.errorInput} ${commonStyles.input}`
+              }
             />
           </div>
           <div className={styles.inputWrapper}>
-            <label htmlFor="address">adress</label>
+            <label htmlFor="address">Adress</label>
             <p className={commonStyles.errorValidation}>
               {errors.address?.message}
             </p>
@@ -173,6 +194,11 @@ export function RentOutVenueForm(props) {
               name="adress"
               id="adress"
               {...register('address')}
+              className={
+                !errors.address
+                  ? commonStyles.input
+                  : `${commonStyles.errorInput} ${commonStyles.input}`
+              }
             />
           </div>
           <div className={styles.inputWrapper}>
@@ -180,7 +206,17 @@ export function RentOutVenueForm(props) {
             <p className={commonStyles.errorValidation}>
               {errors.city?.message}
             </p>
-            <input type="text" name="city" id="city" {...register('city')} />
+            <input
+              type="text"
+              name="city"
+              id="city"
+              {...register('city')}
+              className={
+                !errors.city
+                  ? commonStyles.input
+                  : `${commonStyles.errorInput} ${commonStyles.input}`
+              }
+            />
           </div>
           <div className={styles.inputWrapper}>
             <label htmlFor="country">Country</label>
@@ -192,6 +228,11 @@ export function RentOutVenueForm(props) {
               name="country"
               id="country"
               {...register('country')}
+              className={
+                !errors.country
+                  ? commonStyles.input
+                  : `${commonStyles.errorInput} ${commonStyles.input}`
+              }
             />
           </div>
           <div className={styles.inputWrapper}>
@@ -204,6 +245,11 @@ export function RentOutVenueForm(props) {
               name="maxGuestsAllowed"
               id="maxGuestsAllowed"
               {...register('maxGuests')}
+              className={
+                !errors.maxGuests
+                  ? commonStyles.input
+                  : `${commonStyles.errorInput} ${commonStyles.input}`
+              }
             />
           </div>
           <PublishVenueFormCheckboxes

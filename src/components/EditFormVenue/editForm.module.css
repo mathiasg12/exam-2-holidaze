@@ -15,12 +15,6 @@
   max-width: 220px;
   margin: 10px auto;
 }
-.inputWrapper textarea,
-.inputWrapper input {
-  width: 214px;
-  border: 1px solid black;
-  border-radius: 5px;
-}
 .addImageWrapper {
   display: flex;
 }
@@ -28,13 +22,20 @@
   border-radius: 5px 0 0 5px;
   border-right: 0;
 }
+.inputDesc {
+  height: fit-content;
+  width: 220px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.errorInputDesc {
+  border: 3px solid var(--error-blueBg);
+  width: 216px;
+}
 .addImageWrapper button {
   background-color: var(--custom-yellow);
   border-radius: 0 5px 5px 0;
   border: 1px solid black;
-}
-.inputWrapper input {
-  height: 27px;
 }
 .errorCon {
   margin-top: 15px;

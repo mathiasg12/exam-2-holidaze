@@ -68,7 +68,11 @@ export function LoginForm() {
           <input
             type="text"
             name="email"
-            className={styles.input}
+            className={
+              !errors.email
+                ? commonStyles.input
+                : `${commonStyles.errorInput} ${commonStyles.input}`
+            }
             {...register('email')}
           ></input>
         </div>
@@ -77,7 +81,13 @@ export function LoginForm() {
           <p className={commonStyles.errorValidation}>
             {errors.password?.message}
           </p>
-          <div className={styles.eyeAndInputWrapper}>
+          <div
+            className={`${styles.eyeAndInputWrapper} ${
+              !errors.password
+                ? commonStyles.input
+                : `${commonStyles.errorInput} ${commonStyles.input}`
+            }`}
+          >
             <input
               type={passwordVisible ? 'text' : 'password'}
               name="password"

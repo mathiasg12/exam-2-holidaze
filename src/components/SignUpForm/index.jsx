@@ -80,9 +80,13 @@ export function SignUpForm() {
           <input
             type="text"
             name="email"
-            className={styles.input}
             id="email"
             {...register('email')}
+            className={
+              !errors.email
+                ? commonStyles.input
+                : `${commonStyles.errorInput} ${commonStyles.input}`
+            }
           ></input>
         </div>
         <div className={styles.inputCon}>
@@ -91,9 +95,13 @@ export function SignUpForm() {
           <input
             type="text"
             name="name"
-            className={styles.input}
             id="name"
             {...register('name')}
+            className={
+              !errors.name
+                ? commonStyles.input
+                : `${commonStyles.errorInput} ${commonStyles.input}`
+            }
           ></input>
         </div>
         <div className={styles.inputCon}>
@@ -103,9 +111,9 @@ export function SignUpForm() {
           <input
             type="text"
             name="image"
-            className={styles.input}
             id="image"
             {...register('image')}
+            className={commonStyles.input}
           ></input>
         </div>
         <div className={styles.inputCon}>
@@ -113,13 +121,19 @@ export function SignUpForm() {
           <p className={commonStyles.errorValidation}>
             {errors.password?.message}
           </p>
-          <div className={styles.eyeAndInputWrapper}>
+          <div
+            className={`${styles.eyeAndInputWrapper} ${
+              !errors.password
+                ? commonStyles.input
+                : `${commonStyles.errorInput} ${commonStyles.input}`
+            }`}
+          >
             <input
               type={passwordVisible ? 'text' : 'password'}
               name="password"
               id="password"
-              className={styles.inputPassword}
               {...register('password')}
+              className={styles.inputPassword}
             ></input>
             <FontAwesomeIcon
               icon={passwordVisible ? faEye : faEyeSlash}
@@ -133,12 +147,18 @@ export function SignUpForm() {
           <p className={commonStyles.errorValidation}>
             {errors.repeatPassword?.message}
           </p>
-          <div className={styles.eyeAndInputWrapper}>
+          <div
+            className={`${styles.eyeAndInputWrapper} ${
+              !errors.repeatPassword
+                ? commonStyles.input
+                : `${commonStyles.errorInput} ${commonStyles.input}`
+            }`}
+          >
             <input
               type={repeatPasswordVisible ? 'text' : 'password'}
               name="rePassword"
-              className={styles.inputPassword}
               {...register('repeatPassword')}
+              className={styles.inputPassword}
             ></input>
             <FontAwesomeIcon
               icon={repeatPasswordVisible ? faEye : faEyeSlash}

@@ -74,14 +74,14 @@ export function VenueCardsLandingPage(props) {
                 </div>
                 <div className={styles.loactionContainer}>
                   <p>
-                    {venueObject.location.address
-                      ? venueObject.location.address + ','
-                      : 'unknown,'}
+                    {venueObject.location.city
+                      ? venueObject.location.city + ','
+                      : ' unknown'}
                   </p>
                   <p>
-                    {venueObject.location.city
-                      ? venueObject.location.city
-                      : ' unknown'}
+                    {venueObject.location.country
+                      ? venueObject.location.country
+                      : 'unknown,'}
                   </p>
                 </div>
                 <div className={styles.starAndPersonContainer}>

@@ -97,7 +97,9 @@ export function MyVenues(props) {
                           : 'unknown,'}
                       </p>
                       <p>
-                        {venue.location.city ? venue.location.city : ' unknown'}
+                        {venue.location.country
+                          ? venue.location.country
+                          : ' unknown'}
                       </p>
                     </div>
                     <div className={styles.descWrapper}>

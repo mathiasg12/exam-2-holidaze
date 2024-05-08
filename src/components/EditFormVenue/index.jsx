@@ -110,6 +110,11 @@ export function EditFormVenue(props) {
             setNameOfVenue(e.target.value);
           }}
           {...register('name')}
+          className={
+            !errors.name
+              ? commonStyles.input
+              : `${commonStyles.errorInput} ${commonStyles.input}`
+          }
         />
       </div>
       <AddAndRemoveImage
@@ -133,6 +138,11 @@ export function EditFormVenue(props) {
             setDescOfVenue(e.target.value);
           }}
           {...register('description')}
+          className={
+            !errors.description
+              ? styles.inputDesc
+              : `${styles.errorInputDesc} ${styles.inputDesc}`
+          }
         ></textarea>
       </div>
       <div className={styles.inputWrapper}>
@@ -146,10 +156,15 @@ export function EditFormVenue(props) {
             setPriceOfVenue(e.target.value);
           }}
           {...register('price')}
+          className={
+            !errors.price
+              ? commonStyles.input
+              : `${commonStyles.errorInput} ${commonStyles.input}`
+          }
         />
       </div>
       <div className={styles.inputWrapper}>
-        <label htmlFor="address">adress</label>
+        <label htmlFor="address">Address</label>
         <p className={commonStyles.errorValidation}>
           {errors.address?.message}
         </p>
@@ -162,6 +177,11 @@ export function EditFormVenue(props) {
             setAddressOfVenue(e.target.value);
           }}
           {...register('address')}
+          className={
+            !errors.address
+              ? commonStyles.input
+              : `${commonStyles.errorInput} ${commonStyles.input}`
+          }
         />
       </div>
       <div className={styles.inputWrapper}>
@@ -176,6 +196,11 @@ export function EditFormVenue(props) {
             setCityOfVenue(e.target.value);
           }}
           {...register('city')}
+          className={
+            !errors.city
+              ? commonStyles.input
+              : `${commonStyles.errorInput} ${commonStyles.input}`
+          }
         />
       </div>
       <div className={styles.inputWrapper}>
@@ -192,6 +217,11 @@ export function EditFormVenue(props) {
             setCountryOfVenue(e.target.value);
           }}
           {...register('country')}
+          className={
+            !errors.country
+              ? commonStyles.input
+              : `${commonStyles.errorInput} ${commonStyles.input}`
+          }
         />
       </div>
       <div className={styles.inputWrapper}>
@@ -201,6 +231,11 @@ export function EditFormVenue(props) {
         </p>
         <input
           defaultValue={maxGuestsOfVenue}
+          className={
+            !errors.maxGuests
+              ? commonStyles.input
+              : `${commonStyles.errorInput} ${commonStyles.input}`
+          }
           type="number"
           name="maxGuestsAllowed"
           id="maxGuestsAllowed"

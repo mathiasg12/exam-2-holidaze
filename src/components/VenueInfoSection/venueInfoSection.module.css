@@ -64,14 +64,10 @@
 .loactionAndOwnerCon p {
   margin-top: 5px;
 }
-.venueManagerCon {
-  display: flex;
-  align-items: center;
-}
 .venueManager,
 .locationAddress {
   font-size: 0.8em;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 .locationCon {
   display: flex;

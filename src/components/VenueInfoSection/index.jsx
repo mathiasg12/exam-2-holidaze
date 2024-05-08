@@ -24,16 +24,10 @@ export function VenueInfo(props) {
         </p>
       </div>
       <div className={styles.loactionAndOwnerCon}>
-        <div className={styles.locationCon}>
-          <p>Location:</p>
-          <p className={styles.locationAddress}>
-            {location.address}, {location.city}
-          </p>
-        </div>
-        <div className={styles.venueManagerCon}>
-          <p>Venue manager:</p>
-          <p className={styles.venueManager}> {owner.name}</p>
-        </div>
+        <p className={styles.locationAddress}>
+          Location: {location.address}, {location.city}, {location.country}
+        </p>
+        <p className={styles.venueManager}>Venue manager: {owner.name}</p>
       </div>
       <div className={styles.descCon}>
         <p>{venue.description}</p>

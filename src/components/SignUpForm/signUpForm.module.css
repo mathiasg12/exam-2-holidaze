@@ -22,42 +22,32 @@
 .inputCon {
   display: flex;
   flex-direction: column;
-  width: 220px;
+  width: 226px;
   margin-bottom: 15px;
   margin: 15px auto;
-}
-
-.input {
-  width: 100%;
-  height: 33px;
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 5px;
 }
 .singUpSection label {
   margin-bottom: 5px;
 }
 .eyeAndInputWrapper {
-  padding: 1px;
+  padding: 1px 2px 1px 2px;
+  border-radius: 5px;
   display: flex;
   align-items: center;
   background-color: white;
   color: black;
-  width: 222px;
-  height: 33px;
-  border-radius: 5px;
 }
 input[type='radio'] {
   accent-color: var(--custom-yellow);
   transform: scale(1.2);
 }
+.eye {
+  width: 30px;
+  border: 0;
+}
 .inputPassword {
   width: 100%;
   height: 25px;
-  border: 0;
-}
-.eye {
-  width: 30px;
   border: 0;
 }
 .singUpSection fieldset {

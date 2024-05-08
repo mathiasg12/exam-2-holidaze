@@ -1,15 +1,16 @@
 @import '../../styles/customColors.css';
 .successOverlay {
-  background-color: var(--success);
+  background-color: var(--success-blueBg);
   width: 80vw;
   margin: 0 auto;
   padding: 0 5px;
   position: absolute;
+  border: 5px solid var(--success);
+  color: black;
   z-index: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid white;
   border-radius: 10px;
 }
 .successMessage {
@@ -32,7 +33,7 @@
 }
 .closeBtn:hover,
 .exitBtn:hover {
-  color: var(--custom-yellow);
+  color: var(--success);
 }
 @media (min-width: 600px) {
   .successOverlay {
