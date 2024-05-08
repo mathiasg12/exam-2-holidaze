@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 import '../styles/fonts.css';
 const CustomGlobalStyles = createGlobalStyle`
-p,label{
+p,label,input,textarea{
     font-family: DroidSans;
 }
 h1,h2,h3,h4,h5,h6,a,button{

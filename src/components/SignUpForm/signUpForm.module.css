@@ -60,17 +60,9 @@ input[type='radio'] {
 .errorWithFormNone {
   display: none;
 }
-.linkCon {
-  display: flex;
-  align-items: center;
-}
-.linkCon a {
-  margin-left: 10px;
-  color: var(--custom-yellow);
-}
 @media (min-width: 600px) {
   .singUpSection {
-    width: 600px;
+    width: 500px;
   }
   .singUpSection fieldset {
     width: 300px;

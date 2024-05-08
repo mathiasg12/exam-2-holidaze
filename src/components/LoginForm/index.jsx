@@ -10,6 +10,7 @@ import { useEffect, useState } from 'react';
 import { useLoggedInStore } from '../../states/loggedInState';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { ClickHereLink } from '../ClickHereLink';
 /**
  * component that creates the login form, the component validates and allows users to login when they press the login button if all validation passes, the component
  * has a useffect that runs every time the loggedIn state changes, if loggedIn === true the page redirects to the profile page
@@ -110,10 +111,7 @@ export function LoginForm() {
           value="Login"
           className={commonStyles.bigButtonYellow}
         ></input>
-        <div className={styles.linkCon}>
-          <p>Don't have an account?</p>
-          <Link to="/signUp">Click here</Link>
-        </div>
+        <ClickHereLink linkTo="/signUp"></ClickHereLink>
       </form>
     </section>
   );

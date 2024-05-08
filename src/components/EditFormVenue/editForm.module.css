@@ -12,7 +12,7 @@
 .inputWrapper {
   display: flex;
   flex-direction: column;
-  max-width: 220px;
+  max-width: 226px;
   margin: 10px auto;
 }
 .addImageWrapper {

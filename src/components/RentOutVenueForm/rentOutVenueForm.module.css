@@ -18,6 +18,7 @@
 
 .addImageWrapper {
   display: flex;
+  width: 226px;
 }
 .addImageWrapper input {
   border-radius: 5px 0 0 5px;

@@ -46,17 +46,9 @@
   width: 30px;
   border: 0;
 }
-.linkCon {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.linkCon a {
-  margin-left: 10px;
-  color: var(--custom-yellow);
-}
+
 @media (min-width: 600px) {
   .loginSection {
-    width: 400px;
+    width: 500px;
   }
 }

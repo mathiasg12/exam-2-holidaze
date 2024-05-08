@@ -102,9 +102,6 @@ export function MyVenues(props) {
                           : ' unknown'}
                       </p>
                     </div>
-                    <div className={styles.descWrapper}>
-                      {capText(venue.description, 30)}
-                    </div>
                     <div className={styles.starAndPersonContainer}>
                       <div className={styles.personCon}>
                         <p>

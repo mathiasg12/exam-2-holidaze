@@ -1,0 +1,16 @@
+.linkCon {
+  display: flex;
+  align-items: center;
+}
+.linkCon a {
+  margin-left: 10px;
+  color: var(--custom-yellow);
+}
+.linkCon a:hover {
+  animation: hoverLink 1s ease-in-out forwards;
+}
+@keyframes hoverLink {
+  100% {
+    font-size: 1.1em;
+  }
+}

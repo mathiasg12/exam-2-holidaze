@@ -11,6 +11,7 @@ import { signUpFunction } from '../../js/signUpFunctionality';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { useLoggedInStore } from '../../states/loggedInState';
+import { ClickHereLink } from '../ClickHereLink';
 /**
  * component that creates the signup form and handles inputs from the user, if the submit button is pressed a new user is created and the user is logged in automatically, the component
  * has a useffect that runs every time the loggedIn state changes, if loggedIn === true the page redirects to the profile page
@@ -194,10 +195,7 @@ export function SignUpForm() {
           value="Sign up"
           className={commonStyles.bigButtonYellow}
         />
-        <div className={styles.linkCon}>
-          <p>Already a user?</p>
-          <Link to="/login">Click here</Link>
-        </div>
+        <ClickHereLink linkTo="/login"></ClickHereLink>
       </form>
     </section>
   );

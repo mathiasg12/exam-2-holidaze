@@ -5,6 +5,11 @@ import {
   removeImage,
 } from '../../js/handleImagesVenueForm';
 import styles from './addAndRemoveImage.module.css';
+import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
+/**
+ * component that returns the add and remove image link component, this allows users to eighter add or remove a image link to the image array that is sent to the API in a API call
+ * @param {props} props
+ */
 export function AddAndRemoveImage(props) {
   const {
     newImageArray,
@@ -26,6 +31,7 @@ export function AddAndRemoveImage(props) {
           name="image"
           id="imageUpdateForm"
           value={imageInputValue}
+          className={commonStyles.input}
           onChange={(e) => {
             imageOnChange(setImageError);
             setImageInputValue(e.target.value);
