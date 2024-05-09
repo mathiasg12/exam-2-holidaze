@@ -6,50 +6,12 @@
   align-items: center;
   max-width: 80vw;
   border-radius: 5px;
-  margin: 0 auto 50px auto;
+  margin: 30px auto 50px auto;
   border: 2px solid var(--custom-yellow);
-}
-.inputWrapper {
-  display: flex;
-  flex-direction: column;
-  max-width: 220px;
-  margin: 10px auto;
-}
-
-.addImageWrapper {
-  display: flex;
-  width: 226px;
-}
-.addImageWrapper input {
-  border-radius: 5px 0 0 5px;
-  border-right: 0;
-}
-.addImageWrapper button {
-  background-color: var(--custom-yellow);
-  border-radius: 0 5px 5px 0;
-  border: 1px solid black;
-}
-.inputDesc {
-  height: fit-content;
-  width: 220px;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-.errorInputDesc {
-  border: 3px solid var(--error-blueBg);
-  width: 216px;
-}
-.imageLinkInfo {
-  display: block;
-}
-.imageLinkHide {
-  display: none;
+  padding-top: 30px;
 }
 .included div {
   margin: 5px auto 5px auto;
-}
-.included h4 {
-  margin: 0;
 }
 .errorHide {
   display: none;
@@ -59,14 +21,10 @@
 }
 .rentOutHeading {
   font-size: 1.5em;
-}
-.imageLink {
-  word-wrap: break-word;
-  color: var(--success-blueBg);
-}
-.imageLink:hover {
-  cursor: pointer;
-  color: var(--error-blueBg);
+  text-align: center;
+  background-color: var(--custom-blue);
+  color: white;
+  padding: 10px;
 }
 @media (min-width: 600px) {
   .rentOutVenueForm {

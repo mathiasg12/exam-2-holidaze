@@ -17,6 +17,9 @@ export function BookingsOnMyVenues(props) {
     if (loadedVenue.length < 1) {
       return (
         <div>
+          <div className={styles.headingSection}>
+            <h2>Bookings on my venues</h2>
+          </div>
           <h3 className={styles.noBookings}>
             There are currently no bookings on your venues yet
           </h3>
@@ -72,9 +75,14 @@ export function BookingsOnMyVenues(props) {
         );
       } else {
         return (
-          <h3 className={styles.noBookingsHeading}>
-            There is currently no bookings on youre venues
-          </h3>
+          <div>
+            <div className={styles.headingSection}>
+              <h2>Bookings on my venues</h2>
+            </div>
+            <h3 className={styles.noBookings}>
+              There are currently no bookings on your venues yet
+            </h3>
+          </div>
         );
       }
     }

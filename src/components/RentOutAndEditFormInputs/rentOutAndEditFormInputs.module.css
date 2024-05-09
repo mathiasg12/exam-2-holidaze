@@ -1,0 +1,19 @@
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 226px;
+  margin: 10px auto;
+}
+.inputDesc {
+  height: fit-content;
+  width: 220px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.errorInputDesc {
+  border: 3px solid var(--error-blueBg);
+  width: 216px;
+}
+.inputContainer {
+  margin-top: 0;
+}

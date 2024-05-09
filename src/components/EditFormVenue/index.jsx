@@ -5,9 +5,9 @@ import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 import { useForm } from 'react-hook-form';
 import { RentOutVenueSchema } from '../../hooks/yupSchema';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { AddAndRemoveImage } from '../AddAndRemoveImageUpdateForm';
 import { onUpdateClick } from '../../js/updateVenueSubmitClick';
 import { capText } from '../../js/capText';
+import { RentOutAndEditFormInputs } from '../RentOutAndEditFormInputs';
 /**
  * function that returns the component for the edit form, the edit form allow users to update their venues or delete them
  * @param {props} props
@@ -98,153 +98,28 @@ export function EditFormVenue(props) {
       <h4 className={error ? commonStyles.errorMsg : styles.errorHide}>
         {errorMsg}
       </h4>
-      <div className={styles.inputWrapper}>
-        <label htmlFor="name">Name</label>
-        <p className={commonStyles.errorValidation}>{errors.name?.message}</p>
-        <input
-          type="text"
-          name="name"
-          id="name"
-          defaultValue={nameOfVenue}
-          onChange={(e) => {
-            setNameOfVenue(e.target.value);
-          }}
-          {...register('name')}
-          className={
-            !errors.name
-              ? commonStyles.input
-              : `${commonStyles.errorInput} ${commonStyles.input}`
-          }
-        />
-      </div>
-      <AddAndRemoveImage
+      <RentOutAndEditFormInputs
+        errors={errors}
+        register={register}
         newImageArray={newImageArray}
         setNewImageArray={setNewImageArray}
         imageInputValue={imageInputValue}
         setImageInputValue={setImageInputValue}
-      ></AddAndRemoveImage>
-      <div className={styles.inputWrapper}>
-        <label htmlFor="desc">Description</label>
-        <p className={commonStyles.errorValidation}>
-          {errors.description?.message}
-        </p>
-        <textarea
-          name="desc"
-          id="desc"
-          cols="20"
-          rows="10"
-          defaultValue={descOfVenue}
-          onChange={(e) => {
-            setDescOfVenue(e.target.value);
-          }}
-          {...register('description')}
-          className={
-            !errors.description
-              ? styles.inputDesc
-              : `${styles.errorInputDesc} ${styles.inputDesc}`
-          }
-        ></textarea>
-      </div>
-      <div className={styles.inputWrapper}>
-        <label htmlFor="price">Price per night in $</label>
-        <p className={commonStyles.errorValidation}>{errors.price?.message}</p>
-        <input
-          defaultValue={priceOfVenue}
-          type="number"
-          id="price"
-          onChange={(e) => {
-            setPriceOfVenue(e.target.value);
-          }}
-          {...register('price')}
-          className={
-            !errors.price
-              ? commonStyles.input
-              : `${commonStyles.errorInput} ${commonStyles.input}`
-          }
-        />
-      </div>
-      <div className={styles.inputWrapper}>
-        <label htmlFor="address">Address</label>
-        <p className={commonStyles.errorValidation}>
-          {errors.address?.message}
-        </p>
-        <input
-          defaultValue={addressOfVenue}
-          type="text"
-          name="adress"
-          id="adress"
-          onChange={(e) => {
-            setAddressOfVenue(e.target.value);
-          }}
-          {...register('address')}
-          className={
-            !errors.address
-              ? commonStyles.input
-              : `${commonStyles.errorInput} ${commonStyles.input}`
-          }
-        />
-      </div>
-      <div className={styles.inputWrapper}>
-        <label htmlFor="city">City</label>
-        <p className={commonStyles.errorValidation}>{errors.city?.message}</p>
-        <input
-          defaultValue={cityOfVenue}
-          type="text"
-          name="city"
-          id="city"
-          onChange={(e) => {
-            setCityOfVenue(e.target.value);
-          }}
-          {...register('city')}
-          className={
-            !errors.city
-              ? commonStyles.input
-              : `${commonStyles.errorInput} ${commonStyles.input}`
-          }
-        />
-      </div>
-      <div className={styles.inputWrapper}>
-        <label htmlFor="country">Country</label>
-        <p className={commonStyles.errorValidation}>
-          {errors.country?.message}
-        </p>
-        <input
-          defaultValue={countryOfVenue}
-          type="text"
-          name="country"
-          id="country"
-          onChange={(e) => {
-            setCountryOfVenue(e.target.value);
-          }}
-          {...register('country')}
-          className={
-            !errors.country
-              ? commonStyles.input
-              : `${commonStyles.errorInput} ${commonStyles.input}`
-          }
-        />
-      </div>
-      <div className={styles.inputWrapper}>
-        <label htmlFor="maxGuestsAllowed">Max Guests</label>
-        <p className={commonStyles.errorValidation}>
-          {errors.maxGuests?.message}
-        </p>
-        <input
-          defaultValue={maxGuestsOfVenue}
-          className={
-            !errors.maxGuests
-              ? commonStyles.input
-              : `${commonStyles.errorInput} ${commonStyles.input}`
-          }
-          type="number"
-          name="maxGuestsAllowed"
-          id="maxGuestsAllowed"
-          {...register('maxGuests')}
-          onChange={(e) => {
-            setMaxGuestsOfVenue(e.target.value);
-          }}
-        />
-      </div>
+        nameOfVenue={nameOfVenue}
+        descOfVenue={descOfVenue}
+        setNameOfVenue={setNameOfVenue}
+        setDescOfVenue={setDescOfVenue}
+        priceOfVenue={priceOfVenue}
+        setPriceOfVenue={setPriceOfVenue}
+        addressOfVenue={addressOfVenue}
+        setAddressOfVenue={setAddressOfVenue}
+        cityOfVenue={cityOfVenue}
+        setCityOfVenue={setCityOfVenue}
+        countryOfVenue={countryOfVenue}
+        setCountryOfVenue={setCountryOfVenue}
+        maxGuestsOfVenue={maxGuestsOfVenue}
+        setMaxGuestsOfVenue={setMaxGuestsOfVenue}
+      ></RentOutAndEditFormInputs>
       <PublishVenueFormCheckboxes
         petsAllowed={petsAllowed}
         setPetsAllowed={setPetsAllowed}
