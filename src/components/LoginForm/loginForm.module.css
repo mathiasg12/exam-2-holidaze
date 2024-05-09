@@ -4,7 +4,7 @@
   color: white;
   border-radius: 5px;
   border: 2px solid var(--custom-yellow);
-  width: 400px;
+  width: 80vw;
 }
 .loginSection {
   display: flex;
