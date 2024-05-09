@@ -1,12 +1,18 @@
 @import '../../styles/customColors.css';
 .included {
   margin: 0 auto;
-  width: 180px;
+  width: 226px;
+  display: flex;
+  flex-direction: column;
 }
 form input[type='checkbox'] {
   width: 18px;
   height: 18px;
+  margin-left: 0;
 }
 form input[type='checkbox']:checked {
   accent-color: var(--custom-yellow);
+}
+.included h4 {
+  margin-bottom: 10px;
 }

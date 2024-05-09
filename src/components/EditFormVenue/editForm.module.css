@@ -9,59 +9,12 @@
   margin: 0 auto 50px auto;
   border: 2px solid var(--custom-yellow);
 }
-.inputWrapper {
-  display: flex;
-  flex-direction: column;
-  max-width: 226px;
-  margin: 10px auto;
-}
-.addImageWrapper {
-  display: flex;
-}
-.addImageWrapper input {
-  border-radius: 5px 0 0 5px;
-  border-right: 0;
-}
-.inputDesc {
-  height: fit-content;
-  width: 220px;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-.errorInputDesc {
-  border: 3px solid var(--error-blueBg);
-  width: 216px;
-}
-.addImageWrapper button {
-  background-color: var(--custom-yellow);
-  border-radius: 0 5px 5px 0;
-  border: 1px solid black;
-}
 .errorCon {
   margin-top: 15px;
 }
-.imageLinkInfo {
-  display: block;
-}
-.imageLinkHide {
-  display: none;
-}
-.included div {
-  margin: 5px auto 5px auto;
-}
-.included h4 {
-  margin: 0;
-}
 .headingH3 {
   text-align: center;
-}
-.imageLink {
-  word-wrap: break-word;
-  color: var(--success-blueBg);
-}
-.imageLink:hover {
-  cursor: pointer;
-  color: var(--error-blueBg);
+  margin-bottom: 0;
 }
 .deleteBtn {
   margin: 10px 0 0 auto;

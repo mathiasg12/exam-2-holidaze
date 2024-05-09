@@ -54,65 +54,72 @@ export function LoginForm() {
   }, [loggedIn, navigate, loginTrue]);
   return (
     <section className={styles.loginSection}>
-      <h1>Login</h1>
-      <p
-        className={errorActive ? commonStyles.errorMsg : styles.errorActiveNone}
-      >
-        {errorMessage}
-      </p>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className={styles.inputCon}>
-          <label htmlFor="email">Email</label>
-          <p className={commonStyles.errorValidation}>
-            {errors.email?.message}
-          </p>
-          <input
-            type="text"
-            name="email"
-            className={
-              !errors.email
-                ? commonStyles.input
-                : `${commonStyles.errorInput} ${commonStyles.input}`
-            }
-            {...register('email')}
-          ></input>
-        </div>
-        <div className={styles.inputCon}>
-          <label htmlFor="password">Password</label>
-          <p className={commonStyles.errorValidation}>
-            {errors.password?.message}
-          </p>
-          <div
-            className={`${styles.eyeAndInputWrapper} ${
-              !errors.password
-                ? commonStyles.input
-                : `${commonStyles.errorInput} ${commonStyles.input}`
-            }`}
-          >
+      <div className={styles.imgWrapper}>
+        <img src="/pictures/WB.jpg" alt="welcome back" />
+      </div>
+      <div className={styles.loginFormContainer}>
+        <h1>Login</h1>
+        <p
+          className={
+            errorActive ? commonStyles.errorMsg : styles.errorActiveNone
+          }
+        >
+          {errorMessage}
+        </p>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className={styles.inputCon}>
+            <label htmlFor="email">Email</label>
+            <p className={commonStyles.errorValidation}>
+              {errors.email?.message}
+            </p>
             <input
-              type={passwordVisible ? 'text' : 'password'}
-              name="password"
-              id="password"
-              className={styles.inputPassword}
-              {...register('password')}
+              type="text"
+              name="email"
+              className={
+                !errors.email
+                  ? commonStyles.input
+                  : `${commonStyles.errorInput} ${commonStyles.input}`
+              }
+              {...register('email')}
             ></input>
-            <FontAwesomeIcon
-              id="eyeSymbolPassword"
-              icon={passwordVisible ? faEye : faEyeSlash}
-              className={styles.eye}
-              type="button"
-              role="button"
-              onClick={handleEyeClick}
-            ></FontAwesomeIcon>
           </div>
-        </div>
-        <input
-          type="submit"
-          value="Login"
-          className={commonStyles.bigButtonYellow}
-        ></input>
-        <ClickHereLink linkTo="/signUp"></ClickHereLink>
-      </form>
+          <div className={styles.inputCon}>
+            <label htmlFor="password">Password</label>
+            <p className={commonStyles.errorValidation}>
+              {errors.password?.message}
+            </p>
+            <div
+              className={`${styles.eyeAndInputWrapper} ${
+                !errors.password
+                  ? commonStyles.input
+                  : `${commonStyles.errorInput} ${commonStyles.input}`
+              }`}
+            >
+              <input
+                type={passwordVisible ? 'text' : 'password'}
+                name="password"
+                id="password"
+                className={styles.inputPassword}
+                {...register('password')}
+              ></input>
+              <FontAwesomeIcon
+                id="eyeSymbolPassword"
+                icon={passwordVisible ? faEye : faEyeSlash}
+                className={styles.eye}
+                type="button"
+                role="button"
+                onClick={handleEyeClick}
+              ></FontAwesomeIcon>
+            </div>
+          </div>
+          <input
+            type="submit"
+            value="Login"
+            className={commonStyles.bigButtonYellow}
+          ></input>
+          <ClickHereLink linkTo="/signUp"></ClickHereLink>
+        </form>
+      </div>
     </section>
   );
 }

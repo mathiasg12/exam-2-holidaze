@@ -43,6 +43,7 @@ export function MyVenues(props) {
     if (loadedVenues.length < 1) {
       return (
         <div>
+          <h2 className={styles.myVenueHeading}>My venues</h2>
           <h3 className={styles.noVenues}>
             You have no active venues published yet
           </h3>
@@ -51,12 +52,16 @@ export function MyVenues(props) {
     } else {
       if (edit) {
         return (
-          <EditVenue
-            loadedVenues={loadedVenues}
-            indexOfEditVenue={indexOfEditVenue}
-            setEdit={setEdit}
-            activeMenuItem={activeMenuItem}
-          ></EditVenue>
+          <div>
+            {' '}
+            <h2 className={styles.myVenueHeading}>My venues</h2>
+            <EditVenue
+              loadedVenues={loadedVenues}
+              indexOfEditVenue={indexOfEditVenue}
+              setEdit={setEdit}
+              activeMenuItem={activeMenuItem}
+            ></EditVenue>
+          </div>
         );
       } else {
         return (

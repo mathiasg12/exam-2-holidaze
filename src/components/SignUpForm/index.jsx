@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styles from './signUpForm.module.css';
 import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 import { useForm } from 'react-hook-form';
@@ -62,141 +62,148 @@ export function SignUpForm() {
     }
   }, [loggedIn]);
   return (
-    <section className={styles.singUpSection}>
-      <h1>Sign up</h1>
-      <p
-        id="errorWithform"
-        className={
-          !errorActive ? styles.errorWithFormNone : commonStyles.errorMsg
-        }
-      >
-        {errorMessage}
-      </p>
-      <form onSubmit={handleSubmit(OnSubmit)}>
-        <div className={styles.inputCon}>
-          <label htmlFor="email">Email</label>
-          <p className={commonStyles.errorValidation}>
-            {errors.email?.message}
-          </p>
-          <input
-            type="text"
-            name="email"
-            id="email"
-            {...register('email')}
-            className={
-              !errors.email
-                ? commonStyles.input
-                : `${commonStyles.errorInput} ${commonStyles.input}`
-            }
-          ></input>
-        </div>
-        <div className={styles.inputCon}>
-          <label htmlFor="name">Name</label>
-          <p className={commonStyles.errorValidation}>{errors.name?.message}</p>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            {...register('name')}
-            className={
-              !errors.name
-                ? commonStyles.input
-                : `${commonStyles.errorInput} ${commonStyles.input}`
-            }
-          ></input>
-        </div>
-        <div className={styles.inputCon}>
-          <label htmlFor="image">
-            Image URL (optional: a default is given if left empty)
-          </label>
-          <input
-            type="text"
-            name="image"
-            id="image"
-            {...register('image')}
-            className={commonStyles.input}
-          ></input>
-        </div>
-        <div className={styles.inputCon}>
-          <label htmlFor="password">Password</label>
-          <p className={commonStyles.errorValidation}>
-            {errors.password?.message}
-          </p>
-          <div
-            className={`${styles.eyeAndInputWrapper} ${
-              !errors.password
-                ? commonStyles.input
-                : `${commonStyles.errorInput} ${commonStyles.input}`
-            }`}
-          >
-            <input
-              type={passwordVisible ? 'text' : 'password'}
-              name="password"
-              id="password"
-              {...register('password')}
-              className={styles.inputPassword}
-            ></input>
-            <FontAwesomeIcon
-              icon={passwordVisible ? faEye : faEyeSlash}
-              onClick={handleEyeClick}
-              className={styles.eye}
-            ></FontAwesomeIcon>
-          </div>
-        </div>
-        <div className={styles.inputCon}>
-          <label htmlFor="rePassword">Repeat Password</label>
-          <p className={commonStyles.errorValidation}>
-            {errors.repeatPassword?.message}
-          </p>
-          <div
-            className={`${styles.eyeAndInputWrapper} ${
-              !errors.repeatPassword
-                ? commonStyles.input
-                : `${commonStyles.errorInput} ${commonStyles.input}`
-            }`}
-          >
-            <input
-              type={repeatPasswordVisible ? 'text' : 'password'}
-              name="rePassword"
-              {...register('repeatPassword')}
-              className={styles.inputPassword}
-            ></input>
-            <FontAwesomeIcon
-              icon={repeatPasswordVisible ? faEye : faEyeSlash}
-              onClick={handleEyeClickRepeatPassword}
-              className={styles.eye}
-            ></FontAwesomeIcon>
-          </div>
-        </div>
-        <fieldset>
-          <legend>What kind of user are you registrering?</legend>
+    <section className={styles.signUpSection}>
+      <div className={styles.imgWrapper}>
+        <img src="/pictures/signUpImageBackGround.jpg" alt="welcome back" />
+      </div>
+      <div className={styles.singUpSectionForm}>
+        <h1>Sign up</h1>
+        <p
+          id="errorWithform"
+          className={
+            !errorActive ? styles.errorWithFormNone : commonStyles.errorMsg
+          }
+        >
+          {errorMessage}
+        </p>
+        <form onSubmit={handleSubmit(OnSubmit)}>
           <div className={styles.inputCon}>
-            <label htmlFor="customer">Customer</label>
+            <label htmlFor="email">Email</label>
+            <p className={commonStyles.errorValidation}>
+              {errors.email?.message}
+            </p>
             <input
-              type="radio"
-              name="userType"
-              id="customer"
-              value="customer"
-              {...register('userType')}
-              defaultChecked
+              type="text"
+              name="email"
+              id="email"
+              {...register('email')}
+              className={
+                !errors.email
+                  ? commonStyles.input
+                  : `${commonStyles.errorInput} ${commonStyles.input}`
+              }
             ></input>
-            <label htmlFor="manager">Venue manager</label>
-            <input
-              type="radio"
-              id="manager"
-              name="userType"
-              value="manager"
-              {...register('userType')}
-            />
           </div>
-        </fieldset>
-        <input
-          type="submit"
-          value="Sign up"
-          className={commonStyles.bigButtonYellow}
-        />
-        <ClickHereLink linkTo="/login"></ClickHereLink>
-      </form>
+          <div className={styles.inputCon}>
+            <label htmlFor="name">Name</label>
+            <p className={commonStyles.errorValidation}>
+              {errors.name?.message}
+            </p>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              {...register('name')}
+              className={
+                !errors.name
+                  ? commonStyles.input
+                  : `${commonStyles.errorInput} ${commonStyles.input}`
+              }
+            ></input>
+          </div>
+          <div className={styles.inputCon}>
+            <label htmlFor="image">
+              Image URL (optional: a default is given if left empty)
+            </label>
+            <input
+              type="text"
+              name="image"
+              id="image"
+              {...register('image')}
+              className={commonStyles.input}
+            ></input>
+          </div>
+          <div className={styles.inputCon}>
+            <label htmlFor="password">Password</label>
+            <p className={commonStyles.errorValidation}>
+              {errors.password?.message}
+            </p>
+            <div
+              className={`${styles.eyeAndInputWrapper} ${
+                !errors.password
+                  ? commonStyles.input
+                  : `${commonStyles.errorInput} ${commonStyles.input}`
+              }`}
+            >
+              <input
+                type={passwordVisible ? 'text' : 'password'}
+                name="password"
+                id="password"
+                {...register('password')}
+                className={styles.inputPassword}
+              ></input>
+              <FontAwesomeIcon
+                icon={passwordVisible ? faEye : faEyeSlash}
+                onClick={handleEyeClick}
+                className={styles.eye}
+              ></FontAwesomeIcon>
+            </div>
+          </div>
+          <div className={styles.inputCon}>
+            <label htmlFor="rePassword">Repeat Password</label>
+            <p className={commonStyles.errorValidation}>
+              {errors.repeatPassword?.message}
+            </p>
+            <div
+              className={`${styles.eyeAndInputWrapper} ${
+                !errors.repeatPassword
+                  ? commonStyles.input
+                  : `${commonStyles.errorInput} ${commonStyles.input}`
+              }`}
+            >
+              <input
+                type={repeatPasswordVisible ? 'text' : 'password'}
+                name="rePassword"
+                {...register('repeatPassword')}
+                className={styles.inputPassword}
+              ></input>
+              <FontAwesomeIcon
+                icon={repeatPasswordVisible ? faEye : faEyeSlash}
+                onClick={handleEyeClickRepeatPassword}
+                className={styles.eye}
+              ></FontAwesomeIcon>
+            </div>
+          </div>
+          <fieldset className={styles.fieldsetSignUp}>
+            <legend>What kind of user are you registrering?</legend>
+            <div className={styles.inputCon}>
+              <label htmlFor="customer">Customer</label>
+              <input
+                type="radio"
+                name="userType"
+                id="customer"
+                value="customer"
+                {...register('userType')}
+                defaultChecked
+              ></input>
+              <label htmlFor="manager">Venue manager</label>
+              <input
+                type="radio"
+                id="manager"
+                name="userType"
+                value="manager"
+                {...register('userType')}
+              />
+            </div>
+          </fieldset>
+          <input
+            type="submit"
+            value="Sign up"
+            className={commonStyles.bigButtonYellow}
+          />
+          <ClickHereLink linkTo="/login"></ClickHereLink>
+        </form>
+      </div>
     </section>
   );
 }

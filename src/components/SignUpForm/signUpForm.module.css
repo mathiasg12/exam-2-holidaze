@@ -1,6 +1,5 @@
 @import '../../styles/customColors.css';
-.singUpSection {
-  margin: 170px auto 50px auto;
+.singUpSectionForm {
   background-color: var(--custom-blue);
   padding: 10px;
   width: 80vw;
@@ -8,13 +7,17 @@
   border-radius: 5px;
   border: 2px solid var(--custom-yellow);
 }
-.singUpSection form {
+.signUpSection {
+  display: flex;
+  margin: 170px auto 50px auto;
+}
+.singUpSectionForm form {
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.singUpSection h1 {
+.singUpSectionForm h1 {
   text-align: center;
   margin-bottom: 20px;
 }
@@ -50,9 +53,16 @@ input[type='radio'] {
   height: 25px;
   border: 0;
 }
-.singUpSection fieldset {
+.fieldsetSignUp {
   text-align: center;
-  width: 220px;
+  max-width: 226px;
+}
+.imgWrapper {
+  display: none;
+}
+.imgWrapper img {
+  height: 100%;
+  width: 100%;
 }
 .singUpSection fieldset label {
   margin-top: 10px;
@@ -61,10 +71,38 @@ input[type='radio'] {
   display: none;
 }
 @media (min-width: 600px) {
-  .singUpSection {
-    width: 500px;
-  }
-  .singUpSection fieldset {
+  .singUpSectionForm {
     width: 300px;
+    border: 0;
+    border-radius: 0 5px 5px 0;
+  }
+  .imgWrapper {
+    display: block;
+    max-width: 300px;
+  }
+  .imgWrapper img {
+    border-radius: 5px 0 0 5px;
+  }
+  .signUpSection {
+    max-width: 600px;
+    border: 2px solid var(--custom-yellow);
+    border-radius: 5px;
+  }
+}
+@media (min-width: 800px) {
+  .singUpSectionForm {
+    width: 400px;
+  }
+  .imgWrapper {
+    display: block;
+    max-width: 400px;
+  }
+  .imgWrapper img {
+    border-radius: 5px 0 0 5px;
+  }
+  .signUpSection {
+    max-width: 800px;
+    border: 2px solid var(--custom-yellow);
+    border-radius: 5px;
   }
 }

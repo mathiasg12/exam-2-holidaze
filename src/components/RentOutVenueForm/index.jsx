@@ -6,14 +6,10 @@ import { RentOutVenueSchema } from '../../hooks/yupSchema';
 import { useEffect, useState } from 'react';
 import { PublishVenueSuccess } from '../PublishVenueSuccess';
 import { LoadingSpinner } from '../LoadingSpinner';
-import {
-  addImage,
-  imageOnChange,
-  removeImage,
-} from '../../js/handleImagesVenueForm';
 import { onSubmitClick } from '../../js/publishVenueSubmit';
 import { PublishVenueFormCheckboxes } from '../PublishVenueFormCheckboxes';
 import { AddAndRemoveImage } from '../AddAndRemoveImageUpdateForm';
+import { RentOutAndEditFormInputs } from '../RentOutAndEditFormInputs';
 /**
  * function that returns the "rent out venue" form, the form uses yup form controll
  * @param {props} props
@@ -24,6 +20,13 @@ export function RentOutVenueForm(props) {
   const [wifiIncluded, setWifiIncluded] = useState(false);
   const [parkingIncluded, setParkingIncluded] = useState(false);
   const [breakfastIncluded, setBreakfastIncuded] = useState(false);
+  const [nameOfVenue, setNameOfVenue] = useState('');
+  const [descOfVenue, setDescOfVenue] = useState('');
+  const [priceOfVenue, setPriceOfVenue] = useState(0);
+  const [addressOfVenue, setAddressOfVenue] = useState('');
+  const [cityOfVenue, setCityOfVenue] = useState('');
+  const [countryOfVenue, setCountryOfVenue] = useState('');
+  const [maxGuestsOfVenue, setMaxGuestsOfVenue] = useState('');
   const [error, setError] = useState(false);
   const [errorMsg, setErrorMsg] = useState('');
   const [loading, setLoading] = useState(false);
@@ -51,6 +54,7 @@ export function RentOutVenueForm(props) {
   if (!loading && !success) {
     return (
       <div>
+        <h3 className={styles.rentOutHeading}>Rent out a Venue</h3>
         <form
           className={styles.rentOutVenueForm}
           onSubmit={handleSubmit((data) => {
@@ -70,136 +74,31 @@ export function RentOutVenueForm(props) {
             );
           })}
         >
-          <h3 className={styles.rentOutHeading}>Rent out a Venue</h3>
           <h4 className={error ? commonStyles.errorMsg : styles.errorHide}>
             {errorMsg}
           </h4>
-          <AddAndRemoveImage
+          <RentOutAndEditFormInputs
+            errors={errors}
+            register={register}
             newImageArray={imageArray}
             setNewImageArray={setImageArray}
             imageInputValue={imageInputValue}
             setImageInputValue={setImageInputValue}
-          ></AddAndRemoveImage>
-          <div className={styles.inputWrapper}>
-            <label htmlFor="name">Name</label>
-            <p className={commonStyles.errorValidation}>
-              {errors.name?.message}
-            </p>
-            <input
-              type="text"
-              name="name"
-              id="name"
-              {...register('name')}
-              className={
-                !errors.name
-                  ? commonStyles.input
-                  : `${commonStyles.errorInput} ${commonStyles.input}`
-              }
-            />
-          </div>
-          <div className={styles.inputWrapper}>
-            <label htmlFor="desc">Description</label>
-            <p className={commonStyles.errorValidation}>
-              {errors.description?.message}
-            </p>
-            <textarea
-              name="desc"
-              id="desc"
-              cols="20"
-              rows="10"
-              {...register('description')}
-              className={
-                !errors.description
-                  ? styles.inputDesc
-                  : `${styles.errorInputDesc} ${styles.inputDesc}`
-              }
-            ></textarea>
-          </div>
-          <div className={styles.inputWrapper}>
-            <label htmlFor="price">Price per night in $</label>
-            <p className={commonStyles.errorValidation}>
-              {errors.price?.message}
-            </p>
-            <input
-              type="number"
-              name="price"
-              id="price"
-              {...register('price')}
-              className={
-                !errors.price
-                  ? commonStyles.input
-                  : `${commonStyles.errorInput} ${commonStyles.input}`
-              }
-            />
-          </div>
-          <div className={styles.inputWrapper}>
-            <label htmlFor="address">Adress</label>
-            <p className={commonStyles.errorValidation}>
-              {errors.address?.message}
-            </p>
-            <input
-              type="text"
-              name="adress"
-              id="adress"
-              {...register('address')}
-              className={
-                !errors.address
-                  ? commonStyles.input
-                  : `${commonStyles.errorInput} ${commonStyles.input}`
-              }
-            />
-          </div>
-          <div className={styles.inputWrapper}>
-            <label htmlFor="city">City</label>
-            <p className={commonStyles.errorValidation}>
-              {errors.city?.message}
-            </p>
-            <input
-              type="text"
-              name="city"
-              id="city"
-              {...register('city')}
-              className={
-                !errors.city
-                  ? commonStyles.input
-                  : `${commonStyles.errorInput} ${commonStyles.input}`
-              }
-            />
-          </div>
-          <div className={styles.inputWrapper}>
-            <label htmlFor="country">Country</label>
-            <p className={commonStyles.errorValidation}>
-              {errors.country?.message}
-            </p>
-            <input
-              type="text"
-              name="country"
-              id="country"
-              {...register('country')}
-              className={
-                !errors.country
-                  ? commonStyles.input
-                  : `${commonStyles.errorInput} ${commonStyles.input}`
-              }
-            />
-          </div>
-          <div className={styles.inputWrapper}>
-            <label htmlFor="maxGuestsAllowed">Max Guests</label>
-            <p className={commonStyles.errorValidation}>
-              {errors.maxGuests?.message}
-            </p>
-            <input
-              type="number"
-              name="maxGuestsAllowed"
-              id="maxGuestsAllowed"
-              {...register('maxGuests')}
-              className={
-                !errors.maxGuests
-                  ? commonStyles.input
-                  : `${commonStyles.errorInput} ${commonStyles.input}`
-              }
-            />
-          </div>
+            nameOfVenue={nameOfVenue}
+            descOfVenue={descOfVenue}
+            setNameOfVenue={setNameOfVenue}
+            setDescOfVenue={setDescOfVenue}
+            priceOfVenue={priceOfVenue}
+            setPriceOfVenue={setPriceOfVenue}
+            addressOfVenue={addressOfVenue}
+            setAddressOfVenue={setAddressOfVenue}
+            cityOfVenue={cityOfVenue}
+            setCityOfVenue={setCityOfVenue}
+            countryOfVenue={countryOfVenue}
+            setCountryOfVenue={setCountryOfVenue}
+            maxGuestsOfVenue={maxGuestsOfVenue}
+            setMaxGuestsOfVenue={setMaxGuestsOfVenue}
+          ></RentOutAndEditFormInputs>
           <PublishVenueFormCheckboxes
             petsAllowed={petsAllowed}
             setPetsAllowed={setPetsAllowed}
