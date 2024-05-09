@@ -13,6 +13,7 @@ import {
 } from '../../js/handleImagesVenueForm';
 import { onSubmitClick } from '../../js/publishVenueSubmit';
 import { PublishVenueFormCheckboxes } from '../PublishVenueFormCheckboxes';
+import { AddAndRemoveImage } from '../AddAndRemoveImageUpdateForm';
 /**
  * function that returns the "rent out venue" form, the form uses yup form controll
  * @param {props} props
@@ -28,7 +29,6 @@ export function RentOutVenueForm(props) {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [imageArray, setImageArray] = useState([]);
-  const [imageError, setImageError] = useState('');
   const [imageInputValue, setImageInputValue] = useState('');
 
   function handleChangedMetaValue(metaValue, setMetaValue) {
@@ -74,64 +74,12 @@ export function RentOutVenueForm(props) {
           <h4 className={error ? commonStyles.errorMsg : styles.errorHide}>
             {errorMsg}
           </h4>
-          <div className={styles.inputWrapper}>
-            <label htmlFor="image">Image link (optional)</label>
-            <p className={commonStyles.errorValidation}>{imageError}</p>
-            <div className={styles.addImageWrapper}>
-              <input
-                type="text"
-                name="image"
-                id="image"
-                value={imageInputValue}
-                className={commonStyles.input}
-                onChange={(e) => {
-                  imageOnChange(setImageError);
-                  setImageInputValue(e.target.value);
-                }}
-              />
-              <button
-                onClick={(event) =>
-                  addImage(
-                    event,
-                    setImageArray,
-                    imageArray,
-                    setImageError,
-                    imageInputValue,
-                    setImageInputValue
-                  )
-                }
-              >
-                Add
-              </button>
-            </div>
-            <div>
-              <p
-                className={
-                  imageArray.length >= 1
-                    ? styles.imageLinkInfo
-                    : styles.imageLinkHide
-                }
-              >
-                images added (click the link to remove)
-              </p>
-              {imageArray.map((link, index) => {
-                return (
-                  <p
-                    key={link.url + index}
-                    role="button"
-                    type="button"
-                    id={index}
-                    onClick={(event) => {
-                      removeImage(event, imageArray, setImageArray);
-                    }}
-                    className={styles.imageLink}
-                  >
-                    {link.url.substring(0, 20)}
-                  </p>
-                );
-              })}
-            </div>
-          </div>
+          <AddAndRemoveImage
+            newImageArray={imageArray}
+            setNewImageArray={setImageArray}
+            imageInputValue={imageInputValue}
+            setImageInputValue={setImageInputValue}
+          ></AddAndRemoveImage>
           <div className={styles.inputWrapper}>
             <label htmlFor="name">Name</label>
             <p className={commonStyles.errorValidation}>
