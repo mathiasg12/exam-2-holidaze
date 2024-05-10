@@ -21,6 +21,14 @@ main{
     display: flex;
     flex-direction: column;
 }
+input[type='checkbox'] {
+    width: 18px;
+    height: 18px;
+    margin-left: 0;
+  }
+  input[type='checkbox']:checked {
+    accent-color: var(--custom-yellow);
+  }
 a{
     color:black;
 }

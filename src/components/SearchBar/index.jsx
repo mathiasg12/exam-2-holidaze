@@ -21,7 +21,10 @@ export function SearchBar(props) {
     }
   }, [searched]);
   if (searchValue.length > 0) {
-    const searchedArray = searchfunctionality(arrayToSearch, searchValue);
+    const searchedArray = searchfunctionality(
+      arrayToSearch,
+      searchValue.trim()
+    );
     function handleSearchClicked() {
       setSearched(true);
       setSearchClicked(true);
@@ -47,7 +50,7 @@ export function SearchBar(props) {
             placeholder="Search for a venue"
             value={searchValue}
             onChange={(e) => {
-              setSearchValue(e.target.value.toLowerCase().trim());
+              setSearchValue(e.target.value);
               setSearchClicked(false);
             }}
             onKeyDown={handleEnterKeyPress}
@@ -79,7 +82,7 @@ export function SearchBar(props) {
       <div>
         <div className={styles.searchBarContainer}>
           <input
-            placeholder="Search for a venue"
+            placeholder="Search for a venue, city or country"
             value={searchValue}
             onChange={(e) => {
               setSearchValue(e.target.value.toLowerCase().trim());

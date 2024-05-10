@@ -26,8 +26,8 @@
   color: white;
   padding: 10px;
 }
-@media (min-width: 600px) {
+@media (min-width: 601px) {
   .rentOutVenueForm {
-    max-width: 600px;
+    max-width: 596px;
   }
 }

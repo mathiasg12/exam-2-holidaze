@@ -96,15 +96,15 @@ export function MyVenues(props) {
                       {venue.meta.wifi && <p className={styles.wifi}>Wifi</p>}
                     </div>
                     <div className={styles.loactionContainer}>
-                      <p>
-                        {venue.location.address
-                          ? venue.location.address + ','
-                          : 'unknown,'}
+                      <p className={styles.locationP}>
+                        {venue.location.city
+                          ? capText(venue.location.city, 60) + ','
+                          : ' unknown, '}
                       </p>
-                      <p>
+                      <p className={styles.locationP}>
                         {venue.location.country
-                          ? venue.location.country
-                          : ' unknown'}
+                          ? capText(venue.location.country, 60)
+                          : 'unknown'}
                       </p>
                     </div>
                     <div className={styles.starAndPersonContainer}>

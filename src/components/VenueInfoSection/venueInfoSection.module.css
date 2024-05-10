@@ -12,10 +12,7 @@
 }
 .includesCon,
 .descCon {
-  margin-top: 10px;
-  border: 1px solid white;
-  border-left: 0;
-  border-right: 0;
+  border-bottom: 1px solid white;
   width: 99%;
   display: flex;
   flex-direction: column;
@@ -23,22 +20,25 @@
 }
 .includesCon ul {
   list-style: none;
+  width: 90%;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
 }
 .includesCon li {
   padding: 5px;
   background-color: white;
   color: black;
-  margin: 5px auto;
+  margin: 5px 5px;
   text-align: center;
   border-radius: 5px;
   height: 25px;
   font-weight: bold;
-}
-.descCon {
-  border-bottom: 0;
+  width: 70px;
 }
 .descCon p {
-  margin: 10px auto 0 5px;
+  margin: 5px auto 5px 10px;
 }
 .venueInfoCon ul {
   padding: 10px;
@@ -49,9 +49,6 @@
   word-wrap: break-word;
   max-width: 100%;
 }
-.venueInfoCon h3 {
-  margin-bottom: 0;
-}
 .boldP {
   font-weight: bold;
 }
@@ -60,13 +57,15 @@
   height: 50px;
   border-radius: 100%;
 }
+
+.loactionCon,
 .ownerCon {
-  width: 100%;
-}
-.loactionCon {
   border: solid white;
   border-width: 1px 0 1px 0;
   width: 100%;
+}
+.ownerCon {
+  border-width: 0 0 1px 0;
 }
 .locationContent,
 .venueManagerContent {
@@ -75,15 +74,19 @@
 }
 .locationContent p,
 .venueManagerContent p {
-  margin: 10px 0 0 5px;
+  margin: 5px 0 0 10px;
   max-width: 60vw;
   word-wrap: break-word;
 }
-.locationH3,
-.venueManagerH3 {
+.venueInfoCon h3 {
+  margin-bottom: 15px;
   text-align: center;
 }
-@media (min-width: 600px) {
+.maxGuests {
+  font-weight: bold;
+  margin: 20px auto 10px auto;
+}
+@media (min-width: 601px) {
   .locationContent p {
     max-width: 30vw;
   }
@@ -92,22 +95,12 @@
     padding: 4vw 1vw;
     width: 47vw;
   }
-  .includesCon ul {
-    width: 300px;
-    justify-content: space-around;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0;
-  }
-  .includesCon li {
-    width: 70px;
-  }
   .venueManager,
   .locationAddress {
     font-size: 1em;
   }
 }
-@media (min-width: 850px) {
+@media (min-width: 851px) {
   .locationContent p {
     max-width: 300px;
   }

@@ -11,7 +11,7 @@
   max-width: 300px;
   margin: 20px auto;
 }
-@media (min-width: 600px) {
+@media (min-width: 601px) {
   .notLoggedInContainer {
     grid-column: 1/-1;
     width: 97vw;

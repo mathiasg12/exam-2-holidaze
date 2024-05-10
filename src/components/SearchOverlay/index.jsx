@@ -52,13 +52,13 @@ export function SearchOverlay(props) {
               </div>
               <div className={styles.pContainer}>
                 <p>
-                  {venueObject.location.address
-                    ? venueObject.location.address + ','
+                  {venueObject.location.city
+                    ? capText(venueObject.location.city, 20) + ','
                     : 'unknown,'}
                 </p>
                 <p>
-                  {venueObject.location.city
-                    ? venueObject.location.city
+                  {venueObject.location.country
+                    ? capText(venueObject.location.country, 15)
                     : ' unknown'}
                 </p>
               </div>

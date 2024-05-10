@@ -4,7 +4,7 @@
 .specificSectionLoading {
   margin: 200px auto;
 }
-@media (min-width: 600px) {
+@media (min-width: 601px) {
   .specificSection {
     display: grid;
     grid-template-columns: 50vw 50vw;
@@ -14,7 +14,7 @@
     margin: 200px auto 0 auto;
   }
 }
-@media (min-width: 850px) {
+@media (min-width: 851px) {
   .specificSection {
     grid-template-columns: 425px 425px;
     max-width: 850px;

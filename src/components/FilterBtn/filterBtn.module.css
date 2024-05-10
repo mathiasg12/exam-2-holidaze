@@ -6,7 +6,7 @@
   margin: 5px auto;
   border-radius: 10px;
 }
-@media (min-width: 600px) {
+@media (min-width: 601px) {
   .filterBtn {
     display: none;
   }

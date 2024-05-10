@@ -75,6 +75,13 @@
 .venueCard p {
   margin: 5px;
 }
+.loactionContainer p {
+  margin: 0 0 0 5px;
+  word-wrap: break-word;
+}
+.locationP {
+  max-width: 100px;
+}
 .included p {
   border-radius: 5px;
   width: 56px;

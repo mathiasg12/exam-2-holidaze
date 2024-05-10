@@ -65,8 +65,8 @@ export function VenueInfo(props) {
         </ul>
       </div>
       <div>
-        <p>
-          maximum amount of guests: {venue.maxGuests}
+        <p className={styles.maxGuests}>
+          Maximum amount of guests: {venue.maxGuests}
           <FontAwesomeIcon icon={faPerson} size="lg" />
         </p>
       </div>

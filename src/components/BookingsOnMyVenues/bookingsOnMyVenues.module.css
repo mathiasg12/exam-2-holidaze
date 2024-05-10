@@ -68,7 +68,7 @@
     margin: 0;
   }
 }
-@media (min-width: 800px) {
+@media (min-width: 801px) {
   .bookingCard {
     min-width: 500px;
   }

@@ -29,7 +29,7 @@ export function ActiveFilters() {
         type="button"
         onClick={handleBtnClick}
       >
-        Reset Filters
+        Clear Filters
       </p>
     </div>
   ) : (

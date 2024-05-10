@@ -41,7 +41,7 @@ header {
   max-width: 100px;
   max-height: 100px;
 }
-@media (min-width: 600px) {
+@media (min-width: 601px) {
   .img {
     max-width: 120px;
     max-height: 120px;

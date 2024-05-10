@@ -125,7 +125,7 @@ export function UpComingBookingsCard(props) {
                   </div>
                   <div className={styles.bookingInfoAndBtnWrapper}>
                     <h3>
-                      Your reservation at: {capText(booking.venue.name, 30)}
+                      Your reservation at: {capText(booking.venue.name, 22)}
                     </h3>
 
                     <div className={styles.bookingInfoContainer}>

@@ -35,7 +35,7 @@
 .exitBtn:hover {
   color: var(--success);
 }
-@media (min-width: 600px) {
+@media (min-width: 601px) {
   .successOverlay {
     width: 500px;
   }

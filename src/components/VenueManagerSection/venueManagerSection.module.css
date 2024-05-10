@@ -36,18 +36,18 @@
   color: white;
   border: 1px solid white;
 }
-@media (min-width: 600px) {
+@media (min-width: 601px) {
   .buttonsContainer {
     flex-direction: row;
     justify-content: center;
   }
   .buttonWrapper {
-    width: 100vw;
+    width: 98vw;
     flex-direction: row;
     justify-content: space-between;
   }
 }
-@media (min-width: 850px) {
+@media (min-width: 851px) {
   .buttonWrapper {
     width: 800px;
   }
