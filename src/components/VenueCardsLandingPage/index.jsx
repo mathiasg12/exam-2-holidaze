@@ -73,15 +73,15 @@ export function VenueCardsLandingPage(props) {
                   {venueObject.meta.wifi && <p className={styles.wifi}>Wifi</p>}
                 </div>
                 <div className={styles.loactionContainer}>
-                  <p>
+                  <p className={styles.locationP}>
                     {venueObject.location.city
-                      ? venueObject.location.city + ','
-                      : ' unknown'}
+                      ? capText(venueObject.location.city, 60) + ','
+                      : ' unknown, '}
                   </p>
-                  <p>
+                  <p className={styles.locationP}>
                     {venueObject.location.country
-                      ? venueObject.location.country
-                      : 'unknown,'}
+                      ? capText(venueObject.location.country, 60)
+                      : 'unknown'}
                   </p>
                 </div>
                 <div className={styles.starAndPersonContainer}>

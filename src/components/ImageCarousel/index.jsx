@@ -18,10 +18,10 @@ export function ImageCarousel(props) {
     }
   }
   function handleBackImageClick() {
-    if (visibleImageIndex - 1 < imageArray.length) {
-      setVisibleImageIndex(0);
-    } else {
+    if (visibleImageIndex - 1 >= 0) {
       setVisibleImageIndex(visibleImageIndex - 1);
+    } else {
+      setVisibleImageIndex(imageArray.length - 1);
     }
   }
   if (imageArray && imageArray.length > 0) {

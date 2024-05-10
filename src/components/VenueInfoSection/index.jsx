@@ -23,13 +23,37 @@ export function VenueInfo(props) {
           <FontAwesomeIcon icon={faStar} />
         </p>
       </div>
-      <div className={styles.loactionAndOwnerCon}>
-        <p className={styles.locationAddress}>
-          Location: {location.address}, {location.city}, {location.country}
-        </p>
-        <p className={styles.venueManager}>Venue manager: {owner.name}</p>
+      <div className={styles.loactionCon}>
+        <div className={styles.locationAddress}>
+          <h3 className={styles.locationH3}>Location</h3>
+          <div className={styles.locationContent}>
+            <p className={styles.boldP}>Address:</p>
+            <p>{location.address}</p>
+          </div>
+          <div className={styles.locationContent}>
+            <p className={styles.boldP}>City:</p>
+            <p>{location.city}</p>
+          </div>
+          <div className={styles.locationContent}>
+            <p className={styles.boldP}>Country:</p>
+            <p>{location.country}</p>
+          </div>
+        </div>
       </div>
+      <div className={styles.ownerCon}>
+        <h3 className={styles.venueManagerH3}>Venue Manager</h3>
+        <div className={styles.venueManagerContent}>
+          <p className={styles.boldP}>Name:</p>
+          <p> {owner.name}</p>
+        </div>
+        <div className={styles.venueManagerContent}>
+          <p className={styles.boldP}>Email:</p>
+          <p> {owner.email}</p>
+        </div>
+      </div>
+
       <div className={styles.descCon}>
+        <h3>Description</h3>
         <p>{venue.description}</p>
       </div>
       <div className={styles.includesCon}>

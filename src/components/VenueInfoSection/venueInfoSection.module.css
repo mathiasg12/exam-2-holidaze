@@ -38,7 +38,7 @@
   border-bottom: 0;
 }
 .descCon p {
-  margin-left: 10px;
+  margin: 10px auto 0 5px;
 }
 .venueInfoCon ul {
   padding: 10px;
@@ -52,32 +52,45 @@
 .venueInfoCon h3 {
   margin-bottom: 0;
 }
+.boldP {
+  font-weight: bold;
+}
 .avatar {
   width: 50px;
   height: 50px;
   border-radius: 100%;
 }
-.loactionAndOwnerCon {
+.ownerCon {
+  width: 100%;
+}
+.loactionCon {
+  border: solid white;
+  border-width: 1px 0 1px 0;
+  width: 100%;
+}
+.locationContent,
+.venueManagerContent {
   display: flex;
-  flex-direction: column;
+  margin: 5px auto;
 }
-.loactionAndOwnerCon p {
-  margin-top: 5px;
+.locationContent p,
+.venueManagerContent p {
+  margin: 10px 0 0 5px;
+  max-width: 60vw;
+  word-wrap: break-word;
 }
-.venueManager,
-.locationAddress {
-  font-size: 0.8em;
-  margin-left: 10px;
-}
-.locationCon {
-  display: flex;
-  align-items: center;
+.locationH3,
+.venueManagerH3 {
+  text-align: center;
 }
 @media (min-width: 600px) {
+  .locationContent p {
+    max-width: 30vw;
+  }
   .venueInfoCon {
     margin-top: 0;
-    width: 300px;
-    padding: 50px 0px;
+    padding: 4vw 1vw;
+    width: 47vw;
   }
   .includesCon ul {
     width: 300px;
@@ -95,7 +108,15 @@
   }
 }
 @media (min-width: 850px) {
+  .locationContent p {
+    max-width: 300px;
+  }
+  .locationAddress,
+  .ownerCon {
+    max-width: 400px;
+  }
   .venueInfoCon {
+    padding: 50px 10px;
     width: 400px;
   }
   .includesCon ul {

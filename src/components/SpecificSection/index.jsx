@@ -59,7 +59,6 @@ export function SpecificSection() {
           userName !== loadedVenueOwner.name ? (
             <BookSection
               venue={loadedVenue}
-              className={styles.bookSection}
               loadedBookings={loadedVenueBookigs}
             ></BookSection>
           ) : (

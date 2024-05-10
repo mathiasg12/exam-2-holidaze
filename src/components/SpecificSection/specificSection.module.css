@@ -7,14 +7,11 @@
 @media (min-width: 600px) {
   .specificSection {
     display: grid;
-    grid-template-columns: 300px 300px;
+    grid-template-columns: 50vw 50vw;
     grid-template-rows: auto auto;
     align-items: start;
-    max-width: 650px;
+    justify-items: center;
     margin: 200px auto 0 auto;
-  }
-  .bookSection {
-    grid-column: 1/-1;
   }
 }
 @media (min-width: 850px) {

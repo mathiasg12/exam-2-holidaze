@@ -2,12 +2,15 @@
 .bookSection {
   color: white;
   border-radius: 5px;
-  margin: 0 auto 150px auto;
+  margin: 0 auto 100px auto;
   background-color: var(--custom-blue);
   width: 80vw;
   padding: 50px 10px;
   text-align: center;
   position: relative;
+}
+.bookSection button {
+  margin-bottom: 0;
 }
 .BookSectionInputAndLabel {
   display: flex;
@@ -96,12 +99,13 @@
   color: var(--error-blueBg);
 }
 @media (min-width: 600px) {
+  .bookSection {
+    grid-column: 1/-1;
+    width: 97vw;
+    padding: 50px 1vw;
+  }
   .arrow {
     display: block;
-  }
-  .bookSection {
-    width: 600px;
-    padding: 50px 0px;
   }
   .amountOfGuestsCon {
     width: 320px;
@@ -119,6 +123,7 @@
 }
 @media (min-width: 850px) {
   .bookSection {
-    width: 840px;
+    padding: 50px 10px;
+    width: 830px;
   }
 }

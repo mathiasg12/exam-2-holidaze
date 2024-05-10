@@ -20,14 +20,14 @@
   background-color: white;
   padding: 5px;
   border-radius: 100%;
-  font-size: 1.2em;
+  font-size: 1.5em;
 }
 .arrowBack {
-  left: 2vw;
+  left: 1vw;
   top: 47%;
 }
 .arrowNext {
-  right: 2vw;
+  right: 1vw;
   top: 47%;
 }
 .imageCount {
@@ -43,8 +43,8 @@
 }
 @media (min-width: 600px) {
   .image {
-    width: 300px;
-    height: 300px;
+    width: 49vw;
+    height: 49vw;
   }
   .allImageCon {
     margin: 0 auto;

@@ -1,7 +1,7 @@
 .notLoggedInContainer {
   color: white;
   border-radius: 5px;
-  margin: 0 auto 150px auto;
+  margin: 0 auto 100px auto;
   background-color: var(--custom-blue);
   width: 80vw;
   padding: 50px 10px;
@@ -13,12 +13,14 @@
 }
 @media (min-width: 600px) {
   .notLoggedInContainer {
-    width: 600px;
-    padding: 50px 0px;
+    grid-column: 1/-1;
+    width: 97vw;
+    padding: 50px 1vw;
   }
 }
 @media (min-width: 850px) {
   .notLoggedInContainer {
-    width: 840px;
+    padding: 50px 10px;
+    width: 830px;
   }
 }
