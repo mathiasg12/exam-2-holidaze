@@ -52,9 +52,9 @@
 }
 .noResults {
   background-color: white;
-  padding: 5px;
-  width: 217px;
-  margin-top: 0;
+  padding: 5px 0;
+  width: 237px;
+  margin: 0 0 0 1px;
   border-radius: 0 0 10px 10px;
 }
 .noResults h3 {

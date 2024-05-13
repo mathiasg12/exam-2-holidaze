@@ -48,7 +48,9 @@ export function SearchOverlay(props) {
                     }}
                   />
                 </div>
-                <h3>{capText(venueObject.name, 30)}</h3>
+                <h3>
+                  {venueObject.name ? capText(venueObject.name, 30) : 'No name'}
+                </h3>
               </div>
               <div className={styles.pContainer}>
                 <p>

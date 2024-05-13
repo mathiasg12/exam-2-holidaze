@@ -45,6 +45,9 @@ export function SearchBar(props) {
               : styles.searchBarContainerActive
           }
         >
+          <label htmlFor="searchBar" className={styles.searchBarLabel}>
+            SearchBar
+          </label>
           <input
             placeholder="Search for a venue"
             value={searchValue}
