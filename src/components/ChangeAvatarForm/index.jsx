@@ -32,7 +32,6 @@ export function ChangeAvatarForm(props) {
     formState: { errors },
   } = useForm({ resolver: yupResolver(ChangeAvatarSchema) });
   async function onSubmit(data) {
-    console.log(data);
     const object = {
       avatar: {
         url: data.url,

@@ -14,7 +14,6 @@ export function BookingsOnMyVenues(props) {
   const { error, loading, venues } = props;
   const loadedVenue = venues ? venues : {};
   const loadedBookings = venues.map((venue) => venue.bookings).flat();
-  console.log(loadedBookings);
   if (error) {
     return <ErrorMessageNotSpecific></ErrorMessageNotSpecific>;
   } else if (loading) {

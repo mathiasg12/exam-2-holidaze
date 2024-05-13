@@ -29,7 +29,6 @@ export function SpecificSection() {
   if (Array.isArray(loadedVenue.media) && loadedVenue.media.length > 0) {
     imageMedia = loadedVenue.media;
   }
-  console.log(loadedVenue);
   if (loading || !loadedVenue) {
     return (
       <section className={styles.specificSectionLoading}>

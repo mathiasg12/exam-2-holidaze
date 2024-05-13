@@ -19,7 +19,6 @@ export function MyVenues(props) {
   const [indexOfEditVenue, setIndexOfEditVenue] = useState(0);
   const loadedVenues = venues ? venues : [];
   const update = useUpdateTriggerStore((state) => state.newUpdate);
-  console.log(loadedVenues);
   function handleEditBtnClick(e) {
     const id = e.target.id;
     setIndexOfEditVenue(loadedVenues.findIndex((venue) => venue.id === id));

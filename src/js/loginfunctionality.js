@@ -34,8 +34,13 @@ export async function loginFunctionality(
       localStorage.setItem('loggedIn', true);
       localStorage.setItem('name', response.data.name);
       await reset();
-      await fetchApiKey(ApiKeyURL);
-      await setLoggedIn(true);
+      const ApiKeyBoolean = await fetchApiKey(ApiKeyURL);
+      if (ApiKeyBoolean) {
+        await setLoggedIn(true);
+      } else {
+        setErrorActive(true);
+        setErrormessage('Error with login please try again later');
+      }
     } else {
       setErrorActive(true);
       const error = await login.json();
@@ -44,6 +49,6 @@ export async function loginFunctionality(
     }
   } catch (error) {
     setErrorActive(true);
-    setErrormessage('Error with Login');
+    setErrormessage('Error with login please try again later');
   }
 }

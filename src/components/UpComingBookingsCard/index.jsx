@@ -27,7 +27,6 @@ export function UpComingBookingsCard(props) {
   function onExitButtonClick() {
     setMessageVisible(!messageVisible);
   }
-  console.log(loadedBookingsArray);
   function onCancelClick(e) {
     const id = e.target.id;
     setDeleteOverlayKey(id);

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import {
   addImage,
   imageOnChange,
@@ -18,9 +18,6 @@ export function AddAndRemoveImage(props) {
     setImageInputValue,
   } = props;
   const [imageError, setImageError] = useState('');
-  useEffect(() => {
-    console.log(newImageArray);
-  }, [newImageArray]);
   return (
     <div className={styles.inputWrapper}>
       <label htmlFor="image">Image link (optional)</label>

@@ -30,9 +30,7 @@ export async function bookVenue(
       body: JSON.stringify(object),
     };
     const bookVenue = await fetch(URL, options);
-    console.log(bookVenue);
     const bookJson = await bookVenue.json();
-    console.log(bookJson);
     if (bookVenue.ok) {
       setError(false);
       setSuccess(true);
@@ -49,7 +47,6 @@ export async function bookVenue(
       }
     }
   } catch (error) {
-    console.log(error);
     setSuccess(false);
     setError(true);
     setMessage('Something went wrong please try again later');

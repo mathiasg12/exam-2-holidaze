@@ -36,7 +36,6 @@ export function SearchBar(props) {
         handleSearchClicked();
       }
     };
-    console.log(searchedArray);
     return (
       <div>
         <div
