@@ -39,7 +39,10 @@ export function FilterMenu(props) {
       <div className={styles.filterMenuContentContainer}>
         <h3>Filter</h3>
         <div className={styles.amountOfGuestsCon}>
-          <label htmlFor="Guests" className={styles.amountOfGuestsLabel}>
+          <label
+            htmlFor="amountOfGuests"
+            className={styles.amountOfGuestsLabel}
+          >
             Max amount of guests
           </label>
           <select
@@ -66,8 +69,9 @@ export function FilterMenu(props) {
               name="pets"
               value="pets"
               onClick={checkboxChange}
+              id="petsCheckBox"
             />
-            <label htmlFor="pets">Pets allowed</label>
+            <label htmlFor="petsCheckBox">Pets allowed</label>
           </div>
           <div className={styles.checkboxContainer}>
             <input
@@ -75,8 +79,9 @@ export function FilterMenu(props) {
               name="wifi"
               value="wifi"
               onClick={checkboxChange}
+              id="wifiCheckBox"
             />
-            <label htmlFor="wifi">Wifi included</label>
+            <label htmlFor="wifiCheckBox">Wifi included</label>
           </div>
           <div className={styles.checkboxContainer}>
             <input
@@ -84,8 +89,9 @@ export function FilterMenu(props) {
               name="breakfast"
               value="breakfast"
               onClick={checkboxChange}
+              id="breakfastCheckBox"
             />
-            <label htmlFor="breakfast">Breakfast included</label>
+            <label htmlFor="breakfastCheckBox">Breakfast included</label>
           </div>
           <div className={styles.checkboxContainer}>
             <input
@@ -93,8 +99,9 @@ export function FilterMenu(props) {
               name="parking"
               value="parking"
               onClick={checkboxChange}
+              id="parkingCheckBox"
             />
-            <label htmlFor="parking">Parking included</label>
+            <label htmlFor="parkingCheckBox">Parking included</label>
           </div>
         </div>
         <ComfirmBtn onClickFunction={onClickFunction}></ComfirmBtn>

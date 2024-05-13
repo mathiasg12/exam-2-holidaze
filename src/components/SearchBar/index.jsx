@@ -80,6 +80,9 @@ export function SearchBar(props) {
     return (
       <div>
         <div className={styles.searchBarContainer}>
+          <label htmlFor="searchBar" className={styles.searchBarLabel}>
+            SearchBar
+          </label>
           <input
             placeholder="Search for a venue, city or country"
             value={searchValue}

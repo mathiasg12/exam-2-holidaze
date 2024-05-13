@@ -95,9 +95,9 @@ export function EditFormVenue(props) {
       <h3 className={styles.headingH3}>
         Update your Venue: {capText(venueToEdit.name, 30)}
       </h3>
-      <h4 className={error ? commonStyles.errorMsg : styles.errorHide}>
+      <p className={error ? commonStyles.errorMsg : styles.errorHide}>
         {errorMsg}
-      </h4>
+      </p>
       <RentOutAndEditFormInputs
         errors={errors}
         register={register}

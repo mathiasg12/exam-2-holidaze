@@ -25,7 +25,7 @@ export function ProfilePicture(props) {
         ></img>
       </div>
       <button
-        className={`${commonStyles.smallButtonYellow} ${commonStyles.smallMarginBottom} `}
+        className={`${commonStyles.smallButtonYellow} ${commonStyles.smallMarginBottom} ${commonStyles.smallMarginTop} `}
         onClick={handleChangeAvatarClick}
       >
         Change avatar

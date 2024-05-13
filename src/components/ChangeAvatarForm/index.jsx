@@ -68,9 +68,9 @@ export function ChangeAvatarForm(props) {
           </p>
         </div>
         <div className={styles.inputWrapper}>
-          <label htmlFor="url">Add a valid URL</label>
+          <label htmlFor="urlInput">Add a valid URL</label>
           <p className={commonStyles.errorValidation}>{errors.url?.message}</p>
-          <input type="text" name="url" {...register('url')} />
+          <input type="text" name="url" id="urlInput" {...register('url')} />
         </div>
         <input
           type="submit"

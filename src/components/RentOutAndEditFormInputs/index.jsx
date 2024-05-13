@@ -96,7 +96,7 @@ export function RentOutAndEditFormInputs(props) {
         />
       </div>
       <div className={styles.inputWrapper}>
-        <label htmlFor="address">Address</label>
+        <label htmlFor="adress">Address</label>
         <p className={commonStyles.errorValidation}>
           {errors.address?.message}
         </p>

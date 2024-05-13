@@ -68,13 +68,14 @@ export function LoginForm() {
         </p>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className={styles.inputCon}>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="emailInput">Email</label>
             <p className={commonStyles.errorValidation}>
               {errors.email?.message}
             </p>
             <input
               type="text"
               name="email"
+              id="emailInput"
               className={
                 !errors.email
                   ? commonStyles.input

@@ -20,7 +20,7 @@ export function AddAndRemoveImage(props) {
   const [imageError, setImageError] = useState('');
   return (
     <div className={styles.inputWrapper}>
-      <label htmlFor="image">Image link (optional)</label>
+      <label htmlFor="imageUpdateForm">Image link (optional)</label>
       <p className={styles.errorMsg}>{imageError}</p>
       <div className={styles.addImageWrapper}>
         <input

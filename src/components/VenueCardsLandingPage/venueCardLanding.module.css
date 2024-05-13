@@ -10,12 +10,12 @@
   margin: 30px auto;
   background-color: white;
   color: black;
-  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.3);
+  box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.4);
 }
 .venueCard:hover {
-  box-shadow: 4px 6px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 6px 8px 10px rgba(0, 0, 0, 0.5);
   transition-delay: 0.3s;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 .venueCard h3 {
   margin: 0 auto 5px auto;

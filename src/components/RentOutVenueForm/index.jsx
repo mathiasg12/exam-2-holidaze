@@ -10,7 +10,10 @@ import { onSubmitClick } from '../../js/publishVenueSubmit';
 import { PublishVenueFormCheckboxes } from '../PublishVenueFormCheckboxes';
 import { RentOutAndEditFormInputs } from '../RentOutAndEditFormInputs';
 /**
- * function that returns the "rent out venue" form, the form uses yup form controll
+ * Function that returns the "rent out venue" form. The form uses Yup form control.
+ * Like the "edit" form, the "rentOut" form will not render unless the "activeMenuItem" state is the correct string.
+ * This is to prevent multiple instances of the same inputs and labels being rendered at the same time,
+ * which can cause issues with screen readers
  * @param {props} props
  */
 export function RentOutVenueForm(props) {
@@ -51,83 +54,85 @@ export function RentOutVenueForm(props) {
     }
   }, [activeMenuItem]);
   if (!loading && !success) {
-    return (
-      <div>
-        <h3 className={styles.rentOutHeading}>Rent out a Venue</h3>
-        <form
-          className={styles.rentOutVenueForm}
-          onSubmit={handleSubmit((data) => {
-            onSubmitClick(
-              data,
-              petsAllowed,
-              wifiIncluded,
-              parkingIncluded,
-              breakfastIncluded,
-              setLoading,
-              setError,
-              setErrorMsg,
-              setSuccess,
-              reset,
-              setImageArray,
-              imageArray
-            );
-          })}
-        >
-          <h4 className={error ? commonStyles.errorMsg : styles.errorHide}>
-            {errorMsg}
-          </h4>
-          <RentOutAndEditFormInputs
-            errors={errors}
-            register={register}
-            newImageArray={imageArray}
-            setNewImageArray={setImageArray}
-            imageInputValue={imageInputValue}
-            setImageInputValue={setImageInputValue}
-            nameOfVenue={nameOfVenue}
-            descOfVenue={descOfVenue}
-            setNameOfVenue={setNameOfVenue}
-            setDescOfVenue={setDescOfVenue}
-            priceOfVenue={priceOfVenue}
-            setPriceOfVenue={setPriceOfVenue}
-            addressOfVenue={addressOfVenue}
-            setAddressOfVenue={setAddressOfVenue}
-            cityOfVenue={cityOfVenue}
-            setCityOfVenue={setCityOfVenue}
-            countryOfVenue={countryOfVenue}
-            setCountryOfVenue={setCountryOfVenue}
-            maxGuestsOfVenue={maxGuestsOfVenue}
-            setMaxGuestsOfVenue={setMaxGuestsOfVenue}
-          ></RentOutAndEditFormInputs>
-          <PublishVenueFormCheckboxes
-            petsAllowed={petsAllowed}
-            setPetsAllowed={setPetsAllowed}
-            breakfastIncluded={breakfastIncluded}
-            setBreakfastIncuded={setBreakfastIncuded}
-            parkingIncluded={parkingIncluded}
-            setParkingIncluded={setParkingIncluded}
-            wifiIncluded={wifiIncluded}
-            setWifiIncluded={setWifiIncluded}
-            handleChangedMetaValue={handleChangedMetaValue}
-          ></PublishVenueFormCheckboxes>
-          <div className={styles.errorCon}>
-            <p
-              className={
-                error ? commonStyles.errorValidation : styles.errorHide
-              }
-            >
+    if (activeMenuItem === 'rentOut') {
+      return (
+        <div>
+          <h3 className={styles.rentOutHeading}>Rent out a Venue</h3>
+          <form
+            className={styles.rentOutVenueForm}
+            onSubmit={handleSubmit((data) => {
+              onSubmitClick(
+                data,
+                petsAllowed,
+                wifiIncluded,
+                parkingIncluded,
+                breakfastIncluded,
+                setLoading,
+                setError,
+                setErrorMsg,
+                setSuccess,
+                reset,
+                setImageArray,
+                imageArray
+              );
+            })}
+          >
+            <p className={error ? commonStyles.errorMsg : styles.errorHide}>
               {errorMsg}
             </p>
-          </div>
-          <div>
-            <input
-              type="submit"
-              value="Publish"
-              className={commonStyles.bigButtonYellow}
-            />
-          </div>
-        </form>
-      </div>
-    );
+            <RentOutAndEditFormInputs
+              errors={errors}
+              register={register}
+              newImageArray={imageArray}
+              setNewImageArray={setImageArray}
+              imageInputValue={imageInputValue}
+              setImageInputValue={setImageInputValue}
+              nameOfVenue={nameOfVenue}
+              descOfVenue={descOfVenue}
+              setNameOfVenue={setNameOfVenue}
+              setDescOfVenue={setDescOfVenue}
+              priceOfVenue={priceOfVenue}
+              setPriceOfVenue={setPriceOfVenue}
+              addressOfVenue={addressOfVenue}
+              setAddressOfVenue={setAddressOfVenue}
+              cityOfVenue={cityOfVenue}
+              setCityOfVenue={setCityOfVenue}
+              countryOfVenue={countryOfVenue}
+              setCountryOfVenue={setCountryOfVenue}
+              maxGuestsOfVenue={maxGuestsOfVenue}
+              setMaxGuestsOfVenue={setMaxGuestsOfVenue}
+            ></RentOutAndEditFormInputs>
+            <PublishVenueFormCheckboxes
+              petsAllowed={petsAllowed}
+              setPetsAllowed={setPetsAllowed}
+              breakfastIncluded={breakfastIncluded}
+              setBreakfastIncuded={setBreakfastIncuded}
+              parkingIncluded={parkingIncluded}
+              setParkingIncluded={setParkingIncluded}
+              wifiIncluded={wifiIncluded}
+              setWifiIncluded={setWifiIncluded}
+              handleChangedMetaValue={handleChangedMetaValue}
+            ></PublishVenueFormCheckboxes>
+            <div className={styles.errorCon}>
+              <p
+                className={
+                  error ? commonStyles.errorValidation : styles.errorHide
+                }
+              >
+                {errorMsg}
+              </p>
+            </div>
+            <div>
+              <input
+                type="submit"
+                value="Publish"
+                className={commonStyles.bigButtonYellow}
+              />
+            </div>
+          </form>
+        </div>
+      );
+    }
   } else if (success && !loading) {
     return (
       <PublishVenueSuccess

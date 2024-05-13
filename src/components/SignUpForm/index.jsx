@@ -150,7 +150,7 @@ export function SignUpForm() {
             </div>
           </div>
           <div className={styles.inputCon}>
-            <label htmlFor="rePassword">Repeat Password</label>
+            <label htmlFor="rePasswordInput">Repeat Password</label>
             <p className={commonStyles.errorValidation}>
               {errors.repeatPassword?.message}
             </p>
@@ -164,6 +164,7 @@ export function SignUpForm() {
               <input
                 type={repeatPasswordVisible ? 'text' : 'password'}
                 name="rePassword"
+                id="rePasswordInput"
                 {...register('repeatPassword')}
                 className={styles.inputPassword}
               ></input>
