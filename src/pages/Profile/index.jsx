@@ -4,6 +4,7 @@ import { UpComingBookingsSection } from '../../components/UpComingBookingsSectio
 import { useFetchUserProfile } from '../../hooks/FetchUserProfile';
 import { profileURL } from '../../js/URL';
 import { VenueManagerSection } from '../../components/VenueManagerSection';
+import { Helmet } from 'react-helmet';
 /**
  * component that creates the profile page calls the profileUserSection component and eighter the upComingBookingsSection or venueManagerSection component depending on if the user is
  * a manager or not
@@ -27,6 +28,18 @@ export function Profile() {
   } else if (!loading && loadedProfile) {
     return (
       <main>
+        <Helmet>
+          <title>{`Holidaze | Profile | logged in as: ${loadedProfile.name}`}</title>
+          <meta
+            name="description"
+            content="Manage your Holidaze profile, access your upcoming bookings, your venues,
+            your profile information, and upcoming bookings on your venues, all in one place "
+          />
+          <meta
+            name="keywords"
+            content="Profile, Holidaze, Holidaze profile, Bookings, Upcoming bookings, Venues, Edit venue, Travel,Holiday,Rental"
+          />
+        </Helmet>
         <ProfileUserSection profile={profile}></ProfileUserSection>
         {!isVenueManager ? (
           <UpComingBookingsSection
