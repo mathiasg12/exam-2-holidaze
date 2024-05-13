@@ -97,7 +97,9 @@
   display: none;
 }
 .datePickerError {
-  border: solid 2px var(--error-blueBg);
+  border: solid 4px var(--error-blueBg);
+  height: 18px;
+  width: 174px;
 }
 .total {
   margin-bottom: 0;

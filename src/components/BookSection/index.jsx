@@ -55,7 +55,7 @@ export function BookSection(props) {
     setError(false);
   }
   useEffect(() => {
-    if (checkIn && checkOut !== null) {
+    if (checkIn && checkOut !== null && checkOut > checkIn) {
       const stayPeriode = allDaysBetween([
         { startDate: checkIn, endDate: checkOut },
       ]);
@@ -72,6 +72,10 @@ export function BookSection(props) {
     } else if (checkOut === null) {
       setCheckInError(false);
       setCheckOutError(true);
+    } else if (checkOut < checkIn) {
+      setCheckOutError(true);
+      setError(true);
+      setMessage('Check-out needs to be after check-in');
     } else {
       const object = createBookingObject(
         checkIn,
@@ -133,12 +137,15 @@ export function BookSection(props) {
                   onChange={(date) => {
                     setCheckIn(date);
                     removeErrorMessage();
+                    setCheckInError(false);
                   }}
                   minDate={new Date()}
                   placeholderText="click to choose check-in"
                   excludeDates={exludedDatesArray}
                   className={
-                    !checkInError ? styles.datePicker : styles.datePickerError
+                    !checkInError
+                      ? styles.datePicker
+                      : ` ${styles.datePicker} ${styles.datePickerError}`
                   }
                 ></DatePicker>
               </div>
@@ -164,6 +171,7 @@ export function BookSection(props) {
                   onChange={(date) => {
                     setCheckOut(date);
                     removeErrorMessage();
+                    setCheckOutError(false);
                   }}
                   minDate={earliestCheckoutDate}
                   placeholderText="click to choose check-out"

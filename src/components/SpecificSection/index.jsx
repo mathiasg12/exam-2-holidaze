@@ -1,6 +1,3 @@
-import { useParams } from 'react-router-dom';
-import { useFetchAllVenues } from '../../hooks/FetchAllVenues';
-import { allVenuesURL } from '../../js/URL';
 import { ImageCarousel } from '../ImageCarousel';
 import styles from './specificSection.module.css';
 import { VenueInfo } from '../VenueInfoSection';
@@ -11,15 +8,12 @@ import { LoadingSpinner } from '../LoadingSpinner';
 import { BookSectionOwnVenue } from '../BookSectionOwnVenue';
 import { ErrorMessageNotSpecific } from '../ErrorMessageNotSpecific';
 /**
- * the specific section component handles and displays errors,loading and the specific venue a user has clicked on, the component calls three other components
+ * The specific section component receives an error state, a loading state,
+ * and the specific venue a user has clicked on as props and displays this to the user. The component calls three other components.
  */
-export function SpecificSection() {
-  const { id } = useParams();
+export function SpecificSection(props) {
+  const { venues, error, loading } = props;
   const isloggedIn = useLoggedInStore((state) => state.loggedIn);
-  const { venues, error, loading } = useFetchAllVenues(
-    allVenuesURL + `/${id}`,
-    true
-  );
   const loadedVenue = venues ? venues : {};
   const loadedVenueOwner = venues.owner ? venues.owner : {};
   const loadedVenueBookigs = venues.bookings ? venues.bookings : [];
