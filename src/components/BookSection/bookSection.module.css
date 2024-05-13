@@ -97,7 +97,11 @@
   display: none;
 }
 .datePickerError {
+  text-align: center;
+  padding: 2px;
   border: solid 4px var(--error-blueBg);
+  font-size: 18px;
+  border-radius: 5px;
   height: 18px;
   width: 174px;
 }
