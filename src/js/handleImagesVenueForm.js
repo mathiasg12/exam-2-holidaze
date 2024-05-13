@@ -24,7 +24,6 @@ export function addImage(
   if (imageInputValue.length >= 5) {
     setImageArray([...imageArray, { url: imageInputValue }]);
     setImageInputValue('');
-    console.log(imageArray);
   } else if (imageInputValue.length === 0) {
     setImageError('You have not given a image link (optional)');
     setImageInputValue('');
@@ -45,5 +44,4 @@ export function removeImage(event, imageArray, setImageArray) {
   const indexToRemove = event.target.id;
   imageArray.splice(indexToRemove, 1);
   setImageArray([...imageArray]);
-  console.log(imageArray);
 }

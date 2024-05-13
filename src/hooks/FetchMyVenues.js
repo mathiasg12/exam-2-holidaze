@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react';
 import { nonDuplicatedVenues } from '../js/removeDupllicatedArray';
 import { useUpdateTriggerStore } from '../states/updateTriggerState';
-
+/**
+ * hook that fetches and returns a users own venues
+ * @param {string} URL
+ */
 export function useFetchMyvenues(URL) {
   const [unFilteredvenues, setUnFilteredVenues] = useState([]);
   const [venues, setVenues] = useState([]);

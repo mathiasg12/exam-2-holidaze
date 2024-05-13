@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useUpdateTriggerStore } from '../states/updateTriggerState';
-
+/**
+ * hook that fetches and returns a profile
+ * @param {string} URL
+ */
 export function useFetchUserProfile(URL) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);

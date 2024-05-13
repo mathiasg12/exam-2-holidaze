@@ -1,7 +1,5 @@
-import { useUpdateTriggerStore } from '../states/updateTriggerState';
-
 /**
- * function that sends a put request to the api with an image object, so a user can update their profile picture
+ * function that sends a PUT request to the api with an image object, so a user can update their profile picture
  * @param {string} URL
  * @param {state} setResponseMessage
  * @param {function} reset

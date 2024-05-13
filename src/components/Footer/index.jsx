@@ -6,7 +6,6 @@ import { useLoggedInStore } from '../../states/loggedInState';
  */
 export function Footer() {
   const isLoggedIn = useLoggedInStore((state) => state.loggedIn);
-  const logOut = useLoggedInStore((state) => state.logOut);
   return (
     <footer>
       <div className={styles.footerElementsContainer}>

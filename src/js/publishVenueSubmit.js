@@ -4,7 +4,7 @@ import { postOrUpdateVenue } from '../js/postOrUpdateVenue';
 /**
  * function that handles the submit click on the profile page when filling out the rent out a venue form, if a user clicks submit and the validation goes thrue the function will call,
  * the createVenueObject and use that object as a parameter for the postVenue function which posts the venue to the api,
- *  if the request is successfull the form resets and the imageArray is set to an empty array
+ * if the request is successfull the form resets and the imageArray is set to an empty array
  * @param {object} data
  * @param {boolean} petsAllowed
  * @param {boolean} wifiIncluded

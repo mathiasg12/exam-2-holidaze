@@ -10,12 +10,10 @@ import { LoadingSpinner } from '../LoadingSpinner';
 import { VenueCardsLandingPage } from '../VenueCardsLandingPage';
 import { ErrorMessageNotSpecific } from '../ErrorMessageNotSpecific';
 /**
-Here's the corrected version:
-
-* The VenueSection component creates the venue section. It uses the useFetchAllVenues hook to fetch data from the API.
-  It then displays the content from the API in the venue section. If a user uses the search bar, a new array is made.
-  It then uses either the search array or the whole array to create a new array with the filter settings and then displays this array.
-  The component also handles error messages and displays loading if the loading state from the fetch hook is true.
+ * The VenueSection component creates the venue section. It uses the useFetchAllVenues hook to fetch data from the API.
+ * It then displays the content from the API in the venue section. If a user uses the search bar, a new array is made.
+ * It then uses either the search array or the whole array to create a new array with the filter settings and then displays this array.
+ * The component also handles error messages and displays loading if the loading state from the fetch hook is true.
  */
 export function AllVenueSection() {
   const { venues, error, loading } = useFetchAllVenues(allVenuesURL, false);

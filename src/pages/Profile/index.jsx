@@ -4,7 +4,10 @@ import { UpComingBookingsSection } from '../../components/UpComingBookingsSectio
 import { useFetchUserProfile } from '../../hooks/FetchUserProfile';
 import { profileURL } from '../../js/URL';
 import { VenueManagerSection } from '../../components/VenueManagerSection';
-
+/**
+ * component that creates the profile page calls the profileUserSection component and eighter the upComingBookingsSection or venueManagerSection component depending on if the user is
+ * a manager or not
+ */
 export function Profile() {
   const { loading, error, profile } = useFetchUserProfile(profileURL);
   const loadedProfile = profile ? profile : {};

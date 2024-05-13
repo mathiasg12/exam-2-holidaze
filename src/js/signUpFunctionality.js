@@ -1,6 +1,5 @@
 import { LoginURL } from './URL';
 import { loginFunctionality } from './loginfunctionality';
-
 /**
  * function that register a user to the API, takes six parameters, URL which is the URL to create the user and object,
  * which is the object posted to the API, settErrorActive,setLoggedIn and setErrorMessage

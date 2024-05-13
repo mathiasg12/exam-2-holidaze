@@ -3,7 +3,7 @@ import { EditFormVenue } from '../EditFormVenue';
 import { LoadingSpinner } from '../LoadingSpinner';
 import { DeleteVenueMessage } from '../DeleteVenueMessage';
 /**
- * function which creates the edit venue section, it eighter returns the delete message or the edit venue form depending on the state "deleteThisVenue"
+ * Function which creates the edit venue section, it eighter returns the delete message or the edit venue form depending on the state "deleteThisVenue"
  * @param {props} props
  */
 export function EditVenue(props) {

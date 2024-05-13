@@ -1,4 +1,8 @@
 import styles from './publishVenueSuccess.module.css';
+/**
+ * Component that creates the success message after a user has successfully published a venue
+ * @param {props} props
+ */
 export function PublishVenueSuccess(props) {
   const { setActiveMenuItem, setSuccess } = props;
   function handleResetForm() {

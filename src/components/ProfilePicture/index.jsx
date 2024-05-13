@@ -5,7 +5,6 @@ import styles from './ProfilePicture.module.css';
 /**
  * component that creates the jsx for the avatar picture and change avatar picture button, uses the changeAvatarForm component
  * @param {prop} props
- * @returns
  */
 export function ProfilePicture(props) {
   const [updateAvatarVisible, setUpdateAvatarVisible] = useState(false);

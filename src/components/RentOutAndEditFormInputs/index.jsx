@@ -1,6 +1,10 @@
 import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 import { AddAndRemoveImage } from '../AddAndRemoveImageUpdateForm';
 import styles from './rentOutAndEditFormInputs.module.css';
+/**
+ * Component that handles the different inputs in the "rent out" and "edit" form
+ * @param {props} props
+ */
 export function RentOutAndEditFormInputs(props) {
   const {
     errors,

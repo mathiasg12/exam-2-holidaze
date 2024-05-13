@@ -1,9 +1,8 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import styles from './nav.module.css';
 import { useLoggedInStore } from '../../states/loggedInState';
-import { useEffect } from 'react';
 /**
- * the navigation component, includes links, takes a prop called clicked which is true or false depending if the user has clicked the hamburger icon.
+ * The navigation component, includes links, takes a prop called clicked which is true or false depending if the user has clicked the hamburger icon.
  * @param {prop} props
  */
 export function Nav(props) {

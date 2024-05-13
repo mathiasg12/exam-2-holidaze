@@ -1,7 +1,7 @@
 import { RentOutLink } from '../RentOutLink';
 import styles from './welcomeMessage.module.css';
 /**
- * component that creates the welcoming message
+ * component that creates the welcoming message, this includes a h1,h2,p and a button
  */
 export function WelcomeMessage() {
   return (

@@ -8,7 +8,6 @@ import { PublishVenueSuccess } from '../PublishVenueSuccess';
 import { LoadingSpinner } from '../LoadingSpinner';
 import { onSubmitClick } from '../../js/publishVenueSubmit';
 import { PublishVenueFormCheckboxes } from '../PublishVenueFormCheckboxes';
-import { AddAndRemoveImage } from '../AddAndRemoveImageUpdateForm';
 import { RentOutAndEditFormInputs } from '../RentOutAndEditFormInputs';
 /**
  * function that returns the "rent out venue" form, the form uses yup form controll
