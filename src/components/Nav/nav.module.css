@@ -22,17 +22,18 @@
 .navButton {
   text-decoration: none;
   color: white;
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 .navButton {
   margin: 0;
   cursor: pointer;
 }
 .navLink:hover,
-.navButton:hover,
-.navButton:active,
-.navLink:active {
+.navButton:hover {
   color: var(--custom-yellow);
+}
+.navLink[aria-current='page'] {
+  font-weight: bold;
 }
 @media (min-width: 601px) {
   .navUl,
@@ -49,10 +50,14 @@
   .navLi {
     margin: 0 10px 0 10px;
   }
+  .navLink[aria-current='page'] {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
   .navLink,
   .navButton {
     border: 1px solid;
     border-color: var(--custom-yellow);
+    border-radius: 5px;
     display: block;
     width: 100px;
     text-align: center;

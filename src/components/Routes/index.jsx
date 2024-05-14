@@ -4,6 +4,7 @@ import { Specific } from '../../pages/Specific';
 import { LoginPage } from '../../pages/Login';
 import { SignUpPage } from '../../pages/SignUp';
 import { Profile } from '../../pages/Profile';
+import { NotFound } from '../../pages/404Page';
 /**
  * react Routes to different paths
  */
@@ -15,6 +16,7 @@ export function PageRoutes() {
       <Route path="/login" element={<LoginPage></LoginPage>}></Route>
       <Route path="/signUp" element={<SignUpPage></SignUpPage>}></Route>
       <Route path="/profile" element={<Profile></Profile>}></Route>
+      <Route path="*" element={<NotFound></NotFound>}></Route>
     </Routes>
   );
 }

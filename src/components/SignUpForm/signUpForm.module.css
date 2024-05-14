@@ -1,28 +1,24 @@
 @import '../../styles/customColors.css';
-.singUpSectionForm {
+.signUpSection {
+  margin: 150px auto 50px auto;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
   background-color: var(--custom-blue);
-  padding: 10px;
-  width: 80vw;
   color: white;
   border-radius: 5px;
   border: 2px solid var(--custom-yellow);
+  width: 300px;
 }
-.signUpSection {
-  display: flex;
-  margin: 170px auto 50px auto;
-}
+
 .singUpSectionForm form {
   flex-direction: column;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.singUpSectionForm h1 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.inputCon {
+.inputCon,
+.inputConFieldset {
   display: flex;
   flex-direction: column;
   width: 226px;
@@ -56,13 +52,28 @@ input[type='radio'] {
 .fieldsetSignUp {
   text-align: center;
   max-width: 226px;
-}
-.imgWrapper {
-  display: none;
+  border: 1px solid var(--custom-yellow);
 }
 .imgWrapper img {
-  height: 100%;
+  height: 300px;
   width: 100%;
+  border-radius: 5px 5px 0 0;
+}
+.imgWrapper {
+  position: relative;
+  width: 100%;
+}
+.signUpSection h1 {
+  font-size: 2em;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
 }
 .singUpSection fieldset label {
   margin-top: 10px;
@@ -70,39 +81,44 @@ input[type='radio'] {
 .errorWithFormNone {
   display: none;
 }
-@media (min-width: 601px) {
-  .singUpSectionForm {
-    width: 298px;
-    border: 0;
-    border-radius: 0 5px 5px 0;
+@media (max-width: 310px) {
+  .signUpSection {
+    width: 95vw;
   }
-  .imgWrapper {
-    display: block;
-    max-width: 298px;
+  .inputConFieldset {
+    text-align: center;
+    max-width: 200px;
+  }
+}
+@media (min-width: 601px) {
+  .signUpSection {
+    margin-top: 170px;
+    flex-direction: row;
+    min-width: 596px;
+  }
+  .signUpH1 {
+    font-size: 2.5em;
   }
   .imgWrapper img {
+    height: 900px;
+    max-width: 300px;
     border-radius: 5px 0 0 5px;
   }
-  .signUpSection {
-    max-width: 596px;
-    border: 2px solid var(--custom-yellow);
-    border-radius: 5px;
+  .signUpSection h1 {
+    top: 15%;
+  }
+  .singUpSectionForm form {
+    width: 300px;
   }
 }
 @media (min-width: 801px) {
-  .singUpSectionForm {
-    width: 398px;
-  }
-  .imgWrapper {
-    display: block;
-    max-width: 398px;
+  .signUpSection {
+    min-width: 796px;
   }
   .imgWrapper img {
-    border-radius: 5px 0 0 5px;
+    max-width: 400px;
   }
-  .signUpSection {
-    max-width: 796px;
-    border: 2px solid var(--custom-yellow);
-    border-radius: 5px;
+  .singUpSectionForm form {
+    width: 400px;
   }
 }

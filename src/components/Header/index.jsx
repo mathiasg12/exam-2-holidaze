@@ -38,7 +38,7 @@ export function Header() {
             </span>
           </div>
         </div>
-        <Nav clicked={clicked}></Nav>
+        <Nav clicked={clicked} setClicked={setClicked}></Nav>
       </div>
     </header>
   );

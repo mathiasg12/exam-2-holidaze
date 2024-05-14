@@ -30,6 +30,14 @@ input[type='checkbox'] {
   input[type='checkbox']:checked {
     accent-color: var(--custom-yellow);
   }
+ input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
 a{
     color:black;
 }

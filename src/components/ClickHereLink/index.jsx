@@ -5,10 +5,10 @@ import styles from './clickHereLink.module.css';
  * @param {props} props
  */
 export function ClickHereLink(props) {
-  const { linkTo } = props;
+  const { linkTo, text } = props;
   return (
     <div className={styles.linkCon}>
-      <p>Already a user?</p>
+      <p>{text}</p>
       <Link to={linkTo}>Click here</Link>
     </div>
   );

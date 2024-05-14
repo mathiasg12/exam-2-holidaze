@@ -55,10 +55,10 @@ export function LoginForm() {
   return (
     <section className={styles.loginSection}>
       <div className={styles.imgWrapper}>
-        <img src="/pictures/WB.jpg" alt="welcome back" />
+        <img src="/pictures/ImageOfNature.jpg" alt="welcome back" />
+        <h1 className={styles.loginH1}>Welcome back!</h1>
       </div>
       <div className={styles.loginFormContainer}>
-        <h1>Login</h1>
         <p
           className={
             errorActive ? commonStyles.errorMsg : styles.errorActiveNone
@@ -118,7 +118,11 @@ export function LoginForm() {
             value="Login"
             className={commonStyles.bigButtonYellow}
           ></input>
-          <ClickHereLink linkTo="/signUp"></ClickHereLink>
+          <ClickHereLink
+            linkTo="/signUp"
+            text="Don't have an account?"
+            className={styles.clickHereLink}
+          ></ClickHereLink>
         </form>
       </div>
     </section>

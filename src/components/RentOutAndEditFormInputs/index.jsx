@@ -2,7 +2,10 @@ import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 import { AddAndRemoveImage } from '../AddAndRemoveImageUpdateForm';
 import styles from './rentOutAndEditFormInputs.module.css';
 /**
- * Component that handles the different inputs in the "rent out" and "edit" form
+ * Component that handles the different inputs in the "rent out" and "edit" form.
+ * Most inputs are type text, price and maxGuest input are type number for better mobile optimization.
+ * The number inputs also use "onWheel={(e) => e.target.blur()}" to remove focus from the input when the user scrolls.
+ * This is to improve UX so the user doesn't accidentally scroll a different value when scrolling up or down the form.
  * @param {props} props
  */
 export function RentOutAndEditFormInputs(props) {
@@ -34,13 +37,13 @@ export function RentOutAndEditFormInputs(props) {
         <label htmlFor="name">Name</label>
         <p className={commonStyles.errorValidation}>{errors.name?.message}</p>
         <input
+          onChange={(e) => {
+            setNameOfVenue(e.target.value);
+          }}
           type="text"
           name="name"
           id="name"
           defaultValue={nameOfVenue}
-          onChange={(e) => {
-            setNameOfVenue(e.target.value);
-          }}
           {...register('name')}
           className={
             !errors.name
@@ -61,14 +64,14 @@ export function RentOutAndEditFormInputs(props) {
           {errors.description?.message}
         </p>
         <textarea
+          onChange={(e) => {
+            setDescOfVenue(e.target.value);
+          }}
           name="desc"
           id="desc"
           cols="20"
           rows="10"
           defaultValue={descOfVenue}
-          onChange={(e) => {
-            setDescOfVenue(e.target.value);
-          }}
           {...register('description')}
           className={
             !errors.description
@@ -81,12 +84,13 @@ export function RentOutAndEditFormInputs(props) {
         <label htmlFor="price">Price per night in $</label>
         <p className={commonStyles.errorValidation}>{errors.price?.message}</p>
         <input
-          defaultValue={priceOfVenue}
-          type="number"
-          id="price"
           onChange={(e) => {
             setPriceOfVenue(e.target.value);
           }}
+          onWheel={(e) => e.target.blur()}
+          defaultValue={priceOfVenue}
+          type="number"
+          id="price"
           {...register('price')}
           className={
             !errors.price
@@ -101,13 +105,13 @@ export function RentOutAndEditFormInputs(props) {
           {errors.address?.message}
         </p>
         <input
+          onChange={(e) => {
+            setAddressOfVenue(e.target.value);
+          }}
           defaultValue={addressOfVenue}
           type="text"
           name="adress"
           id="adress"
-          onChange={(e) => {
-            setAddressOfVenue(e.target.value);
-          }}
           {...register('address')}
           className={
             !errors.address
@@ -120,13 +124,13 @@ export function RentOutAndEditFormInputs(props) {
         <label htmlFor="city">City</label>
         <p className={commonStyles.errorValidation}>{errors.city?.message}</p>
         <input
+          onChange={(e) => {
+            setCityOfVenue(e.target.value);
+          }}
           defaultValue={cityOfVenue}
           type="text"
           name="city"
           id="city"
-          onChange={(e) => {
-            setCityOfVenue(e.target.value);
-          }}
           {...register('city')}
           className={
             !errors.city
@@ -141,13 +145,13 @@ export function RentOutAndEditFormInputs(props) {
           {errors.country?.message}
         </p>
         <input
+          onChange={(e) => {
+            setCountryOfVenue(e.target.value);
+          }}
           defaultValue={countryOfVenue}
           type="text"
           name="country"
           id="country"
-          onChange={(e) => {
-            setCountryOfVenue(e.target.value);
-          }}
           {...register('country')}
           className={
             !errors.country
@@ -162,19 +166,20 @@ export function RentOutAndEditFormInputs(props) {
           {errors.maxGuests?.message}
         </p>
         <input
+          onChange={(e) => {
+            setMaxGuestsOfVenue(e.target.value);
+          }}
+          onWheel={(e) => e.target.blur()}
           defaultValue={maxGuestsOfVenue}
+          type="number"
+          id="maxGuestsAllowed"
+          name="maxGuestsAllowed"
+          {...register('maxGuests')}
           className={
             !errors.maxGuests
               ? commonStyles.input
               : `${commonStyles.errorInput} ${commonStyles.input}`
           }
-          type="number"
-          name="maxGuestsAllowed"
-          id="maxGuestsAllowed"
-          {...register('maxGuests')}
-          onChange={(e) => {
-            setMaxGuestsOfVenue(e.target.value);
-          }}
         />
       </div>
     </div>

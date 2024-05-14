@@ -1,0 +1,29 @@
+@import '../../styles/customColors.css';
+.contentContainer {
+  margin: 200px auto 50px auto;
+  max-width: 400px;
+  text-align: center;
+  background-color: var(--custom-blue);
+  color: white;
+  border-radius: 5px;
+  padding: 10px 10px 20px 10px;
+  border: 2px solid var(--custom-yellow);
+}
+.backToVenueLink {
+  background-color: var(--custom-yellow);
+  color: black;
+  text-decoration: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  display: flex;
+  max-width: 178px;
+  min-height: 36px;
+  line-height: 0;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+.backToVenueLink:hover {
+  background-color: white;
+}

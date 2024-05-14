@@ -24,7 +24,7 @@ export function RentOutVenueForm(props) {
   const [breakfastIncluded, setBreakfastIncuded] = useState(false);
   const [nameOfVenue, setNameOfVenue] = useState('');
   const [descOfVenue, setDescOfVenue] = useState('');
-  const [priceOfVenue, setPriceOfVenue] = useState(0);
+  const [priceOfVenue, setPriceOfVenue] = useState('');
   const [addressOfVenue, setAddressOfVenue] = useState('');
   const [cityOfVenue, setCityOfVenue] = useState('');
   const [countryOfVenue, setCountryOfVenue] = useState('');

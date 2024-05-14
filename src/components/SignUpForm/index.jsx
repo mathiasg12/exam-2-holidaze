@@ -64,10 +64,10 @@ export function SignUpForm() {
   return (
     <section className={styles.signUpSection}>
       <div className={styles.imgWrapper}>
-        <img src="/pictures/signUpImageBackGround.jpg" alt="welcome back" />
+        <img src="/pictures/imageOfNature.jpg" alt="welcome" />
+        <h1>Sign up and start your journey today!</h1>
       </div>
       <div className={styles.singUpSectionForm}>
-        <h1>Sign up</h1>
         <p
           id="errorWithform"
           className={
@@ -177,7 +177,7 @@ export function SignUpForm() {
           </div>
           <fieldset className={styles.fieldsetSignUp}>
             <legend>What kind of user are you registrering?</legend>
-            <div className={styles.inputCon}>
+            <div className={styles.inputConFieldset}>
               <label htmlFor="customer">Customer</label>
               <input
                 type="radio"
@@ -202,7 +202,7 @@ export function SignUpForm() {
             value="Sign up"
             className={commonStyles.bigButtonYellow}
           />
-          <ClickHereLink linkTo="/login"></ClickHereLink>
+          <ClickHereLink linkTo="/login" text="Already a user?"></ClickHereLink>
         </form>
       </div>
     </section>

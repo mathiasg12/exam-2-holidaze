@@ -61,16 +61,16 @@ export const RentOutVenueSchema = yup.object({
     .string()
     .required('please enter the city of your venue')
     .min(2, 'Name of the city needs to be at least 2 characters long'),
+  maxGuests: yup
+    .number('Max guest needs to be a number')
+    .transform((guests) => (isNaN(guests) ? undefined : guests))
+    .required(
+      'Please enter the maximum amount of guests that can stay in your venue'
+    )
+    .min(1, 'Your venue needs to be able to accommodate at least 1 guest')
+    .max(100, 'A venue cannot accommodate more than 100 guests'),
   country: yup
     .string()
     .required('Please enter the name of the country your venue is located')
     .min(4, 'Name of the country needs to be at least 4 characters long'),
-  maxGuests: yup
-    .number('Max guest needs to be a number')
-    .transform((value) => (isNaN(value) ? undefined : value))
-    .required(
-      'Please enter the maximum amount of guests that can stay in your venue'
-    )
-    .min(1, 'your venue needs to be able for at least 1 guest')
-    .max(100, 'A venue cannot accommodate more than 100 guests'),
 });
