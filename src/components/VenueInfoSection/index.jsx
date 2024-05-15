@@ -11,6 +11,11 @@ export function VenueInfo(props) {
   const { venue, owner, location } = props;
   const metaObject = venue.meta ? venue.meta : {};
   const metaArray = Object.entries(metaObject);
+  const loadedOwnerAvatar = owner.avatar ? owner.avatar : '';
+  let profileImage = '../pictures/noImage.jpg';
+  if (loadedOwnerAvatar !== undefined) {
+    profileImage = loadedOwnerAvatar.url;
+  }
   const filterMetaArray = metaArray
     .filter(([key, value]) => value === true)
     .map(([key]) => key);
@@ -42,6 +47,15 @@ export function VenueInfo(props) {
       </div>
       <div className={styles.ownerCon}>
         <h3 className={styles.venueManagerH3}>Venue Manager</h3>
+        <div className={styles.avatarCon}>
+          <img
+            src={profileImage}
+            alt="profile avatar"
+            onError={(errorEvent) => {
+              errorEvent.target.src = '../pictures/noImage.jpg';
+            }}
+          />
+        </div>
         <div className={styles.venueManagerContent}>
           <p className={styles.boldP}>Name:</p>
           <p> {owner.name}</p>

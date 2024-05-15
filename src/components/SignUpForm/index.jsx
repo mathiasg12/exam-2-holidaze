@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { useLoggedInStore } from '../../states/loggedInState';
 import { ClickHereLink } from '../ClickHereLink';
+import { useProfileAvatar } from '../../states/profileAvatarState';
 /**
  * component that creates the signup form and handles inputs from the user, if the submit button is pressed a new user is created and the user is logged in automatically, the component
  * has a useffect that runs every time the loggedIn state changes, if loggedIn === true the page redirects to the profile page
@@ -23,6 +24,7 @@ export function SignUpForm() {
   const [repeatPasswordVisible, setRepeatPasswordVisible] = useState(false);
   const [passwordVisible, setPasswordVisible] = useState(false);
   const loginTrue = useLoggedInStore((state) => state.login);
+  const setProfileAvatar = useProfileAvatar((state) => state.setProfileImage);
   const [errorMessage, setErrorMessage] = useState(
     'error please try again later'
   );
@@ -46,7 +48,8 @@ export function SignUpForm() {
       setErrorActive,
       setErrorMessage,
       setLoggedIn,
-      reset
+      reset,
+      setProfileAvatar
     );
   };
   function handleEyeClick() {

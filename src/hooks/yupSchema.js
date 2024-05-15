@@ -3,7 +3,10 @@ import * as yup from 'yup';
  * yup schema for "sign up" form," login" form,  "change avatar" form and the "rent out a venue form".
  */
 export const SignUpSchema = yup.object({
-  name: yup.string().required('Name is required'),
+  name: yup
+    .string()
+    .required('Name is required')
+    .max(21, 'Name can not be greater than 20 characters'),
   email: yup
     .string()
     .required('Email is required')

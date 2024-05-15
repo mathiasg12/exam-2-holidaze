@@ -8,6 +8,7 @@ import { updateProfile } from '../../js/updateProfile';
 import { profileURL } from '../../js/URL';
 import { useUpdateTriggerStore } from '../../states/updateTriggerState';
 import { LoadingSpinner } from '../LoadingSpinner';
+import { useProfileAvatar } from '../../states/profileAvatarState';
 /**
  * component that returns the change avatar form, this component calls the updateProfile function which sends a put request  to the api
  * @param {props} props
@@ -19,6 +20,7 @@ export function ChangeAvatarForm(props) {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
   const updateImage = useUpdateTriggerStore((state) => state.newUpdate);
+  const setProfileAvatar = useProfileAvatar((state) => state.setProfileImage);
   const handleExitClick = (e) => {
     setVisible(!visible);
     reset();
@@ -45,7 +47,8 @@ export function ChangeAvatarForm(props) {
       object,
       setError,
       setLoading,
-      updateImage
+      updateImage,
+      setProfileAvatar
     );
     setCloseResponseMessage(false);
   }

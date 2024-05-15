@@ -35,13 +35,30 @@
 .navLink[aria-current='page'] {
   font-weight: bold;
 }
+.userName {
+  display: none;
+}
+.headerAvatarDesktop {
+  display: none;
+}
 @media (min-width: 601px) {
+  .headerAvatarDesktop {
+    display: block;
+  }
+  .userName {
+    text-align: end;
+    margin: 15px 45px 10px auto;
+    font-size: 1.2em;
+    display: block;
+    color: white;
+  }
   .navUl,
   .navUlVisible {
     display: flex;
     flex-direction: row;
     min-height: max-content;
     list-style: none;
+    align-items: end;
     padding-left: 0;
     padding-bottom: 2px;
     margin: 0 30px 0 0;

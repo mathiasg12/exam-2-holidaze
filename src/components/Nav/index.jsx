@@ -1,6 +1,9 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import styles from './nav.module.css';
 import { useLoggedInStore } from '../../states/loggedInState';
+import { HeaderAvatar } from '../HeaderAvatar';
+import { useProfileAvatar } from '../../states/profileAvatarState';
+import { useState } from 'react';
 /**
  * The navigation component, includes links, takes two states from props called "clicked" and "setClicked" which is true or false depending if the user has clicked the hamburger icon.
  * the component also
@@ -10,9 +13,15 @@ import { useLoggedInStore } from '../../states/loggedInState';
  */
 export function Nav(props) {
   const { clicked, setClicked } = props;
+  const [avatarClick, setAvatarClick] = useState(false);
   const logOut = useLoggedInStore((state) => state.logOut);
   const navigate = useNavigate();
   let isLoggedIn = useLoggedInStore((state) => state.loggedIn);
+  const avatarUrl = useProfileAvatar((state) => state.profileImage);
+  const userName = localStorage.getItem('name');
+  function handleAvatarClick() {
+    setAvatarClick(!avatarClick);
+  }
   function onLogoutClick() {
     logOut();
     navigate('/');
@@ -68,7 +77,17 @@ export function Nav(props) {
             LogOut
           </p>
         </li>
+        <li className={styles.headerAvatarDesktop}>
+          <HeaderAvatar
+            isLoggedIn={isLoggedIn}
+            avatarUrl={avatarUrl}
+            handleAvatarClick={handleAvatarClick}
+          ></HeaderAvatar>
+        </li>
       </ul>
+      <p className={!avatarClick ? styles.displayNone : styles.userName}>
+        Logged in as: {userName}
+      </p>
     </nav>
   );
 }

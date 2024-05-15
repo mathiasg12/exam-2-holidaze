@@ -19,7 +19,8 @@ export async function loginFunctionality(
   setErrormessage,
   setErrorActive,
   setLoggedIn,
-  reset
+  reset,
+  setProfileAvatar
 ) {
   try {
     const login = await fetch(URL, {
@@ -33,6 +34,7 @@ export async function loginFunctionality(
       localStorage.setItem('token', response.data.accessToken);
       localStorage.setItem('loggedIn', true);
       localStorage.setItem('name', response.data.name);
+      setProfileAvatar(response.data.avatar.url);
       await reset();
       const ApiKeyBoolean = await fetchApiKey(ApiKeyURL);
       if (ApiKeyBoolean) {

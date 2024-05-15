@@ -11,6 +11,7 @@ import { useLoggedInStore } from '../../states/loggedInState';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { ClickHereLink } from '../ClickHereLink';
+import { useProfileAvatar } from '../../states/profileAvatarState';
 /**
  * component that creates the login form, the component validates and allows users to login when they press the login button if all validation passes, the component
  * has a useffect that runs every time the loggedIn state changes, if loggedIn === true the page redirects to the profile page
@@ -23,6 +24,7 @@ export function LoginForm() {
     'Sorry an error has occured please try again later'
   );
   const [loggedIn, setLoggedIn] = useState(false);
+  const setProfileAvatar = useProfileAvatar((state) => state.setProfileImage);
   const navigate = useNavigate();
   const {
     register,
@@ -40,7 +42,8 @@ export function LoginForm() {
       setErrorMessage,
       setErrorActive,
       setLoggedIn,
-      reset
+      reset,
+      setProfileAvatar
     );
   };
   function handleEyeClick() {

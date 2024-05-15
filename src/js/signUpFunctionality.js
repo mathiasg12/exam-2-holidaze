@@ -16,7 +16,8 @@ export async function signUpFunction(
   setErrorActive,
   setErrorMessage,
   setLoggedIn,
-  reset
+  reset,
+  setProfileAvatar
 ) {
   try {
     const registerUser = await fetch(URL, {
@@ -39,7 +40,8 @@ export async function signUpFunction(
         setErrorMessage,
         setErrorActive,
         setLoggedIn,
-        reset
+        reset,
+        setProfileAvatar
       );
     }
   } catch (error) {

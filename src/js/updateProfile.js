@@ -14,7 +14,8 @@ export async function updateProfile(
   object,
   setError,
   setLoading,
-  updateImage
+  updateImage,
+  setProfileAvatar
 ) {
   const key = localStorage.getItem('key');
   const token = localStorage.getItem('token');
@@ -32,9 +33,11 @@ export async function updateProfile(
     };
     const putNewImage = await fetch(`${URL}${name}`, options);
     if (putNewImage.ok) {
+      const response = await putNewImage.json();
       updateImage();
       setError(false);
       reset();
+      setProfileAvatar(response.data.avatar.url);
     } else {
       setError(true);
       setResponseMessage(
