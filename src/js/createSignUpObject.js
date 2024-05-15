@@ -17,7 +17,7 @@ export function createSignUpObject(name, email, password, image, userType) {
         url:
           image.length >= 8
             ? image
-            : 'https://unsplash.com/photos/blue-and-white-lego-blocks-pi9W2dWDdak',
+            : 'https://img.freepik.com/premium-photo/man-with-face-circle-with-word-man-it_798164-934.jpg?w=996',
       },
     };
   } else {
@@ -29,7 +29,7 @@ export function createSignUpObject(name, email, password, image, userType) {
         url:
           image.length >= 8
             ? image
-            : 'https://unsplash.com/photos/blue-and-white-lego-blocks-pi9W2dWDdak',
+            : 'https://img.freepik.com/premium-photo/man-with-face-circle-with-word-man-it_798164-934.jpg?w=996',
       },
       venueManager: true,
     };
