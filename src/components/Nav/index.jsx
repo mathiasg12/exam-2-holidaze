@@ -85,7 +85,11 @@ export function Nav(props) {
           ></HeaderAvatar>
         </li>
       </ul>
-      <p className={!avatarClick ? styles.displayNone : styles.userName}>
+      <p
+        className={
+          !avatarClick || !isLoggedIn ? styles.displayNone : styles.userName
+        }
+      >
         Logged in as: {userName}
       </p>
     </nav>

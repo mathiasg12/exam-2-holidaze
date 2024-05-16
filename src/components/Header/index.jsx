@@ -62,7 +62,11 @@ export function Header() {
           </div>
         </div>
         <Nav clicked={clicked} setClicked={setClicked}></Nav>
-        <p className={!avatarClick ? styles.displayNone : styles.userName}>
+        <p
+          className={
+            !avatarClick || !isLoggedIn ? styles.displayNone : styles.userName
+          }
+        >
           Logged in as: {userName}
         </p>
       </div>
