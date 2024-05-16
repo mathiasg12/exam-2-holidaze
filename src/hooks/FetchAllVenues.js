@@ -34,7 +34,7 @@ export function useFetchAllVenues(URL, singleObjectBooleanValue) {
         } else {
           let page = 1;
           while (startedLoop) {
-            let data = await fetch(URL + `?limit=10&&page=${page}`);
+            let data = await fetch(URL + `?limit=100&&page=${page}`);
             let allVenues = await data.json();
             if (!data.ok) {
               setError(true);
