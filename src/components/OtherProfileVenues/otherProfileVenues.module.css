@@ -1,0 +1,30 @@
+.noVenues {
+  text-align: center;
+  margin: 30px auto 100px auto;
+}
+.myVenueHeading {
+  text-align: center;
+  padding: 10px;
+  background-color: var(--custom-blue);
+  color: white;
+  word-break: break-all;
+}
+.myVenuesContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 50px;
+}
+@media (min-width: 800px) {
+  .myVenuesContainer {
+    width: 800px;
+  }
+}
+@media (min-width: 1000px) {
+  .myVenuesContainer {
+    width: 1000px;
+  }
+}

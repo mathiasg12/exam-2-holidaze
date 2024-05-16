@@ -4,11 +4,10 @@ import { useUpdateTriggerStore } from '../states/updateTriggerState';
  * hook that fetches and returns a profile
  * @param {string} URL
  */
-export function useFetchUserProfile(URL) {
+export function useFetchUserProfile(URL, name) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [profile, setProfile] = useState({});
-  const name = localStorage.getItem('name');
   const token = localStorage.getItem('token');
   const apiKey = localStorage.getItem('key');
   const update = useUpdateTriggerStore((state) => state.update);
@@ -40,7 +39,7 @@ export function useFetchUserProfile(URL) {
       }
     }
     innerFunction();
-  }, [URL, update]);
+  }, [URL, update, name]);
 
   return { error, loading, profile };
 }

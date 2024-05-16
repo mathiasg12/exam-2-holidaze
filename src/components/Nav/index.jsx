@@ -57,7 +57,7 @@ export function Nav(props) {
         </li>
         <li className={!isLoggedIn ? styles.displayNone : styles.navLi}>
           <NavLink
-            to="/profile"
+            to={`/profile/${userName}`}
             className={styles.navLink}
             onClick={handleLinkClick}
           >

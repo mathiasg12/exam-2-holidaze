@@ -3,17 +3,17 @@ import styles from './venueManagerSection.module.css';
 import { RentOutVenueForm } from '../RentOutVenueForm';
 import { MyVenues } from '../MyVenues';
 import { BookingsOnMyVenues } from '../BookingsOnMyVenues';
-import { useFetchMyvenues } from '../../hooks/FetchMyVenues';
 import { profileURL } from '../../js/URL';
 import { useUpdateTriggerStore } from '../../states/updateTriggerState';
 import { UpComingBookingsSection } from '../UpComingBookingsSection';
+import { useFetchVenuesByProfile } from '../../hooks/FetchVenuesByProfile';
 /**
  * component that creates the venue manager section, this component includes a menu where the manager can choose between three different admin sections.
  */
 export function VenueManagerSection(props) {
-  const { profile } = props;
+  const { profile, name } = props;
   const [activeMenuItem, setActiveMenuItem] = useState('myVenues');
-  const { error, loading, venues } = useFetchMyvenues(profileURL);
+  const { error, loading, venues } = useFetchVenuesByProfile(profileURL, name);
   const update = useUpdateTriggerStore((state) => state.newUpdate);
   function handleClick(click) {
     const id = click.target.id;

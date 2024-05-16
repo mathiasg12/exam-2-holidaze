@@ -15,7 +15,7 @@ export function PageRoutes() {
       <Route path="/specific/:id" element={<Specific></Specific>}></Route>
       <Route path="/login" element={<LoginPage></LoginPage>}></Route>
       <Route path="/signUp" element={<SignUpPage></SignUpPage>}></Route>
-      <Route path="/profile" element={<Profile></Profile>}></Route>
+      <Route path="/profile/:name" element={<Profile></Profile>}></Route>
       <Route path="*" element={<NotFound></NotFound>}></Route>
     </Routes>
   );

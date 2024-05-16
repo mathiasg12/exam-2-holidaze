@@ -1,0 +1,72 @@
+.userSection {
+  margin: 170px auto 0 auto;
+  background-color: var(--custom-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0px;
+  width: 80vw;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid var(--custom-yellow);
+}
+.infoHeading {
+  text-align: center;
+  word-break: break-all;
+}
+.userSection h2 {
+  margin: 15px 5px;
+}
+.userSection h1 {
+  margin: 10px auto;
+}
+.infoDiv {
+  display: flex;
+  align-items: start;
+}
+.boldP {
+  margin: 10px 5px;
+  font-weight: bold;
+}
+.regularP {
+  margin: 10px 5px;
+  display: flex;
+  align-items: end;
+  word-break: break-all;
+}
+.userWrapper {
+  max-width: 300px;
+}
+.profilePicture {
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+.profilePictureContainer {
+  width: 200px;
+  height: 200px;
+  margin: 20px auto 20px auto;
+}
+
+@media (min-width: 601px) {
+  .profilePictureContainer {
+    margin-bottom: 0px;
+  }
+  .userSection {
+    width: 596px;
+  }
+  .userWrapper {
+    margin-top: 30px;
+  }
+  .profileInfoWrapper {
+    width: 580px;
+    display: flex;
+    align-items: start;
+    justify-content: space-around;
+  }
+}
+@media (min-width: 801px) {
+  .userSection {
+    width: 650px;
+  }
+}

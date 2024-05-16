@@ -6,6 +6,7 @@ import { useLoggedInStore } from '../../states/loggedInState';
  */
 export function Footer() {
   const isLoggedIn = useLoggedInStore((state) => state.loggedIn);
+  const name = localStorage.getItem('name');
   return (
     <footer>
       <div className={styles.footerElementsContainer}>
@@ -34,7 +35,7 @@ export function Footer() {
             </li>
             <li>
               <NavLink
-                to="/profile"
+                to={`/profile/${name}`}
                 className={!isLoggedIn ? styles.displayNone : styles.footerLink}
               >
                 Profile

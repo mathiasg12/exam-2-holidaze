@@ -5,12 +5,11 @@ import { useUpdateTriggerStore } from '../states/updateTriggerState';
  * hook that fetches and returns a users own venues
  * @param {string} URL
  */
-export function useFetchMyvenues(URL) {
+export function useFetchVenuesByProfile(URL, name) {
   const [unFilteredvenues, setUnFilteredVenues] = useState([]);
   const [venues, setVenues] = useState([]);
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const name = localStorage.getItem('name');
   const token = localStorage.getItem('token');
   const apiKey = localStorage.getItem('key');
   const update = useUpdateTriggerStore((state) => state.update);

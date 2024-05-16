@@ -1,8 +1,11 @@
 import styles from './venueInfoSection.module.css';
+import commonStyles from '../../styles/commonStyles/commonStyles.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar, faPerson } from '@fortawesome/free-solid-svg-icons';
 import { ListItems } from '../ListItemsFromArray';
 import { capText } from '../../js/capText';
+import { Link } from 'react-router-dom';
+import { useLoggedInStore } from '../../states/loggedInState';
 /**
  * function that returns a component which containts the information section about the venue, the compoent
  * @param {props} props
@@ -12,6 +15,8 @@ export function VenueInfo(props) {
   const metaObject = venue.meta ? venue.meta : {};
   const metaArray = Object.entries(metaObject);
   const loadedOwnerAvatar = owner.avatar ? owner.avatar : '';
+  const userName = owner.name;
+  let isLoggedIn = useLoggedInStore((state) => state.loggedIn);
   let profileImage = '../pictures/noImage.jpg';
   if (loadedOwnerAvatar !== undefined) {
     profileImage = loadedOwnerAvatar.url;
@@ -64,6 +69,24 @@ export function VenueInfo(props) {
           <p className={styles.boldP}>Email:</p>
           <p> {owner.email}</p>
         </div>
+        {isLoggedIn ? (
+          <Link
+            to={`/profile/${userName}`}
+            className={commonStyles.smallButtonLinkYellow}
+          >
+            See Profile
+          </Link>
+        ) : (
+          <div className={styles.loginToSeeProfileCon}>
+            <p>You need to login to see their profile</p>
+            <Link
+              to={`/login`}
+              className={`${commonStyles.smallButtonLinkYellow} ${commonStyles.noMarginTop}`}
+            >
+              Login
+            </Link>
+          </div>
+        )}
       </div>
 
       <div className={styles.descCon}>

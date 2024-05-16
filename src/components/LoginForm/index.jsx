@@ -51,7 +51,8 @@ export function LoginForm() {
   }
   useEffect(() => {
     if (loggedIn) {
-      navigate('/profile');
+      const name = localStorage.getItem('name');
+      navigate(`/profile/${name}`);
       loginTrue();
     }
   }, [loggedIn, navigate, loginTrue]);

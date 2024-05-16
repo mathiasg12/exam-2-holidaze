@@ -96,6 +96,10 @@
   border-radius: 100%;
   border: 2px solid white;
 }
+.loginToSeeProfileCon p {
+  margin: 30px auto 5px auto;
+  text-align: center;
+}
 @media (min-width: 601px) {
   .locationContent p {
     max-width: 30vw;
