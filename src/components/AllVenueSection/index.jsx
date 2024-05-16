@@ -9,6 +9,7 @@ import { allVenuesURL } from '../../js/URL';
 import { LoadingSpinner } from '../LoadingSpinner';
 import { VenueCardsLandingPage } from '../VenueCardsLandingPage';
 import { ErrorMessageNotSpecific } from '../ErrorMessageNotSpecific';
+import { sortedVenues } from '../../js/sortedVenues';
 /**
  * The VenueSection component creates the venue section. It uses the useFetchAllVenues hook to fetch data from the API.
  * It then displays the content from the API in the venue section. If a user uses the search bar, a new array is made.
@@ -19,23 +20,31 @@ export function AllVenueSection() {
   const { venues, error, loading } = useFetchAllVenues(allVenuesURL, false);
   const filterValues = useFilterStore((state) => state.metaArray);
   const maxGuests = useFilterStore((state) => state.maxGuests);
+  const sorted = useFilterStore((state) => state.sorted);
   const loadedVenues = venues && venues ? venues : [];
   const [searched, setSearched] = useState(false);
   const [searchedArray, setSearchedArray] = useState([]);
   let filteredLoadedVenues = [];
   if (searched) {
-    filteredLoadedVenues = filteredVenues(
-      searchedArray,
-      filterValues,
-      maxGuests
+    sortedVenues(
+      (filteredLoadedVenues = filteredVenues(
+        searchedArray,
+        filterValues,
+        maxGuests
+      )),
+      sorted
     );
   } else {
-    filteredLoadedVenues = filteredVenues(
-      loadedVenues,
-      filterValues,
-      maxGuests
+    sortedVenues(
+      (filteredLoadedVenues = filteredVenues(
+        loadedVenues,
+        filterValues,
+        maxGuests
+      )),
+      sorted
     );
   }
+
   function handleBackToAllVenuesBtnClick() {
     setSearched(false);
   }

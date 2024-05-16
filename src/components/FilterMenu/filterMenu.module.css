@@ -24,7 +24,8 @@
   width: 100%;
   cursor: pointer;
 }
-.filterMenu h3 {
+.filterMenu h3,
+.filterMenuClosed h3 {
   text-align: center;
 }
 .filterMenu p {
@@ -35,14 +36,15 @@
   display: flex;
   align-items: center;
 }
-.amountOfGuestsCon {
+.amountOfGuestsAndSortCon {
   display: flex;
   flex-direction: column;
   width: fit-content;
-  margin: 0 auto;
+  margin: 16px auto 8px auto;
 }
-.amountOfGuests {
+.amountOfGuestsAndSort {
   height: 30px;
+  width: 160px;
 }
 @media (min-width: 601px) {
   .filterMenu,

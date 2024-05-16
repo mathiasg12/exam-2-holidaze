@@ -13,6 +13,8 @@ export function FilterMenu(props) {
   const filterSettings = useFilterStore((state) => state.filterSettings);
   const changeMaxGuests = useFilterStore((state) => state.changeMaxGuests);
   const maxGuests = useFilterStore((state) => state.maxGuests);
+  const sorted = useFilterStore((state) => state.sorted);
+  const changeSorted = useFilterStore((state) => state.changeSorted);
   const checkIfCheckboxIsChecked = useFilterStore(
     (state) => state.checkMetaArray
   );
@@ -27,9 +29,13 @@ export function FilterMenu(props) {
     const value = inputClicked.target.value;
     filterSettings(value, checked);
   }
-  function optionChange(changedEvent) {
+  function maxGuestChange(changedEvent) {
     const value = changedEvent.target.value;
     changeMaxGuests(value);
+  }
+  function sortedChange(changedEvent) {
+    const value = changedEvent.target.value;
+    changeSorted(value);
   }
   return (
     <div className={clicked ? styles.filterMenu : styles.filterMenuClosed}>
@@ -38,18 +44,30 @@ export function FilterMenu(props) {
       </div>
       <div className={styles.filterMenuContentContainer}>
         <h3>Filter</h3>
-        <div className={styles.amountOfGuestsCon}>
-          <label
-            htmlFor="amountOfGuests"
-            className={styles.amountOfGuestsLabel}
+        <div className={styles.amountOfGuestsAndSortCon}>
+          <label htmlFor="sort">Sorted by:</label>
+          <select
+            id="sort"
+            name="sort"
+            className={styles.amountOfGuestsAndSort}
+            onChange={sortedChange}
+            value={sorted}
           >
-            Max amount of guests
-          </label>
+            <option value="newestFirst">Newest venues first</option>
+            <option value="oldestFirst">Oldest venues first</option>
+            <option value="priceLowtoHigh">Lowest price first</option>
+            <option value="priceHighToLow">Highest price first</option>
+            <option value="ratingLowToHigh">Lowest rating first</option>
+            <option value="ratingHighToLow">Highest rating first</option>
+          </select>
+        </div>
+        <div className={styles.amountOfGuestsAndSortCon}>
+          <label htmlFor="amountOfGuests">Max amount of guests</label>
           <select
             id="amountOfGuests"
             name="Guests"
-            className={styles.amountOfGuests}
-            onChange={optionChange}
+            className={styles.amountOfGuestsAndSort}
+            onChange={maxGuestChange}
             value={maxGuests}
           >
             <option value="all">All</option>

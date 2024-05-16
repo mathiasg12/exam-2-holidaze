@@ -1,13 +1,14 @@
 import { create } from 'zustand';
 /**
- * store that saves the filter setting across pages, so when a user uses the filter setting and goes to a venue they like, if they come back to view more venues they dont have to
- * use the filter settings all over again, has three state values, metaArray which is an array that saves the filter meta key words, maxGuest which is the maximum number of guest and
- * checkboxes which is an array keeping track of which checkbox is checked or not
+ * Store that saves the filter settings across pages, so when a user uses the filter settings and goes to a venue they like, if they come back to view more venues they don't have to
+ * use the filter settings all over again. It has four state values: metaArray, which is an array that saves the filter meta keywords, maxGuest, which is the maximum number of guests,
+ * sorted, which is the user's preferred sort method, and checkboxes, which is an array keeping track of which checkboxes are checked or not.
  */
 export const useFilterStore = create((set) => ({
   metaArray: [],
   maxGuests: 'all',
   checkBoxes: [],
+  sorted: 'newestFirst',
   filterSettings: (inputValue, checked) => {
     set((state) => {
       if (checked) {
@@ -26,6 +27,11 @@ export const useFilterStore = create((set) => ({
       return { maxGuests: inputValue };
     });
   },
+  changeSorted: (inputValue) => {
+    set(() => {
+      return { sorted: inputValue };
+    });
+  },
   checkMetaArray: (state) => {
     const allCheckBoxes = document.querySelectorAll('input[type="checkbox"]');
     allCheckBoxes.forEach((singleCheckBox) => {
@@ -37,5 +43,10 @@ export const useFilterStore = create((set) => ({
     });
   },
   clearFilter: () =>
-    set(() => ({ metaArray: [], maxGuests: 'all', checkBoxes: [] })),
+    set(() => ({
+      metaArray: [],
+      maxGuests: 'all',
+      checkBoxes: [],
+      sorted: 'newestFirst',
+    })),
 }));
