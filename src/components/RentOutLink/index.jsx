@@ -6,7 +6,10 @@ import styles from './rentOutLink.module.css';
 export function RentOutLink() {
   const name = localStorage.getItem('name');
   return (
-    <Link to={name ? '/profile' : '/login'} className={styles.rentOutLink}>
+    <Link
+      to={name ? `/profile/${name}` : '/login'}
+      className={styles.rentOutLink}
+    >
       Rent out a venue
     </Link>
   );

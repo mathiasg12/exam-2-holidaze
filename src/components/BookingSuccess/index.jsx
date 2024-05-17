@@ -10,6 +10,7 @@ export function BookingSuccess(props) {
   function exitOnClick() {
     setSuccess(false);
   }
+  const name = localStorage.getItem('name');
   return (
     <div className={styles.successOverlay}>
       <p
@@ -28,7 +29,7 @@ export function BookingSuccess(props) {
       </p>
       <p></p>
       <Link
-        to="/profile"
+        to={`/profile/${name}`}
         className={`${commonStyles.smallButtonLinkYellow} ${commonStyles.smallMarginBottom}`}
       >
         Profile
