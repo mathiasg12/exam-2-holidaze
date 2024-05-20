@@ -21,6 +21,7 @@
   background-color: rgb(255, 255, 255);
   font-weight: bold;
   font-size: 0.9em;
+  color: black;
 }
 .displayDiv {
   display: block;

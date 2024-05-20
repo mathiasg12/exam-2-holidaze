@@ -46,7 +46,7 @@
 .profilePictureContainer {
   width: 200px;
   height: 200px;
-  margin: 20px 0 20px 0;
+  margin: 20px auto 20px auto;
 }
 
 @media (min-width: 601px) {
