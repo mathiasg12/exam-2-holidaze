@@ -45,6 +45,7 @@
 .amountOfGuestsAndSort {
   height: 30px;
   width: 160px;
+  color: black;
 }
 @media (min-width: 601px) {
   .filterMenu,
