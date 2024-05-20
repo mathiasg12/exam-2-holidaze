@@ -11,6 +11,7 @@
   background-color: rgb(255, 255, 255);
   border: 0;
   font-size: 1.2em;
+  color: black;
 }
 .exitForm:hover {
   background-color: var(--custom-yellow);

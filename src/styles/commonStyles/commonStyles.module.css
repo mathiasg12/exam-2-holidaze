@@ -41,6 +41,7 @@
   font-weight: bold;
   border: 1px solid black;
   border-radius: 5px;
+  color: black;
 }
 .dangerButton:hover {
   background-color: var(--error);

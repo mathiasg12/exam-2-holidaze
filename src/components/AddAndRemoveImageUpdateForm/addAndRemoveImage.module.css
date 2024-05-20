@@ -45,4 +45,5 @@
   background-color: var(--custom-yellow);
   border-radius: 0 5px 5px 0;
   border: 1px solid black;
+  color: black;
 }
