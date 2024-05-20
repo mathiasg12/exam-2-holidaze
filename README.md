@@ -90,12 +90,9 @@ The profile page has three different layouts depending on who is accessing it an
 - Clone repository from Github
 - Open the repository with Visual Studio Code or another code editor
 - Install dependencies using:
-  ````bash
-  npm install
-  - Open live server with
-    ```bash
-  npm start
-  ````
+  `npm install`
+- Open live server with:
+  `npm start`
 
 ## Available Scripts
 
