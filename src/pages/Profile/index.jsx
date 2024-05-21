@@ -19,10 +19,12 @@ export function Profile() {
   const loadedProfile = profile ? profile : {};
   const [isVenueManager, setIsVenueManager] = useState(false);
   useEffect(() => {
-    if (loadedProfile.venueManager === true) {
+    if (loadedProfile.venueManager === true && ownName === name) {
       setIsVenueManager(true);
+    } else {
+      setIsVenueManager(false);
     }
-  }, [loadedProfile.venueManager]);
+  }, [loadedProfile.venueManager, name, ownName]);
 
   if (loading) {
     return (
