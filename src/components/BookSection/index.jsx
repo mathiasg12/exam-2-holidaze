@@ -107,9 +107,9 @@ export function BookSection(props) {
     return (
       <div className={styles.bookSection}>
         <h2>Look for available dates and book</h2>
-        <h3 className={!error ? styles.message : commonStyles.errorMsg}>
+        <p className={!error ? styles.message : commonStyles.errorMsg}>
           {message}
-        </h3>
+        </p>
         <div
           className={
             !success ? styles.hideSuccessOverlay : styles.successOverlay
@@ -122,7 +122,8 @@ export function BookSection(props) {
             <p>Pick an available date (faded dates are unavailable)</p>
             <div className={styles.calendars}>
               <div className={styles.calendarCon}>
-                <p
+                <label
+                  htmlFor="checkInInput"
                   id="checkIn"
                   className={
                     !checkInError
@@ -131,8 +132,9 @@ export function BookSection(props) {
                   }
                 >
                   {!checkInError ? 'Check-in' : checkInOrOutErrorMsg}
-                </p>
+                </label>
                 <DatePicker
+                  id="checkInInput"
                   selected={checkIn}
                   onChange={(date) => {
                     setCheckIn(date);
@@ -156,7 +158,8 @@ export function BookSection(props) {
                 type="button"
               />
               <div className={styles.calendarCon}>
-                <p
+                <label
+                  htmlFor="checkOutInput"
                   id="checkOut"
                   className={
                     !checkOutError
@@ -165,8 +168,9 @@ export function BookSection(props) {
                   }
                 >
                   {!checkOutError ? 'Check-Out' : checkInOrOutErrorMsg}
-                </p>
+                </label>
                 <DatePicker
+                  id="checkOutInput"
                   selected={checkOut}
                   onChange={(date) => {
                     setCheckOut(date);
