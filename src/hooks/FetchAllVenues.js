@@ -53,7 +53,6 @@ export function useFetchAllVenues(URL, singleObjectBooleanValue) {
           }
         }
       } catch (error) {
-        console.log(error);
         setError(true);
       } finally {
         setLoading(false);

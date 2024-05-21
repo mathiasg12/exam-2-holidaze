@@ -17,7 +17,6 @@ export function Profile() {
   const ownName = localStorage.getItem('name');
   const { loading, error, profile } = useFetchUserProfile(profileURL, name);
   const loadedProfile = profile ? profile : {};
-  console.log(loadedProfile);
   const [isVenueManager, setIsVenueManager] = useState(false);
   useEffect(() => {
     if (loadedProfile.venueManager === true) {

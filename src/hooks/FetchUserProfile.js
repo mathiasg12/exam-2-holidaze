@@ -32,7 +32,6 @@ export function useFetchUserProfile(URL, name) {
           }
         } catch (error) {
           setError(true);
-          console.log(error);
         } finally {
           setLoading(false);
         }
