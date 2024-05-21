@@ -7,7 +7,7 @@ import { capText } from '../../js/capText';
 import { Link } from 'react-router-dom';
 import { useLoggedInStore } from '../../states/loggedInState';
 /**
- * function that returns a component which containts the information section about the venue, the compoent
+ * function that returns a component which containts the information section about the venue.
  * @param {props} props
  */
 export function VenueInfo(props) {

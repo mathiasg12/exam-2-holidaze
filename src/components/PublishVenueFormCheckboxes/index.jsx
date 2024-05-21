@@ -1,6 +1,6 @@
 import styles from './publishVenueFormCheckboxes.module.css';
 /**
- * function that creates the jsx for the checkboxes used in the "rent out venue" form
+ * Component that creates the jsx for the checkboxes used in the "rent out venue" form
  * @param {props} props
  */
 export function PublishVenueFormCheckboxes(props) {

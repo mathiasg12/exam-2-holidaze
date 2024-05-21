@@ -6,7 +6,7 @@ import { SignUpPage } from '../../pages/SignUp';
 import { Profile } from '../../pages/Profile';
 import { NotFound } from '../../pages/404Page';
 /**
- * react Routes to different paths
+ * React Routes to different paths
  */
 export function PageRoutes() {
   return (

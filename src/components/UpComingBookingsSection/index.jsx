@@ -2,7 +2,7 @@ import { ErrorMessageNotSpecific } from '../ErrorMessageNotSpecific';
 import { UpComingBookingsCard } from '../UpComingBookingsCard';
 import styles from './UpComingBookingsSection.module.css';
 /**
- * component that creates the up Coming booking section, this section allow users to see their up coming bookings.
+ * component that creates the up coming booking section, this section allow users to see their up coming bookings.
  * @param {props} props
  */
 export function UpComingBookingsSection(props) {

@@ -4,7 +4,7 @@ import { LoadingSpinner } from '../LoadingSpinner';
 import { dateFormated } from '../../js/formatDates';
 import { capText } from '../../js/capText';
 /**
- * Component that creates the section for bookings on a user's venues.
+ * Component that creates the section for bookings on user's venues.
  * This includes an error message if something goes wrong, a loading spinner if the section is loading,
  * and the "Bookings on My Venue" section. If there are no bookings on a user's venue,
  * this message will show up instead: "There are currently no bookings on your venues yet." Otherwise, the bookings will be displayed in this section.

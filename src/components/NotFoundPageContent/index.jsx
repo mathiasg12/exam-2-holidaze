@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
 import styles from './notFoundPageContent.module.css';
+/**
+ * The NotFoundPageContent component returns a heading, a paragraph, and a link back to the landing page. This component is
+ * rendered on the "404 Page Not Found" page.
+ */
 export function NotFoundPageContent() {
   return (
     <section className={styles.contentContainer}>

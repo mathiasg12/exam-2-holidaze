@@ -2,7 +2,8 @@ import { NavLink } from 'react-router-dom';
 import styles from './footer.module.css';
 import { useLoggedInStore } from '../../states/loggedInState';
 /**
- * component that creates the footer, the footer has contact information aswell as links to the landing page and profile
+ * component that creates the footer, the footer has contact information aswell as links to the landing page and profile page
+ * for logged in users, if the user is not logged in the links changes to landing page, login page and signup page
  */
 export function Footer() {
   const isLoggedIn = useLoggedInStore((state) => state.loggedIn);
