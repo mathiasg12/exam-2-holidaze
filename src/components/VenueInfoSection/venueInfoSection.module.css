@@ -39,6 +39,8 @@
 }
 .descCon p {
   margin: 5px auto 5px 10px;
+  word-wrap: break-word;
+  max-width: 100%;
 }
 .venueInfoCon ul {
   padding: 10px;
